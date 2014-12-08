@@ -62,8 +62,6 @@ def generateClozedRTK(nids):
             TextOutput = re.sub('\((.*?)\)[:](.*)', "<br />", TextOutput)
             #showInfo(TextOutput)
             note[dst]= TextOutput
-            
-            #note[dst] = srcTxt
         except Exception, e:
             raise
         note.flush()

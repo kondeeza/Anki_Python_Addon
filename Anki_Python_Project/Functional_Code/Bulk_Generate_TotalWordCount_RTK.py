@@ -9,7 +9,7 @@
 modelName = 'Heisig'
 # each field name must be exact!
 Word_SrcField = 'Words'
-dstField = 'Words_Clozed'
+dstField = 'Total_Word_Counts'
 # if data exists in dstField, should we overwrite it?
 OVERWRITE_DST_FIELD=True
 ##########################################################################
@@ -20,8 +20,8 @@ from anki.hooks import addHook
 from aqt import mw
 from aqt.utils import showWarning, showInfo
 import re
-def bulkGenerateClozedRTK(nids):
-    mw.checkpoint("Bulk-Generate Clozed RTK Field")
+def BulkGenerateTotalWordCountRTK(nids):
+    mw.checkpoint("Bulk-Generate TotalWordCount")
     mw.progress.start()
     for nid in nids:
         #showInfo ("Found note: %s" % (nid))
@@ -48,19 +48,17 @@ def bulkGenerateClozedRTK(nids):
             showInfo ("--> %s not empty. Skipping!" % (Word_SrcField))
             continue
         try:
+            
             # showInfo ("--> Everything should have worked. Trying Regex")
             TextOutput = note[src1]
-            #showInfo(TextOutput)
-            """ Ensure All <br> format considered"""
-            TextOutput = re.sub('\((.*?)\)[:](.*?)(<br />)', "<br />", TextOutput)
-            #showInfo(TextOutput)
-            TextOutput = re.sub('\((.*?)\)[:](.*?)(<br/>)', "<br />", TextOutput)
-            #showInfo(TextOutput)
-            TextOutput = re.sub('\((.*?)\)[:](.*?)(<br>)', "<br />", TextOutput)
-            #showInfo(TextOutput)
-            TextOutput = re.sub('\((.*?)\)[:](.*)', "<br />", TextOutput)
-            #showInfo(TextOutput)
-            note[dst]= TextOutput
+            brformat1count = TextOutput.count("<br />")
+            brformat2count = TextOutput.count("<br/>")
+            brformat3count = TextOutput.count("<br>")
+            TotalWordCount = brformat1count + brformat2count + brformat3count
+            if (TotalWordCount !=0):
+                TotalWordCount = TotalWordCount+1
+                note[dst]= str(TotalWordCount)
+            
         except Exception, e:
             raise
         note.flush()
@@ -68,12 +66,12 @@ def bulkGenerateClozedRTK(nids):
     mw.reset()
 
 def setupMenu(browser):
-    a = QAction("Bulk-Generate Clozed RTK data Field", browser)
-    browser.connect(a, SIGNAL("triggered()"), lambda e=browser: onBulkGenerateClozedRTK(e))
+    a = QAction("Bulk-Generate TotalWordCount RTK data Field", browser)
+    browser.connect(a, SIGNAL("triggered()"), lambda e=browser: onBulkGenerateTotalWordCountRTK(e))
     browser.form.menuEdit.addSeparator()
     browser.form.menuEdit.addAction(a)
 
-def onBulkGenerateClozedRTK(browser):
-    bulkGenerateClozedRTK(browser.selectedNotes())
+def onBulkGenerateTotalWordCountRTK(browser):
+    BulkGenerateTotalWordCountRTK(browser.selectedNotes())
 
 addHook("browser.setupMenus", setupMenu)
