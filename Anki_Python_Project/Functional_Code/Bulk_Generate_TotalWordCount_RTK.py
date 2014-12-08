@@ -55,10 +55,9 @@ def BulkGenerateTotalWordCountRTK(nids):
             brformat2count = TextOutput.count("<br/>")
             brformat3count = TextOutput.count("<br>")
             TotalWordCount = brformat1count + brformat2count + brformat3count
-            if (TotalWordCount !=0):
+            if (TextOutput != ""):
                 TotalWordCount = TotalWordCount+1
                 note[dst]= str(TotalWordCount)
-            
         except Exception, e:
             raise
         note.flush()
