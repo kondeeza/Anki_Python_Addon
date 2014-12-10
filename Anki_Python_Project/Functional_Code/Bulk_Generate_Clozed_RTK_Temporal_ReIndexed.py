@@ -20,8 +20,8 @@ from anki.hooks import addHook
 from aqt import mw
 from aqt.utils import showWarning, showInfo
 import re
-def bulkGenerateClozedRTK(nids):
-    mw.checkpoint("Bulk-Generate Clozed RTK Field")
+def bulkGenerateReIndexedClozedRTK(nids):
+    mw.checkpoint("Bulk-Generate ReIndexed Clozed RTK Field")
     mw.progress.start()
     for nid in nids:
         #showInfo ("Found note: %s" % (nid))
@@ -78,12 +78,12 @@ def bulkGenerateClozedRTK(nids):
     mw.reset()
 
 def setupMenu(browser):
-    a = QAction("Bulk-Generate Clozed RTK data Field", browser)
-    browser.connect(a, SIGNAL("triggered()"), lambda e=browser: onBulkGenerateClozedRTK(e))
+    a = QAction("Bulk-Generate ReIndexed Clozed RTK data Field", browser)
+    browser.connect(a, SIGNAL("triggered()"), lambda e=browser: onBulkGenerateReIndexedClozedRTK(e))
     browser.form.menuEdit.addSeparator()
     browser.form.menuEdit.addAction(a)
 
-def onBulkGenerateClozedRTK(browser):
-    bulkGenerateClozedRTK(browser.selectedNotes())
+def onBulkGenerateReIndexedClozedRTK(browser):
+    bulkGenerateReIndexedClozedRTK(browser.selectedNotes())
 
 addHook("browser.setupMenus", setupMenu)
