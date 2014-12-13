@@ -66,18 +66,6 @@ def bulkCheckVocabReadingRTK(nids):
             TextOutput = note[src1]
             KanaReading = TextOutput
             #showInfo(TextOutput)
-            """ Ensure All <br> format considered"""
-            TextOutput = re.sub('\((.*?)\)[:](.*?)(<br />)', "<br />", TextOutput)
-            #showInfo(TextOutput)
-            TextOutput = re.sub('\((.*?)\)[:](.*?)(<br/>)', "<br />", TextOutput)
-            #showInfo(TextOutput)
-            TextOutput = re.sub('\((.*?)\)[:](.*?)(<br>)', "<br />", TextOutput)
-            #showInfo(TextOutput)
-            TextOutput = re.sub('\((.*?)\)[:](.*)', "<br />", TextOutput)
-            #showInfo(TextOutput)
-            y = TextOutput.split("<br />")
-            if (len(y) !=0):
-                y.pop()
             KanaReading = re.sub(r'(<br>)', r"<br />", KanaReading)
             KanaReading = re.sub(r'(<br/>)', r"<br />", KanaReading)
             KanaReading = re.sub(r'.*?\((.*?)\)[:].*?(<br />)', r"(\1)\2", KanaReading)
@@ -90,10 +78,41 @@ def bulkCheckVocabReadingRTK(nids):
             #showInfo(KanaReading)
             KanaReading = re.sub(r'\((.*?)\).*?(<br />)', r"\1<br />", KanaReading)
             #showInfo(KanaReading)
-            KanaReading = KanaReading.split("<br />")
-            if (len(KanaReading) !=0):
-                KanaReading.pop()
+            if (KanaReading ==TextOutput):
+                #showInfo ("Kana Reading has not been changed after Regex !!!")
+                KanaReading = re.sub(r'.*\((.*?)\).*', r"\1<br />", KanaReading)
 
+            KanaReading = KanaReading.split("<br />")
+            #showInfo(" @ beforepop KanaReading length: %d" % len(KanaReading))
+            
+            """
+            for i in KanaReading:
+                showInfo (" @ beforepop & Aftersplit KanaReading data : %s" % i)"""
+            """ Ensure All <br> format considered"""
+            TextOutput = re.sub('\((.*?)\)[:](.*?)(<br />)', "<br />", TextOutput)
+            #showInfo(TextOutput)
+            TextOutput = re.sub('\((.*?)\)[:](.*?)(<br/>)', "<br />", TextOutput)
+            #showInfo(TextOutput)
+            TextOutput = re.sub('\((.*?)\)[:](.*?)(<br>)', "<br />", TextOutput)
+            #showInfo(TextOutput)
+            TextOutput = re.sub('\((.*?)\)[:](.*)', "<br />", TextOutput)
+            #showInfo(TextOutput)
+            y = TextOutput.split("<br />")
+            #showInfo(" @ beforepop y length: %d" % len(y))
+            #for i in y:
+            #    showInfo (" @ beforepop & Aftersplit y data : %s" % i)
+            if (len(y) !=0):
+                y.pop()
+
+            """
+            #remove the last blank list after spilt function. we also check and len(KanaReading) !=1 because the reg pattern used will not leave blank list when input is just 1 word
+            #ignore the above comment, shit happens because regex with wrong when theres only 1 words
+            if (len(KanaReading) !=0 and len(KanaReading) !=1):
+                KanaReading.pop()
+            """
+            #showInfo (" @ beforepop & Aftersplit KanaReading length : %s" % len(KanaReading))
+            if (len(KanaReading) !=0):
+                KanaReading.pop()            
             x = []
             """
             for i in y:
