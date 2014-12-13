@@ -29,7 +29,11 @@ DictDBSubfolderName = "\Bulk_Generate_Clozed_RTK_Vocab_Reading_Check\\"
 DictDBname = "dict.sqlite"
 #End manual Config
 
-
+def cleanBrFormat(pInput):
+     pInput = re.sub(r'(<br>)', r"<br />", pInput)
+     pInput = re.sub(r'(<br/>)', r"<br />", pInput)
+     pInput = re.sub(r'(<br >)', r"<br />", pInput)
+     return pInput
 def bulkCheckVocabReadingRTK(nids):
     mw.checkpoint("Bulk-Generate ReIndexed Clozed Vocab Reading Check")
     mw.progress.start()
@@ -66,8 +70,7 @@ def bulkCheckVocabReadingRTK(nids):
             TextOutput = note[src1]
             KanaReading = TextOutput
             #showInfo(TextOutput)
-            KanaReading = re.sub(r'(<br>)', r"<br />", KanaReading)
-            KanaReading = re.sub(r'(<br/>)', r"<br />", KanaReading)
+            KanaReading = cleanBrFormat(KanaReading)
             KanaReading = re.sub(r'.*?\((.*?)\)[:].*?(<br />)', r"(\1)\2", KanaReading)
             #showInfo(KanaReading)
             KanaReading = re.sub(r'.*?\((.*?)\)[:].*?(<br/>)', r"(\1)\2", KanaReading)
@@ -89,11 +92,8 @@ def bulkCheckVocabReadingRTK(nids):
             for i in KanaReading:
                 showInfo (" @ beforepop & Aftersplit KanaReading data : %s" % i)"""
             """ Ensure All <br> format considered"""
+            TextOutput = cleanBrFormat(TextOutput)
             TextOutput = re.sub('\((.*?)\)[:](.*?)(<br />)', "<br />", TextOutput)
-            #showInfo(TextOutput)
-            TextOutput = re.sub('\((.*?)\)[:](.*?)(<br/>)', "<br />", TextOutput)
-            #showInfo(TextOutput)
-            TextOutput = re.sub('\((.*?)\)[:](.*?)(<br>)', "<br />", TextOutput)
             #showInfo(TextOutput)
             TextOutput = re.sub('\((.*?)\)[:](.*)', "<br />", TextOutput)
             #showInfo(TextOutput)
@@ -104,43 +104,12 @@ def bulkCheckVocabReadingRTK(nids):
             if (len(y) !=0):
                 y.pop()
 
-            """
-            #remove the last blank list after spilt function. we also check and len(KanaReading) !=1 because the reg pattern used will not leave blank list when input is just 1 word
-            #ignore the above comment, shit happens because regex with wrong when theres only 1 words
-            if (len(KanaReading) !=0 and len(KanaReading) !=1):
-                KanaReading.pop()
-            """
+
             #showInfo (" @ beforepop & Aftersplit KanaReading length : %s" % len(KanaReading))
             if (len(KanaReading) !=0):
                 KanaReading.pop()            
             x = []
-            """
-            for i in y:
-                vocabToQuery = i
-                if (vocabToQuery != ""):
-                    mQuery = "select kana from Dict where kanji =\"" + vocabToQuery + "\";"
-                    cursor = Dictdb.cursor()
-                    cursor.execute(mQuery)
-                    Result_AllRows = cursor.fetchall() #retrieve all row
-                    if (Result_AllRows != None):
-                        if (len(Result_AllRows) ==1):
-                            #append1 1 {Kana}
-                            #print ("is @1")
-                            x.append("@1, " + i +" : " + Result_AllRows[0][0] + "<br />")
-                        elif (len(Result_AllRows) ==2 and (Result_AllRows[0] == Result_AllRows[1])):
-                            #append 2E, 1{Kana}
-                            #print ("is @2E, 2 result but result equal")
-                            x.append("@2E, " + i +" : " +  Result_AllRows[0][0] + "<br />")
-                        elif (len(Result_AllRows) ==2):
-                            #append 2, 2 {Kana}
-                            #print ("is @2, 2 result")
-                            x.append("@2, " +  i +" : " + Result_AllRows[0][0] +", " + Result_AllRows[1][0] + "<br />")
-                        elif (len(Result_AllRows) >=3):
-                            #append 3, first 3 {Kana}
-                            #print ("is @3, 3 result or more")
-                            x.append("@2, " +  i +" : " + Result_AllRows[0][0] +", " + Result_AllRows[1][0] + ", " + Result_AllRows[2][0] + "<br />")
-            
-            """
+
             i = 0
             while i < len(y):
                 #showInfo ("@ Beginning, i : %d" % i)
