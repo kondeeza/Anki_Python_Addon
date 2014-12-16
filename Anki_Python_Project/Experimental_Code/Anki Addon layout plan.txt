@@ -1,17 +1,32 @@
 ##clozed generater##    &mark = future plan
 
 Bulk generator setting
+
 {{
+
 Tickbox Group 1 (pick one) (mandatory):
 	generate as-is,
 	generate as index,
-	generate reading check
+	generate reading check,
+	generate same_word_highlight
 	do nothing (just fix formatting)
 Tickbox Group 2 (pick multiple) (Optional):
 	auto fix <br> format,
 	auto replace <div>,
 	auto replace npbs,
 	&sort original field based on index
+	
+Tickbox Group 3 (pick one) (Optional):
+	generate totalWordCount RTK field
 }}
+
 HotKey Generator setting
+{{
+Tickbox Group 1 (pick one) (mandatory):
+	enable,disable
+
+Dropdown list  Group 1 (set many) (Optional):
+	assign "as is cloze generate binding key" :__ (dropdown choices of {a-z,1-9}, {alt, ctrl, shift} + {A-Z,1-9}, dont assign)
+	assign "Reindexed cloze generate binding key" :__  (dropdown choices of {a-z,1-9}, {alt, ctrl, shift} + {A-Z,1-9}, dont assign)
+}}
 ## Frequency Generator##
