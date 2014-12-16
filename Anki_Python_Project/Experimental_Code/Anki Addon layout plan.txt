@@ -1,0 +1,17 @@
+##clozed generater##    &mark = future plan
+
+Bulk generator setting
+{{
+Tickbox Group 1 (pick one) (mandatory):
+	generate as-is,
+	generate as index,
+	generate reading check
+	do nothing (just fix formatting)
+Tickbox Group 2 (pick multiple) (Optional):
+	auto fix <br> format,
+	auto replace <div>,
+	auto replace npbs,
+	&sort original field based on index
+}}
+HotKey Generator setting
+## Frequency Generator##
