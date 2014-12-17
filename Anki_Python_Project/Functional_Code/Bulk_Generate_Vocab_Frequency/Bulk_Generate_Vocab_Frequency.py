@@ -27,10 +27,13 @@ FrequencyDBname = "freq.sqlite"
 
 
 ##########################################################################
-# USE LOWERCASE. Model name must contain this.
-modelName = 'Japanese yomiSama'
+# Model name must contain this.
 # each field name must be exact!
+#Model name of the note type
+modelName = 'Japanese yomiSama'
+# The Field containing Japanese Vocab which you want to know the frequency ranking
 Vocab_SrcField = 'Vocab'
+# Field to hold  the Freuency Ranking Goes here
 dstField = 'Frequency Ranking'
 # if data exists in dstField, should we overwrite it?
 OVERWRITE_DST_FIELD=True
@@ -49,25 +52,25 @@ def bulkGenerateVocabFq(nids):
         #showInfo ("Found note: %s" % (nid))
         note = mw.col.getNote(nid)
         if modelName not in note.model()['name']:
-            showInfo ("--> Model mismatch: %s vs %s" %( modelName, note.model()['name']))
+            #showInfo ("--> Model mismatch: %s vs %s" %( modelName, note.model()['name']))
             continue
         src1 = None
         if Vocab_SrcField in note:
             src1 = Vocab_SrcField
         if not src1:
             # no src1 field
-            showInfo ("--> Field %s not found." % (Vocab_SrcField))
+            #showInfo ("--> Field %s not found." % (Vocab_SrcField))
             continue
         dst = None
         if dstField in note:
             dst = dstField
         if not dst:
-            showInfo ("--> Field %s not found!" % (dstField))
+            #showInfo ("--> Field %s not found!" % (dstField))
             # no dst field
             continue
         if note[dst] and not OVERWRITE_DST_FIELD:
             # already contains data, skip
-            showInfo ("--> %s not empty. Skipping!" % (Vocab_SrcField))
+            #showInfo ("--> %s not empty. Skipping!" % (Vocab_SrcField))
             continue
         #srcTxt = mw.col.media.strip(note[src1])
         #if not srcTxt.strip():
