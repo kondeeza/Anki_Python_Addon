@@ -39,7 +39,7 @@ def BulkDeleteEmptyJDICAudioField(nids):
             continue
         if note[dst] and not OVERWRITE_DST_FIELD:
             # already contains data, skip
-            showInfo ("--> %s not empty. Skipping!" % (VocabReading_SrcField))
+            showInfo ("--> %s not empty. Skipping!" % (dstField))
             continue
         if (note[dst] == ""):
             continue
@@ -53,9 +53,11 @@ def BulkDeleteEmptyJDICAudioField(nids):
             temp = temp.replace(u"]", "")
             FileToSearch = folderPathToCheckCollection + "\\" + temp
             #FileToSearch = unicode(FileToSearch)
-            showInfo ("File To Search is: %s" %(FileToSearch))
-            if os.path.isfile(FileToSearch):
-                showInfo ("Found it: %s" %(FileToSearch))
+            #showInfo ("File To Search is: %s" %(FileToSearch))
+            if (os.path.isfile(FileToSearch) == False ):
+                #showInfo ("Cannot Find it: %s" %(FileToSearch))
+                note[dst]=""
+                
             #note[dst]="[sound:"+note[src1]+" - .mp3]"
             #note[dst] = srcTxt
         except Exception, e:
