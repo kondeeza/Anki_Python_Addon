@@ -15,7 +15,9 @@ from PyQt4.QtGui import *
 import BulkCleanSongVoc.MultiVocabFieldUtil as MUtil
 
 
-testInputUnicode = unicode(ur"<div>育む はぐくむ 25154&nbsp;(v5m,vt) to raise; to rear; to bring up<br /></div><div>asd</div>")
 
-testInputUnicode = MUtil.CleaNnbsp(testInputUnicode)
-MUtil.CleanDivSyntaxToBR(testInputUnicode)
+testInputUnicode = unicode(ur"<div>育む はぐくむ 25154&nbsp;(v5m,vt) to raise; to rear; to bring up<br /></div><div>asd</div>")
+testInputUnicode = unicode(ur"<div><div>朝礼 ちょうれい 34100&nbsp;morning assembly (company, school, etc.); pep talk</div><div><div>ミサ 12464&nbsp;(n) (Catholic) mass (like an assembly hall)</div></div></div>")
+
+outputUnicode = MUtil.AutoCleanField(testInputUnicode,True,debugMode = True)
+

@@ -7,37 +7,61 @@ Created on 30/12/2014
 
 import re
 
-def CountBrInString():
-    #assumed Text Input from Words field and has no <br> at the very last line
-    TextInput = "万(ばん): many, all<br />万人(ばんじん): all people, everybody, 10000 people<br />万能(ばんのう): all-purpose, almighty, omnipotent<br />万歳(ばんざい): strolling comic dancer<br />万一(まんいち): by some chance, by some possibility, if by any chance, 10,000:1 odds<br />万(まん): 10,000, ten thousand, myriad(s), all, everything<br />万年筆(まんねんひつ): fountain pen"
-    brformat1count = TextInput.count("<br />")
-    brformat2count = TextInput.count("<br/>")
-    brformat3count = TextInput.count("<br>")
-    TotalWordCount = brformat1count + brformat2count + brformat3count
-    if (TotalWordCount !=0):
-        TotalWordCount = TotalWordCount+1
-    print "TotalWordCount :", TotalWordCount
+def cleanBrFormat(pInput, deepClean = False):
+    #tell the method that parameter is always unicode string
+    pInput = unicode(pInput)
+    pInput = re.sub(r'(<br>)', r"<br />", pInput)
+    pInput = re.sub(r'(<br/>)', r"<br />", pInput)
+    pInput = re.sub(r'(<br >)', r"<br />", pInput)
+    if (deepClean == True):
+        pInput = re.sub(r'(<Br>)', r"<br />", pInput)
+        pInput = re.sub(r'(<Br/>)', r"<br />", pInput)
+        pInput = re.sub(r'(<Br >)', r"<br />", pInput)
+        
+        insensitive_BrBrRE =  re.compile(re.escape('<br /><br />'), re.IGNORECASE)
+        InitialpInput = pInput
+        pInput = insensitive_BrBrRE.sub('<br />', pInput)
+        while(InitialpInput != pInput):
+            InitialpInput = pInput
+            pInput = insensitive_BrBrRE.sub('<br />', pInput)
+    return pInput
 
+def IsBREndingOnFinalLine(pX):
+    #tell the method that parameter is always unicode string
+    pX = unicode(pX)
+    pX = pX.lower()
+    if (pX.endswith("<br />") == True or pX.endswith("<br>") == True or pX.endswith("<br >") == True):
+        return True
+    else:
+        return False
 
+def InsertBREndingOnFinalLine(pY):
+    #tell the method that parameter is always unicode string
+    pY = unicode(pY)
+    pY_alreadyHasBrEnding = IsBREndingOnFinalLine(pY)
+    if (pY_alreadyHasBrEnding == True):
+        return pY
+    else:
+        pY = pY+ unicode(ur'<br />')
+        return pY
 
+def RemoveBREndingOnFinalLine(pY):    
+    #tell the method that parameter is always unicode string
+    pY = unicode(pY)
+    pY = cleanBrFormat(pY)
+    pY_alreadyHasBrEnding = IsBREndingOnFinalLine(pY)
+    if (pY_alreadyHasBrEnding == True):
+        return pY[:-6]
+    else:
+        return pY
 
-"""
-def AssertBREndingOnFinalLine():
-
-def InsertBREndingOnFinalLine():
-def RemoveBREndingOnFinalLine():    
-
-"""
-def CleaNnbsp(pInputUnicode):
+def CleanNbsp(pInputUnicode):
     pInputUnicode = unicode(pInputUnicode)
     pInputUnicode = pInputUnicode.replace(ur"&nbsp", " ")
     return pInputUnicode
 
-#todo CleanDivSyntaxToBR, add ability to choose whether to insert Br ending on final line
+
 def CleanDivSyntaxToBR(pInputUnicode):
-    print "You Have Accessed CleanDivSyntaxToBR file"
-    
-    
     #tell the method that parameter is always unicode string
     pInputUnicode = unicode(pInputUnicode)
     
@@ -59,6 +83,7 @@ def CleanDivSyntaxToBR(pInputUnicode):
     pInputUnicode = insensitive_DivToBr.sub('<br />', pInputUnicode)
     
     #Begin Re part 4
+
     insensitive_BrBrRE =  re.compile(re.escape('<br /><br />'), re.IGNORECASE)
     InitialpInputUnicode = pInputUnicode
     pInputUnicode = insensitive_BrBrRE.sub('<br />', pInputUnicode)
@@ -66,11 +91,32 @@ def CleanDivSyntaxToBR(pInputUnicode):
         InitialpInputUnicode = pInputUnicode
         pInputUnicode = insensitive_BrBrRE.sub('<br />', pInputUnicode)
     
+
+    """
     #for debug  only, can delete
-    print pInputUnicode
+    print "before process: " + pInputUnicode
     my_list = pInputUnicode.split(ur"<br />")
     for i in my_list:
         print i
     #end of debug
+    """
     return pInputUnicode
+
+def AutoCleanField(pInputUnic, pInsertFinalLineBr= False, debugMode = False):
+    pInputUnic = unicode(pInputUnic)
+    pInputUnic = CleanNbsp(pInputUnic)
+    pInputUnic = CleanDivSyntaxToBR(pInputUnic)
+    if (pInsertFinalLineBr == True):
+        pInputUnic = InsertBREndingOnFinalLine(pInputUnic)
+    else:
+        pInputUnic = RemoveBREndingOnFinalLine(pInputUnic)
     
+
+    if (debugMode == True):
+        print pInputUnic
+        print
+        my_list = pInputUnic.split(ur"<br />")
+        for i in my_list:
+            print i
+
+    return pInputUnic
