@@ -33,28 +33,41 @@ def CleaNnbsp(pInputUnicode):
     pInputUnicode = pInputUnicode.replace(ur"&nbsp", " ")
     return pInputUnicode
 
+#todo CleanDivSyntaxToBR, add ability to choose whether to insert Br ending on final line
 def CleanDivSyntaxToBR(pInputUnicode):
     print "You Have Accessed CleanDivSyntaxToBR file"
+    
+    
     #tell the method that parameter is always unicode string
     pInputUnicode = unicode(pInputUnicode)
-    #pInputUnicode.replace("<div>", "")
-    print pInputUnicode
-    print 
-    print 
+    
+   
+    #Begin Re part 1
     insensitive_DivRE1 = re.compile(re.escape('<div>'), re.IGNORECASE)
-    insensitive_DivRE2 = re.compile(re.escape('</div></div>'), re.IGNORECASE)
     pInputUnicode = insensitive_DivRE1.sub('', pInputUnicode)
     
+    #Begin Re part 2
+    insensitive_DivRE2 = re.compile(re.escape('</div></div>'), re.IGNORECASE)
     InitialpInputUnicode = pInputUnicode
     pInputUnicode = insensitive_DivRE2.sub('</div>', pInputUnicode)
     while(InitialpInputUnicode != pInputUnicode):
         InitialpInputUnicode = pInputUnicode
         pInputUnicode = insensitive_DivRE2.sub('</div>', pInputUnicode)
-        
+    
+    #Begin Re part 3
     insensitive_DivToBr = re.compile(re.escape('</div>'), re.IGNORECASE)
     pInputUnicode = insensitive_DivToBr.sub('<br />', pInputUnicode)
     
+    #Begin Re part 4
+    insensitive_BrBrRE =  re.compile(re.escape('<br /><br />'), re.IGNORECASE)
+    InitialpInputUnicode = pInputUnicode
+    pInputUnicode = insensitive_BrBrRE.sub('<br />', pInputUnicode)
+    while(InitialpInputUnicode != pInputUnicode):
+        InitialpInputUnicode = pInputUnicode
+        pInputUnicode = insensitive_BrBrRE.sub('<br />', pInputUnicode)
+    
     #for debug  only, can delete
+    print pInputUnicode
     my_list = pInputUnicode.split(ur"<br />")
     for i in my_list:
         print i
