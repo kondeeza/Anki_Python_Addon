@@ -305,8 +305,8 @@ def BulkGenerateSimilarHanguelWordList(nids):
             # showInfo ("--> Everything should have worked. Trying Regex")
             if note[src1] not in Master_HomoPhone_Dicts:
                  Master_HomoPhone_Dicts[note[src1]] = [note[src_Meaning]]
-            else:                 Master_HomoPhone_Dicts[note[src1]].append(note[src_Meaning])
-
+            else:
+                Master_HomoPhone_Dicts[note[src1]].append(note[src_Meaning])
             #showInfo (Master_HomoPhone_Dicts[note[src1]][0])
             #TextOutput = note[src1]
             #note[dst]= str(TotalWordCount)
@@ -362,7 +362,6 @@ def BulkGenerateSimilarHanguelWordList(nids):
                     showInfo ("generated pattern list :" + str(mAllToneInput_List))
                 
                 for cur_Tone in mAllToneInput_List:
-
                      filteredLst = fnmatch.filter(Master_HomoPhone_Dicts, cur_Tone)
                      if (len(filteredLst)>0 and len(filteredLst)<40 ):
                          #Skips null result . e.g skips 먹하다 (match nothing) , also if len exceed 40 it's too common, don't want
