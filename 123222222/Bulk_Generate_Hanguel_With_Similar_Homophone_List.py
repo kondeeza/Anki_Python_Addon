@@ -252,6 +252,7 @@ def BulkGenerateSimilarHanguelWordList(nids):
     warning_Meaning_SrcField_NotFound = 0
     warning_Output_SrcField_NotFound = 0
     Master_HomoPhone_Dicts = {'first':'string value'}
+    Pattern_Cache_Dicts = {'first':'string value'} #fnmatch with wild cards can be costly, so we cache the searched pattern results to optimise time
 
 
     showInfo ("Beginning with the following config:\n modelName: %s \n Vocab_SrcField: %s \n Meaning_SrcField: %s \n Output_SrcField: %s \n OVERWRITE_DST_FIELD: %s \n Fuzzy_Character_Mode_Enabled: %s " %(modelName,Vocab_SrcField,Meaning_SrcField,Output_SrcField,OVERWRITE_DST_FIELD,Fuzzy_Character_Mode_Enabled ))
@@ -362,7 +363,12 @@ def BulkGenerateSimilarHanguelWordList(nids):
                     showInfo ("generated pattern list :" + str(mAllToneInput_List))
                 
                 for cur_Tone in mAllToneInput_List:
-                     filteredLst = fnmatch.filter(Master_HomoPhone_Dicts, cur_Tone)
+                     if cur_Tone in Pattern_Cache_Dicts:#pattern previously searched,i.e  "*먹다*", use cache instead of fnmatch.filter(Dict) which is cpu intensive
+                        filteredLst = Pattern_Cache_Dicts.get(cur_Tone)
+                     else:
+                        filteredLst = fnmatch.filter(Master_HomoPhone_Dicts, cur_Tone)
+                        Pattern_Cache_Dicts[cur_Tone] = filteredLst #add result to cache dict for later use
+                        
                      if (len(filteredLst)>0 and len(filteredLst)<40 ):
                          #Skips null result . e.g skips 먹하다 (match nothing) , also if len exceed 40 it's too common, don't want
                          cur_TextOutput = cur_TextOutput + bold_HTML('&emsp;' +cur_Tone + ' ('+str(len(filteredLst))+')<br />')+  '<ol>' #i.e  *먹다* (4)
@@ -370,6 +376,7 @@ def BulkGenerateSimilarHanguelWordList(nids):
                          for filtered in filteredLst[:7]:
                             x = Master_HomoPhone_Dicts[filtered][0] #need the [0] because dict result is stored in list e.g. ['to suffer a big loss, be cheated']. this will convert it to string 
                             #filtered == Hanguelword, x = Meaning
+                            x = x.replace("<div>","").replace("</div>","")  #won't work with  e.g. <div style="background-color:lightblue"> . this sufficient enough for me. will regex later
                             cur_TextOutput = cur_TextOutput + '<li>'+ filtered + ": "+str(x)+"</li>"
                          cur_TextOutput += '</ol>'
                      
