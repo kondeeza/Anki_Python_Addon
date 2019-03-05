@@ -362,13 +362,14 @@ def BulkGenerateSimilarHanguelWordList(nids):
                     showInfo ("generated pattern list :" + str(mAllToneInput_List))
                 
                 for cur_Tone in mAllToneInput_List:
+
                      filteredLst = fnmatch.filter(Master_HomoPhone_Dicts, cur_Tone)
                      if (len(filteredLst)>0 and len(filteredLst)<40 ):
                          #Skips null result . e.g skips 먹하다 (match nothing) , also if len exceed 40 it's too common, don't want
                          cur_TextOutput = cur_TextOutput + bold_HTML('&emsp;' +cur_Tone + ' ('+str(len(filteredLst))+')<br />')+  '<ol>' #i.e  *먹다* (4)
                          #only the first 7 is taken
                          for filtered in filteredLst[:7]:
-                            x = Master_HomoPhone_Dicts[filtered]
+                            x = Master_HomoPhone_Dicts[filtered][0] #need the [0] because dict result is stored in list e.g. ['to suffer a big loss, be cheated']. this will convert it to string 
                             #filtered == Hanguelword, x = Meaning
                             cur_TextOutput = cur_TextOutput + '<li>'+ filtered + ": "+str(x)+"</li>"
                          cur_TextOutput += '</ol>'
