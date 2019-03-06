@@ -35,6 +35,7 @@ import re
 ########################################################################## THIS SOLVES THE ANNOYING UNICODE ISSUE
 import sys
 import fnmatch
+import time
 #reload(sys) #apparently this doesn't work in python3... 
 #sys.setdefaultencoding('utf-8')
 ########################################################################## THIS SOLVES THE ANNOYING UNICODE ISSUE !!
@@ -80,7 +81,7 @@ def get_singleChar_da_hada_Patterns(inputStr):
     result = []
     for x in inputStr:
         if (x not in '하가다한시'):
-            if (x not in '이오국기' and len(inputStr)<3):
+            if (x not in '이오국기' or len(inputStr)<3):
                 #don't want something like '?이' for long word. ?이 not helpful 
                 result.extend([x,x+'다',x+'하다'])
                 result.extend([x+'[!다]','?'+x])
@@ -253,7 +254,12 @@ def BulkGenerateSimilarHanguelWordList(nids):
     warning_Output_SrcField_NotFound = 0
     Master_HomoPhone_Dicts = {'first':'string value'}
     Pattern_Cache_Dicts = {'first':'string value'} #fnmatch with wild cards can be costly, so we cache the searched pattern results to optimise time
-
+    #before using Cache takes around 3 minutes for 5200 cards. now around 1minutes10secs
+    ran_fnmatchregex_count = 0
+    fnmatchregex_time = 0 
+    filteredCache_used_count = 0
+    warning_Output_SrcField_NotFound = 0
+    notincache_but_already_inmasterdict_count = 0
 
     showInfo ("Beginning with the following config:\n modelName: %s \n Vocab_SrcField: %s \n Meaning_SrcField: %s \n Output_SrcField: %s \n OVERWRITE_DST_FIELD: %s \n Fuzzy_Character_Mode_Enabled: %s " %(modelName,Vocab_SrcField,Meaning_SrcField,Output_SrcField,OVERWRITE_DST_FIELD,Fuzzy_Character_Mode_Enabled ))
     
@@ -365,9 +371,15 @@ def BulkGenerateSimilarHanguelWordList(nids):
                 for cur_Tone in mAllToneInput_List:
                      if cur_Tone in Pattern_Cache_Dicts:#pattern previously searched,i.e  "*먹다*", use cache instead of fnmatch.filter(Dict) which is cpu intensive
                         filteredLst = Pattern_Cache_Dicts.get(cur_Tone)
+                        filteredCache_used_count +=1
                      else:
+                        if (cur_Tone in Master_HomoPhone_Dicts):
+                            notincache_but_already_inmasterdict_count +=1
+                        time_start = time.perf_counter()
                         filteredLst = fnmatch.filter(Master_HomoPhone_Dicts, cur_Tone)
+                        fnmatchregex_time += time.perf_counter()- time_start #time how much time total  fnmatch.filter() takes
                         Pattern_Cache_Dicts[cur_Tone] = filteredLst #add result to cache dict for later use
+                        ran_fnmatchregex_count += 1
                         
                      if (len(filteredLst)>0 and len(filteredLst)<40 ):
                          #Skips null result . e.g skips 먹하다 (match nothing) , also if len exceed 40 it's too common, don't want
@@ -408,6 +420,9 @@ def BulkGenerateSimilarHanguelWordList(nids):
         note.flush()
 
     showInfo ("--> Everything should have worked.\n warning_counter = %d \n warning_ModelNotFound = %d \n warning_Vocab_SrcField_NotFound = %d \n warning_Meaning_SrcField_NotFound = %d \n warning_Output_SrcField_NotFound = %d" %(warning_counter,warning_ModelNotFound,warning_Vocab_SrcField_NotFound,warning_Meaning_SrcField_NotFound,warning_Output_SrcField_NotFound))
+    if (debugMode):
+        showInfo ("len(Pattern_Cache_Dicts): %d \n filteredCache_used_count: %d \n  ran_fnmatchregex_count: %d \n fnmatchregex_time: %d \n notincache_but_already_inmasterdict_count: %d" %(len(Pattern_Cache_Dicts),filteredCache_used_count,ran_fnmatchregex_count,fnmatchregex_time, notincache_but_already_inmasterdict_count))      
+    # for 5200 cards, len(Pattern_Cache_Dicts):14632,filteredCache_used_count:52027,ran_fnmatchregex_count:14631,fnmatchregex_time:71
     #showInfo (TextOutput)
     mw.progress.finish()
     mw.reset()
