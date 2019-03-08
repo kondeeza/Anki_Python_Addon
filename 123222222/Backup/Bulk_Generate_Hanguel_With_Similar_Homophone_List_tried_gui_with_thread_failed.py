@@ -51,6 +51,64 @@ Output_SrcField = ''
 OVERWRITE_DST_FIELD= ''
 Fuzzy_Character_Mode_Enabled= ''
 debugMode = False
+TIME_LIMIT = 100
+
+class External(QThread):
+    """
+    Runs a counter Worker thread.
+    """
+    countChanged = pyqtSignal(int)
+    # https://stackoverflow.com/questions/2970312/pyqt4-qtcore-pyqtsignal-object-has-no-attribute-connect
+    # god knows why pyqtSignal has to be outside of init
+
+    def __init__(self, nids, parent=None):
+        QThread.__init__(self, parent)
+        self.nids = nids
+
+
+
+
+    def run(self):
+
+        count = 0
+        while count < TIME_LIMIT:
+            count +=1
+            time.sleep(0.1)
+            self.countChanged.emit(count)
+
+        """
+        while True:
+            showInfo("running")
+            BulkGenerateSimilarHanguelWordList(self.nids, self.countChanged)"""
+
+
+class MainProgressDialog(QDialog):
+
+    def __init__(self,nids):
+        super().__init__()
+        self.nids = nids
+        self.initUI()
+
+    def initUI(self):
+        self.setWindowTitle('Progress Bar')
+        self.progress = QProgressBar(self)
+        self.progress.setGeometry(0, 0, 300, 25)
+        self.progress.setMaximum(100)
+        self.button = QPushButton('Start', self)
+        self.button.move(0, 30)
+        self.show()
+
+        self.button.clicked.connect(self.onButtonClick)
+
+    def onButtonClick(self):
+        self.calc = External(nids=self.nids)
+        self.calc.countChanged.connect(self.onCountChanged)
+        self.calc.start()
+
+    def onCountChanged(self, value):
+        #showInfo(str(value))
+        self.progress.setValue(value)
+
 
 def reload_config():
     global modelName
@@ -243,7 +301,7 @@ def Optional_Generate_AllHanzi_Homophone_List_As_HTML(Master_HomoPhone_Dicts):
     #showInfo(TextOutput)
     #Debug_Quick_Save_info_to_Note(nids,TextOutput)
     return HtmlOutput
-def BulkGenerateSimilarHanguelWordList(nids):
+def BulkGenerateSimilarHanguelWordList(nids,countChanged):
     mw.checkpoint("Bulk-Generate TotalWordCount")
     mw.progress.start()
     reload_config()
@@ -262,7 +320,7 @@ def BulkGenerateSimilarHanguelWordList(nids):
     notincache_but_already_inmasterdict_count = 0
 
     showInfo ("Beginning with the following config:\n modelName: %s \n Vocab_SrcField: %s \n Meaning_SrcField: %s \n Output_SrcField: %s \n OVERWRITE_DST_FIELD: %s \n Fuzzy_Character_Mode_Enabled: %s " %(modelName,Vocab_SrcField,Meaning_SrcField,Output_SrcField,OVERWRITE_DST_FIELD,Fuzzy_Character_Mode_Enabled ))
-
+    
     for nid in nids:
         #showInfo ("Found note: %s" % (nid))
         note = mw.col.getNote(nid)
@@ -323,26 +381,15 @@ def BulkGenerateSimilarHanguelWordList(nids):
     ##ROUND two. this one assign compiled list to appropriate notes.
     showInfo ("--> Now on final part. Binding final output to dst !")
     debugcount = 0
-    refreshGuiTimer = time.perf_counter()
-    totalRunTime = time.perf_counter()
-    maxloop = max(len(nids),1)
-    for  loopno, nid in enumerate(nids):
+    currentloop = 0
+    maxLoop = max(len(nids),1)
+    for nid in nids:
+        if ((currentloop/maxLoop)*100 %2 ==0):
+            #update every 2 percent
+            countChanged.emit((currentloop/maxLoop)*100)
+        currentloop+=1
+
         #showInfo ("Found note: %s" % (nid))
-        #showInfo(str((currentloop/maxLoop)*100 %2))
-        #if ((currentloop/maxLoop)*100 %2 ==0): THIS WON'T WORK, sometimes result is 2.000000000245 and that's not valid
-
-        if ( time.perf_counter() - refreshGuiTimer >= 2.5):
-            refreshGuiTimer = time.perf_counter()
-            #update timer every 2.5 seconds
-            #update every 2.5 percent
-            #updateProgressDialog(widget,(currentloop/maxLoop)*100)
-            tooltip("Progress : %d %%" % ( (loopno/maxloop)*100),    period=300    )
-            # refresh GUI during loop
-            time.sleep(0.1)
-            #showInfo('hi')
-            mw.app.processEvents()
-
-
         debugcount += 1
         note = mw.col.getNote(nid)
         if modelName not in note.model()['name']:
@@ -385,7 +432,6 @@ def BulkGenerateSimilarHanguelWordList(nids):
                 mAllToneInput_List = list(dict.fromkeys(mAllToneInput_List)) #remove duplicate
                 if(debugMode and debugcount<=5):
                     showInfo ("generated pattern list :" + str(mAllToneInput_List))
-
                 
                 for cur_Tone in mAllToneInput_List:
                      if cur_Tone in Pattern_Cache_Dicts:#pattern previously searched,i.e  "*먹다*", use cache instead of fnmatch.filter(Dict) which is cpu intensive
@@ -437,10 +483,10 @@ def BulkGenerateSimilarHanguelWordList(nids):
         except Exception as e:
             raise
         note.flush()
-    totalRunTime  = time.perf_counter() -totalRunTime
+
     showInfo ("--> Everything should have worked.\n warning_counter = %d \n warning_ModelNotFound = %d \n warning_Vocab_SrcField_NotFound = %d \n warning_Meaning_SrcField_NotFound = %d \n warning_Output_SrcField_NotFound = %d" %(warning_counter,warning_ModelNotFound,warning_Vocab_SrcField_NotFound,warning_Meaning_SrcField_NotFound,warning_Output_SrcField_NotFound))
     if (debugMode):
-        showInfo ("len(Pattern_Cache_Dicts): %d \n filteredCache_used_count: %d \n  ran_fnmatchregex_count: %d \n fnmatchregex_time: %d \n notincache_but_already_inmasterdict_count: %d \n totalRunTime: %d" %(len(Pattern_Cache_Dicts),filteredCache_used_count,ran_fnmatchregex_count,fnmatchregex_time, notincache_but_already_inmasterdict_count, totalRunTime))      
+        showInfo ("len(Pattern_Cache_Dicts): %d \n filteredCache_used_count: %d \n  ran_fnmatchregex_count: %d \n fnmatchregex_time: %d \n notincache_but_already_inmasterdict_count: %d" %(len(Pattern_Cache_Dicts),filteredCache_used_count,ran_fnmatchregex_count,fnmatchregex_time, notincache_but_already_inmasterdict_count))      
     # for 5200 cards, len(Pattern_Cache_Dicts):14632,filteredCache_used_count:52027,ran_fnmatchregex_count:14631,fnmatchregex_time:71
     #showInfo (TextOutput)
     mw.progress.finish()
@@ -455,6 +501,13 @@ def setupMenu(browser):
 
 
 def onBulkGenerateSimilarHanguelWordList(browser):
-    BulkGenerateSimilarHanguelWordList(browser.selectedNotes())
+    nids = browser.selectedNotes()
+
+    if not nids:
+        tooltip("No cards selected.")
+        return
+    dialog = MainProgressDialog(nids)
+    dialog.exec_()
+    #BulkGenerateSimilarHanguelWordList(nids)
 
 addHook("browser.setupMenus", setupMenu)
