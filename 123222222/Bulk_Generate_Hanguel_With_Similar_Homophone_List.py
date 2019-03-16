@@ -266,12 +266,21 @@ def BulkGenerateSimilarHanguelWordList(nids):
     for nid in nids:
         #showInfo ("Found note: %s" % (nid))
         note = mw.col.getNote(nid)
-        if modelName not in note.model()['name']:
-            if warning_ModelNotFound == 0:
-                  showInfo ("--> Model mismatch: %s vs %s" %( modelName, note.model()['name']))
-            warning_counter += 1
-            warning_ModelNotFound += 1
-            continue
+        if isinstance(modelName, str):
+            if modelName not in note.model()['name']:
+                if warning_ModelNotFound == 0:
+                      showInfo ("--> Model mismatch: %s vs %s" %( modelName, note.model()['name']))
+                warning_counter += 1
+                warning_ModelNotFound += 1
+                continue
+        elif isinstance(modelName, list):
+            if not set(modelName).isdisjoint(note.model()['name']):
+                if warning_ModelNotFound == 0:
+                      showInfo ("--> Model mismatch: %s vs %s" %( str(modelName), note.model()['name']))
+                warning_counter += 1
+                warning_ModelNotFound += 1
+                continue
+
         src1 = None
         src_Meaning = None
         if Vocab_SrcField in note:
@@ -345,9 +354,20 @@ def BulkGenerateSimilarHanguelWordList(nids):
 
         debugcount += 1
         note = mw.col.getNote(nid)
-        if modelName not in note.model()['name']:
-            #showInfo ("--> Model mismatch: %s vs %s" %( modelName, note.model()['name']))
-            continue
+        if isinstance(modelName, str):
+            if modelName not in note.model()['name']:
+                if warning_ModelNotFound == 0:
+                      showInfo ("--> Model mismatch: %s vs %s" %( modelName, note.model()['name']))
+                warning_counter += 1
+                warning_ModelNotFound += 1
+                continue
+        elif isinstance(modelName, list):
+            if not set(modelName).isdisjoint(note.model()['name']):
+                if warning_ModelNotFound == 0:
+                      showInfo ("--> Model mismatch: %s vs %s" %( str(modelName), note.model()['name']))
+                warning_counter += 1
+                warning_ModelNotFound += 1
+                continue
         src1 = None
         src_Meaning = None
         if Vocab_SrcField in note:
