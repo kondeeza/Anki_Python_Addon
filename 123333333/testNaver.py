@@ -16,6 +16,7 @@ def getNaverSentenceExample(para):
     # para  = '부족하다'
     r = requests.get(url+para, stream=True, verify=False)
     x = ""
+    result = {"Merged":x, "Sentence":"", "Meaning":""}
     if r.status_code == 200:
         soup = BeautifulSoup(r.content, "html.parser")
         officialExamp = soup.find("div", id="exampleAjaxArea")
@@ -33,15 +34,20 @@ def getNaverSentenceExample(para):
 
             for idx, sentence in enumerate(officialExamp_Sentence[:2]):
                 if (debugMode):
-                    print("input: %s \n sentence , type: %s  , value : %s \n meaning, type: %s  , value : %s \n x, type: %s value: %s " %(para,type(sentence),str(sentence),type(officialExamp_Meaning[idx]),str(officialExamp_Meaning[idx]),type(x),str(x)))
+                    showInfo("input: %s \n sentence , type: %s  , value : %s \n meaning, type: %s  , value : %s \n x, type: %s value: %s " %(para,type(sentence),str(sentence),type(officialExamp_Meaning[idx]),str(officialExamp_Meaning[idx]),type(x),str(x)))
                 x += sentence + "<br>" + officialExamp_Meaning[idx] + "<br>"
-            print (x)
+                result["Sentence"] += sentence + "<br>"
+                result["Meaning"] += officialExamp_Meaning[idx] + "<br>"
+
+            result["Merged"] = x
+            #print (result)
+
     else:
         print("url not found")
 
     time.sleep(0.3)
 
-    return x
+    return result
 
 start = time.perf_counter()
 for i in range(1):

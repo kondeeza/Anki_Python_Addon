@@ -25,7 +25,9 @@ modelName = 'Korean Vocab'
 # The Field containing Japanese Vocab which you want to know the frequency ranking
 Vocab_SrcField = 'Korean'
 # Field to hold  the Freuency Ranking Goes here
-dstField = 'Example_Sentences'
+dstField_Merged = 'Example_Merged' #Optional as long as either dstField_Merged or dstField_Sentence field is not empty
+dstField_Sentence = 'Example_Sentence'
+dstField_Meaning = 'Example_Meaning'
 debugMode = False
 # if data exists in dstField, should we overwrite it?
 OVERWRITE_DST_FIELD=True
@@ -42,6 +44,7 @@ def getNaverSentenceExample(para):
     # para  = '부족하다'
     r = requests.get(url+para, stream=True, verify=False)
     x = ""
+    result = {"Merged":x, "Sentence":"", "Meaning":""}
     if r.status_code == 200:
         soup = BeautifulSoup(r.content, "html.parser")
         officialExamp = soup.find("div", id="exampleAjaxArea")
@@ -61,13 +64,18 @@ def getNaverSentenceExample(para):
                 if (debugMode):
                     showInfo("input: %s \n sentence , type: %s  , value : %s \n meaning, type: %s  , value : %s \n x, type: %s value: %s " %(para,type(sentence),str(sentence),type(officialExamp_Meaning[idx]),str(officialExamp_Meaning[idx]),type(x),str(x)))
                 x += sentence + "<br>" + officialExamp_Meaning[idx] + "<br>"
-            print (x)
+                result["Sentence"] += sentence + "<br>"
+                result["Meaning"] += officialExamp_Meaning[idx] + "<br>"
+
+            result["Merged"] = x
+            #print (result)
+
     else:
         print("url not found")
 
     time.sleep(0.3)
 
-    return x
+    return result
 
 def BulkImportNaverSentenceExample(nids):
     mw.checkpoint("BulkImportNaverSentenceExample")
@@ -101,17 +109,27 @@ def BulkImportNaverSentenceExample(nids):
             # no src1 field
             #showInfo ("--> Field %s not found." % (Vocab_SrcField))
             continue
-        dst = None
-        if dstField in note:
-            dst = dstField
-        if not dst:
-            #showInfo ("--> Field %s not found!" % (dstField))
+        dst_mrged = None
+        dst_st = None
+        dst_mn = None
+        if dstField_Merged in note:
+            dst_mrged = dstField_Merged
+
+        if dstField_Sentence in note:
+            dst_st = dstField_Sentence
+
+        if dstField_Meaning in note:
+            dst_mn = dstField_Meaning
+
+        if not (dst_st or dst_mrged or dst_mn):
+            #showInfo ("--> No Output field found!")
             # no dst field
             continue
-        if note[dst] and not OVERWRITE_DST_FIELD:
+        """    
+        if note[dst_st] and not OVERWRITE_DST_FIELD:
             # already contains data, skip
             #showInfo ("--> %s not empty. Skipping!" % (Vocab_SrcField))
-            continue
+            continue"""
         #srcTxt = mw.col.media.strip(note[src1])
         #if not srcTxt.strip():
         #    continue
@@ -126,7 +144,18 @@ def BulkImportNaverSentenceExample(nids):
 
                     if (debugMode):
                         showInfo (str(vocabToQuery))
-                    note[dst] = getNaverSentenceExample(vocabToQuery)
+
+                    qResult = getNaverSentenceExample(vocabToQuery)
+                    if (dst_mrged):
+                        note[dst_mrged] = qResult["Merged"]
+                    if (dst_st):
+                        note[dst_st] = qResult["Sentence"]
+                    if (dst_mn):
+                        note[dst_mn] = qResult["Meaning"]
+
+
+
+
             
         except Exception as e:
             raise
