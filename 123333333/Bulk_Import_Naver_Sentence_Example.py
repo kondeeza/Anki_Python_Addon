@@ -15,7 +15,7 @@ from anki.hooks import addHook
 import requests
 from bs4 import BeautifulSoup
 import time
-
+import gc
 
 ##########################################################################
 # Model name must contain this.
@@ -84,6 +84,7 @@ def BulkImportNaverSentenceExample(nids):
     maxloop = max(len(nids),1)
     showInfo("Time required = ~1 second/query \n Estimated Time required for %d cards is %d seconds" %(maxloop, maxloop))
     refreshGuiTimer = time.perf_counter()
+    garbageCollectTimer = time.perf_counter()
     totalRunTime = time.perf_counter()
     for  loopno, nid in enumerate(nids):
 
@@ -93,6 +94,10 @@ def BulkImportNaverSentenceExample(nids):
 
             tooltip("loop no: %d Progress : %d %%" % (loopno, (loopno/maxloop)*100),    period=300)
             # refresh GUI during loop
+            if (time.perf_counter() - garbageCollectTimer>= 120):
+                #Frees Memory Every 2 minutes
+                gc.collect()
+                garbageCollectTimer = time.perf_counter()
             time.sleep(0.2)
             #showInfo('hi')
             mw.app.processEvents()
