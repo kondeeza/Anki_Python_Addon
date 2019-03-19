@@ -104,29 +104,55 @@ def get_wildcard_Patterns(inputStr):
     # remove duplicate done at other stage
     return result
 
+
+def hasComposite_jongseong(input):
+    Composite_jamo_Dicts = {'ㄲ':  ['ㄱ', 'ㄲ', 'ㄳ'],
+                  'ㄳ': ['ㄱ', 'ㄲ', 'ㄳ'],
+                  'ㄵ': ['ㄴ', 'ㄵ', 'ㄶ'],
+                  'ㄶ': ['ㄴ', 'ㄵ', 'ㄶ'],
+                  'ㄺ': ['ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ'],
+                  'ㄻ': ['ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ'],
+                  'ㄼ': ['ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ'],
+                  'ㄽ': ['ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ'],
+                  'ㄾ': ['ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ'],
+                  'ㄿ': ['ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ'],
+                  'ㅀ': ['ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ'],
+                  'ㅄ': ['ㅂ', 'ㅄ'],
+                  'ㅆ': ['ㅅ', 'ㅆ', 'ㅈ', 'ㅊ','ㅋ','ㅌ']}
+    result = False
+    if len(input) == 1:
+        if is_syllable(input):
+            if decompose_syllable(input)[2] in Composite_jamo_Dicts:
+                result = decompose_syllable(input)[2]
+    return result
+
 def get_Search_List_Patterns(inputStr):
     # Example , input is '가'
     # Output is  ['가', '카', '까']
 
-    fuzzyJungseongDicts = {'ㅏ': ['ㅏ', 'ㅑ', 'ㅘ'],
-                           'ㅑ': ['ㅏ', 'ㅑ', 'ㅘ'],
-                           'ㅘ': ['ㅏ', 'ㅑ', 'ㅘ'],
-                           'ㅓ': ['ㅓ', 'ㅕ', 'ㅝ', 'ㅗ'],
-                           'ㅕ': ['ㅓ', 'ㅕ', 'ㅝ'],
-                           'ㅝ': ['ㅓ', 'ㅕ', 'ㅝ'],
-                           'ㅗ': ['ㅗ', 'ㅛ', 'ㅜ', 'ㅠ','ㅓ'],
-                           'ㅛ': ['ㅗ', 'ㅛ', 'ㅜ', 'ㅠ'],
-                           'ㅜ': ['ㅗ', 'ㅛ', 'ㅜ', 'ㅠ'],
-                           'ㅠ': ['ㅗ', 'ㅛ', 'ㅜ', 'ㅠ'],
-                           'ㅔ': ['ㅔ', 'ㅐ', 'ㅖ', 'ㅒ', 'ㅞ', 'ㅙ', 'ㅚ'],
-                           'ㅐ': ['ㅔ', 'ㅐ', 'ㅖ', 'ㅒ', 'ㅞ', 'ㅙ', 'ㅚ'],
-                           'ㅖ': ['ㅔ', 'ㅐ', 'ㅖ', 'ㅒ', 'ㅞ', 'ㅙ', 'ㅚ'],
-                           'ㅒ': ['ㅔ', 'ㅐ', 'ㅖ', 'ㅒ', 'ㅞ', 'ㅙ', 'ㅚ'],
-                           'ㅞ': ['ㅔ', 'ㅐ', 'ㅖ', 'ㅒ', 'ㅞ', 'ㅙ', 'ㅚ'],
-                           'ㅙ': ['ㅔ', 'ㅐ', 'ㅖ', 'ㅒ', 'ㅞ', 'ㅙ', 'ㅚ'],
-                           'ㅚ': ['ㅔ', 'ㅐ', 'ㅖ', 'ㅒ', 'ㅞ', 'ㅙ', 'ㅚ'],
-                           'ㅣ': ['ㅣ', 'ㅟ'],
-                           'ㅟ': ['ㅣ', 'ㅟ']}
+    fuzzyJongseongDicts = {'ㄱ': ['ㄱ', 'ㄲ', 'ㄳ'],
+                  'ㄲ':  ['ㄱ', 'ㄲ', 'ㄳ'],
+                  'ㄳ':  ['ㄱ', 'ㄲ', 'ㄳ'],
+                  'ㄴ': ['ㄴ', 'ㄵ', 'ㄶ'],
+                  'ㄵ': ['ㄴ', 'ㄵ', 'ㄶ'],
+                  'ㄶ': ['ㄴ', 'ㄵ', 'ㄶ'],
+                  'ㄹ': ['ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ'],
+                  'ㄺ': ['ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ'],
+                  'ㄻ': ['ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ'],
+                  'ㄼ': ['ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ'],
+                  'ㄽ': ['ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ'],
+                  'ㄾ': ['ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ'],
+                  'ㄿ': ['ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ'],
+                  'ㅀ': ['ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ'],
+                  'ㅂ': ['ㅂ', 'ㅄ'],
+                  'ㅄ': ['ㅂ', 'ㅄ'],
+                  'ㅅ': ['ㅅ', 'ㅆ', 'ㅈ', 'ㅊ','ㅋ','ㅌ'],
+                  'ㅆ': ['ㅅ', 'ㅆ', 'ㅈ', 'ㅊ','ㅋ','ㅌ'],
+                  'ㅈ': ['ㅅ', 'ㅆ', 'ㅈ', 'ㅊ','ㅋ','ㅌ'],
+                  'ㅊ': ['ㅅ', 'ㅆ', 'ㅈ', 'ㅊ','ㅋ','ㅌ'],
+                  'ㅋ': ['ㅅ', 'ㅆ', 'ㅈ', 'ㅊ','ㅋ','ㅌ'],
+                  'ㅌ': ['ㅅ', 'ㅆ', 'ㅈ', 'ㅊ','ㅋ','ㅌ']}
+
 
 
     result = []
@@ -136,8 +162,8 @@ def get_Search_List_Patterns(inputStr):
         if is_syllable(inputStr):
             jamo = decompose_syllable(inputStr)
             # if exist in dict
-            if fuzzyJungseongDicts.get(jamo[1]):
-                for a in fuzzyJungseongDicts.get(jamo[1]):
+            if fuzzyJongseongDicts.get(jamo[1]):
+                for a in fuzzyJongseongDicts.get(jamo[1]):
                     result.append(compose_jamo_characters(jamo[0], a, jamo[2]))
 
     if result == []:
@@ -253,6 +279,7 @@ def BulkGenerateSimilarHanguelWordList(nids):
     warning_Meaning_SrcField_NotFound = 0
     warning_Output_SrcField_NotFound = 0
     Master_HomoPhone_Dicts = {'first':'string value'}
+    Master_CompositeJongseong_Dicts = {'first':'string value'}
     Pattern_Cache_Dicts = {'first':'string value'} #fnmatch with wild cards can be costly, so we cache the searched pattern results to optimise time
     #before using Cache takes around 3 minutes for 5200 cards. now around 1minutes10secs
     ran_fnmatchregex_count = 0
@@ -269,14 +296,14 @@ def BulkGenerateSimilarHanguelWordList(nids):
         if isinstance(modelName, str):
             if modelName not in note.model()['name']:
                 if warning_ModelNotFound == 0:
-                      showInfo ("--> Model mismatch: %s vs %s" %( modelName, note.model()['name']))
+                      showInfo ("--> Model mismatch Str type: %s not in  %s" %( modelName, note.model()['name']))
                 warning_counter += 1
                 warning_ModelNotFound += 1
                 continue
         elif isinstance(modelName, list):
             if not set(modelName).isdisjoint(note.model()['name']):
                 if warning_ModelNotFound == 0:
-                      showInfo ("--> Model mismatch: %s vs %s" %( str(modelName), note.model()['name']))
+                      showInfo ("--> Model mismatch List type: %s not in %s" %( str(modelName), note.model()['name']))
                 warning_counter += 1
                 warning_ModelNotFound += 1
                 continue
@@ -323,6 +350,21 @@ def BulkGenerateSimilarHanguelWordList(nids):
                  Master_HomoPhone_Dicts[note[src1]] = [note[src_Meaning]]
             else:
                 Master_HomoPhone_Dicts[note[src1]].append(note[src_Meaning])
+
+            #Test Composite Jongseong Dict
+            tempCompositeList = []
+            if len(note[src1]) <=3 and len(note[src1]) >0:
+                for ch in note[src1]:
+                    t = hasComposite_jongseong(ch)
+                    if t and not(t in tempCompositeList):
+                        tempCompositeList.append(t)
+            for tempComposite in tempCompositeList:
+                if tempComposite not in Master_CompositeJongseong_Dicts:
+                     Master_CompositeJongseong_Dicts[tempComposite] = [note[src1] + ": " + note[src_Meaning]]
+                else:
+                    Master_CompositeJongseong_Dicts[tempComposite].append(note[src1] + ": " + note[src_Meaning])
+
+            #END Test Composite Jongseong Dict
             #showInfo (Master_HomoPhone_Dicts[note[src1]][0])
             #TextOutput = note[src1]
             #note[dst]= str(TotalWordCount)
@@ -430,7 +472,28 @@ def BulkGenerateSimilarHanguelWordList(nids):
                             x = x.replace("<div>","").replace("</div>","")  #won't work with  e.g. <div style="background-color:lightblue"> . this sufficient enough for me. will regex later
                             cur_TextOutput = cur_TextOutput + '<li>'+ filtered + ": "+str(x)+"</li>"
                          cur_TextOutput += '</ol>'
-                     
+
+
+                #Now to deal with composite JongSeongDict
+
+                tempCompositeList = []
+                if len(note[src1]) <=3 and len(note[src1]) >0:
+                    for ch in note[src1]:
+                        t = hasComposite_jongseong(ch)
+                        if t and not(t in tempCompositeList):
+                            tempCompositeList.append(t)
+
+                for tempComposite in tempCompositeList:
+                    #showInfo(str(tempComposite))
+                    if tempComposite in Master_CompositeJongseong_Dicts:
+                        #showInfo(str(tempComposite) + str(Master_CompositeJongseong_Dicts[tempComposite]))
+                        cur_TextOutput += "<br />" + bold_HTML('&emsp;' +tempComposite + '<br />') +  '<ol>'
+                        for x in Master_CompositeJongseong_Dicts[tempComposite]:
+                             cur_TextOutput += '<li>' + x + '</li>'
+                        cur_TextOutput += '</ol>'
+
+                #END Dealing with Composite Jongseong Dict
+
                 note[dst]= cur_TextOutput
                 #showInfo (Master_HomoPhone_Dicts[note[src1]][0])
                 #TextOutput = note[src1]
