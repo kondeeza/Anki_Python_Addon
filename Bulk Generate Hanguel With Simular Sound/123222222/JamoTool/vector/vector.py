@@ -2,9 +2,7 @@
 from __future__ import (absolute_import, division,
                         print_function, unicode_literals)
 from future.builtins import (
-         bytes, dict, int, list, object, range, str,
-         ascii, chr, hex, input, next, oct, open,
-         pow, round, super, filter, map, zip)
+    object)
 
 import numpy as np
 from . import rules
