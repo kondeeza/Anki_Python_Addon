@@ -85,6 +85,7 @@ def get_singleChar_da_hada_Patterns(inputStr):
                 #don't want something like '?이' for long word. ?이 not helpful 
                 result.extend([x,x+'다',x+'하다'])
                 result.extend([x+'[!다]','?'+x])
+                result.append('*'+x+'*')
             
     return result
     
@@ -98,8 +99,9 @@ def get_wildcard_Patterns(inputStr):
     result = []
     if (len(inputStr) ==2 and inputStr[0] !='하'):
         result.append('*'+inputStr+'*')
+        result.append(inputStr[0]+'*'+inputStr[1])
     elif (len(inputStr) >=3):
-        result.extend([inputStr,inputStr[0]+'*'+inputStr[-1],inputStr[0:2]+'*','*'+inputStr[-2:]])
+        result.extend([inputStr,inputStr[0]+'*'+inputStr[-1],inputStr[0:2]+'*','*'+inputStr[-3:]])
     
     # remove duplicate done at other stage
     return result
@@ -118,7 +120,11 @@ def hasComposite_jongseong(input):
                   'ㄿ': ['ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ'],
                   'ㅀ': ['ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ'],
                   'ㅄ': ['ㅂ', 'ㅄ'],
-                  'ㅆ': ['ㅅ', 'ㅆ', 'ㅈ', 'ㅊ','ㅋ','ㅌ']}
+                  'ㅆ': ['ㅅ', 'ㅆ', 'ㅈ', 'ㅊ','ㅋ','ㅌ'],
+                  'ㅍ': ['ㅍ', 'ㅌ', 'ㅋ'],
+                  'ㅌ': ['ㅍ', 'ㅌ', 'ㅋ'],
+                  'ㅋ': ['ㅍ', 'ㅌ', 'ㅋ']}
+    #  ['ㅍ', 'ㅌ', 'ㅋ'] not composite but i want to keep tracl of them
     result = False
     if len(input) == 1:
         if is_syllable(input):
