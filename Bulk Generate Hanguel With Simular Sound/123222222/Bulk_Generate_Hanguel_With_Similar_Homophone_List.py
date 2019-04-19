@@ -101,7 +101,7 @@ def get_wildcard_Patterns(inputStr):
         result.append('*'+inputStr+'*')
         result.append(inputStr[0]+'*'+inputStr[1])
     elif (len(inputStr) >=3):
-        result.extend([inputStr,inputStr[0]+'*'+inputStr[-1],inputStr[0:2]+'*','*'+inputStr[-3:]])
+        result.extend([inputStr,inputStr[0]+'*'+inputStr[-1],inputStr[0:2]+'*','*'+inputStr[-2:]])
     
     # remove duplicate done at other stage
     return result
