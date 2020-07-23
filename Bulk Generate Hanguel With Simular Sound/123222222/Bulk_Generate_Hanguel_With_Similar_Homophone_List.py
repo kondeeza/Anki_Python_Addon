@@ -13,7 +13,7 @@
 #dá : 达答
 #dǎ : 打
 #dà : 大
-
+#("note:Korean Vocab" or  note:Toktogi) and -Auto_SimilarWord:
 ##########################################################################
 #"deck:00_Hanzi::Most Common 3000 Hanzi" (Pinyin:"zhǐ" or Pinyin:"dì")
 # USE LOWERCASE. Model name must contain this.
@@ -132,7 +132,7 @@ def hasComposite_jongseong(input):
                 result = decompose_syllable(input)[2]
     return result
 
-def get_Search_List_Patterns(inputStr):
+def get_fuzzyJongseongList(inputStr):
     # Example , input is '가'
     # Output is  ['가', '카', '까']
 
@@ -168,9 +168,9 @@ def get_Search_List_Patterns(inputStr):
         if is_syllable(inputStr):
             jamo = decompose_syllable(inputStr)
             # if exist in dict
-            if fuzzyJongseongDicts.get(jamo[1]):
-                for a in fuzzyJongseongDicts.get(jamo[1]):
-                    result.append(compose_jamo_characters(jamo[0], a, jamo[2]))
+            if fuzzyJongseongDicts.get(jamo[2]):
+                for a in fuzzyJongseongDicts.get(jamo[2]):
+                    result.append(compose_jamo_characters(jamo[0],jamo[1], a))
 
     if result == []:
         print("result is null")
@@ -257,13 +257,96 @@ def get_fuzzyChoseongList(inputStr):
         result.append(inputStr)
     return result
 
-    
+def get_fuzzyJamoList(inputStr):
+    # Example , input is '있'
+    # Output is  ['잇', '있', '잊', '잋', '잌', '잍', '윗', '윘', '윚', '윛', '윜', '윝', '힛', '힜', '힞', '힟', '힠', '힡', '휫', '휬', '휮', '휯', '휰', '휱']
+
+    fuzzyChoseongDicts = {'ㄱ': ['ㄱ', 'ㅋ', 'ㄲ'],
+                          'ㅋ': ['ㄱ', 'ㅋ', 'ㄲ'],
+                          'ㄲ': ['ㄱ', 'ㅋ', 'ㄲ'],
+                          'ㄷ': ['ㄷ', 'ㅌ', 'ㄸ'],
+                          'ㅌ': ['ㄷ', 'ㅌ', 'ㄸ'],
+                          'ㄸ': ['ㄷ', 'ㅌ', 'ㄸ'],
+                          'ㅂ': ['ㅂ', 'ㅍ', 'ㅃ'],
+                          'ㅍ': ['ㅂ', 'ㅍ', 'ㅃ'],
+                          'ㅃ': ['ㅂ', 'ㅍ', 'ㅃ'],
+                          'ㅅ': ['ㅅ', 'ㅈ','ㅊ', 'ㅆ', 'ㅉ'],
+                          'ㅈ': ['ㅅ', 'ㅈ','ㅊ', 'ㅆ', 'ㅉ'],
+                          'ㅊ': ['ㅅ', 'ㅈ','ㅊ', 'ㅆ', 'ㅉ'],
+                          'ㅆ': ['ㅅ', 'ㅈ','ㅊ', 'ㅆ', 'ㅉ'],
+                          'ㅉ': ['ㅅ', 'ㅈ','ㅊ', 'ㅆ', 'ㅉ'],
+                          'ㅇ': ['ㅇ', 'ㅎ'],
+                          'ㅎ': ['ㅇ', 'ㅎ']}
+
+    fuzzyJungseongDicts = {'ㅏ': ['ㅏ', 'ㅑ', 'ㅘ'],
+                       'ㅑ': ['ㅏ', 'ㅑ', 'ㅘ'],
+                       'ㅘ': ['ㅏ', 'ㅑ', 'ㅘ'],
+                       'ㅓ': ['ㅓ', 'ㅕ', 'ㅝ', 'ㅗ'],
+                       'ㅕ': ['ㅓ', 'ㅕ', 'ㅝ'],
+                       'ㅝ': ['ㅓ', 'ㅕ', 'ㅝ'],
+                       'ㅗ': ['ㅗ', 'ㅛ', 'ㅜ', 'ㅠ','ㅓ'],
+                       'ㅛ': ['ㅗ', 'ㅛ', 'ㅜ', 'ㅠ'],
+                       'ㅜ': ['ㅗ', 'ㅛ', 'ㅜ', 'ㅠ'],
+                       'ㅠ': ['ㅗ', 'ㅛ', 'ㅜ', 'ㅠ'],
+                       'ㅔ': ['ㅔ', 'ㅐ', 'ㅖ', 'ㅒ', 'ㅞ', 'ㅙ', 'ㅚ'],
+                       'ㅐ': ['ㅔ', 'ㅐ', 'ㅖ', 'ㅒ', 'ㅞ', 'ㅙ', 'ㅚ'],
+                       'ㅖ': ['ㅔ', 'ㅐ', 'ㅖ', 'ㅒ', 'ㅞ', 'ㅙ', 'ㅚ'],
+                       'ㅒ': ['ㅔ', 'ㅐ', 'ㅖ', 'ㅒ', 'ㅞ', 'ㅙ', 'ㅚ'],
+                       'ㅞ': ['ㅔ', 'ㅐ', 'ㅖ', 'ㅒ', 'ㅞ', 'ㅙ', 'ㅚ'],
+                       'ㅙ': ['ㅔ', 'ㅐ', 'ㅖ', 'ㅒ', 'ㅞ', 'ㅙ', 'ㅚ'],
+                       'ㅚ': ['ㅔ', 'ㅐ', 'ㅖ', 'ㅒ', 'ㅞ', 'ㅙ', 'ㅚ'],
+                       'ㅣ': ['ㅣ', 'ㅟ'],
+                       'ㅟ': ['ㅣ', 'ㅟ']}
+
+    fuzzyJongseongDicts = {'ㄱ': ['ㄱ', 'ㄲ', 'ㄳ'],
+              'ㄲ':  ['ㄱ', 'ㄲ', 'ㄳ'],
+              'ㄳ':  ['ㄱ', 'ㄲ', 'ㄳ'],
+              'ㄴ': ['ㄴ', 'ㄵ', 'ㄶ'],
+              'ㄵ': ['ㄴ', 'ㄵ', 'ㄶ'],
+              'ㄶ': ['ㄴ', 'ㄵ', 'ㄶ'],
+              'ㄹ': ['ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ'],
+              'ㄺ': ['ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ'],
+              'ㄻ': ['ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ'],
+              'ㄼ': ['ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ'],
+              'ㄽ': ['ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ'],
+              'ㄾ': ['ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ'],
+              'ㄿ': ['ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ'],
+              'ㅀ': ['ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ'],
+              'ㅂ': ['ㅂ', 'ㅄ'],
+              'ㅄ': ['ㅂ', 'ㅄ'],
+              'ㅅ': ['ㅅ', 'ㅆ', 'ㅈ', 'ㅊ','ㅋ','ㅌ'],
+              'ㅆ': ['ㅅ', 'ㅆ', 'ㅈ', 'ㅊ','ㅋ','ㅌ'],
+              'ㅈ': ['ㅅ', 'ㅆ', 'ㅈ', 'ㅊ','ㅋ','ㅌ'],
+              'ㅊ': ['ㅅ', 'ㅆ', 'ㅈ', 'ㅊ','ㅋ','ㅌ'],
+              'ㅋ': ['ㅅ', 'ㅆ', 'ㅈ', 'ㅊ','ㅋ','ㅌ'],
+              'ㅌ': ['ㅅ', 'ㅆ', 'ㅈ', 'ㅊ','ㅋ','ㅌ']}
+
+    result = []
+    # Jamo example for = decompose_syllable('미') = ('ㅁ', 'ㅣ', None)
+    # Test input validity
+    if len(inputStr) == 1:
+        if is_syllable(inputStr):
+            jamo = decompose_syllable(inputStr)
+            # if exist in dict
+            for a in fuzzyChoseongDicts.get(jamo[0]) or jamo[0]: # Handle when not exist in Choseong Dict (e.g. '미' , since Choseong Dict has no 'ㅁ')
+                for b in fuzzyJungseongDicts.get(jamo[1]) or jamo[1]:
+                    # Handle Jongseongdict. Since many Jamo has no  Jongseong i.e. '미' (a.k.a. jamo[2] returns None)
+                    if jamo[2]:  #if Jamo even has Jongseong ending
+                        for c in fuzzyJongseongDicts.get(jamo[2]) or jamo[2]:
+                            result.append(compose_jamo_characters(a, b, c))
+                    else: #if No Jongseong ending
+                            result.append(compose_jamo_characters(a, b))
+
+    if result == []:
+        result.append(inputStr)
+    return result
+
 def bold_HTML(input):
     return '<b>'+input+'</b>'
     
 
 def Optional_Generate_AllHanzi_Homophone_List_As_HTML(Master_HomoPhone_Dicts):
-    showInfo ("Optional_Generate_AllHanzi_Homophone_List_As_HTML")
+    print ("Optional_Generate_AllHanzi_Homophone_List_As_HTML")
     HtmlOutput = ''
     for mKey in Master_HomoPhone_Dicts:
         HtmlOutput = HtmlOutput + mKey + ' : '
@@ -272,7 +355,7 @@ def Optional_Generate_AllHanzi_Homophone_List_As_HTML(Master_HomoPhone_Dicts):
         HtmlOutput = HtmlOutput + '<br />'
     #for XY in get_all_chinese_tone('chìfanX'):
     #    TextOutput = TextOutput + XY + ", "
-    #showInfo(TextOutput)
+    #print(TextOutput)
     #Debug_Quick_Save_info_to_Note(nids,TextOutput)
     return HtmlOutput
 def BulkGenerateSimilarHanguelWordList(nids):
@@ -289,27 +372,27 @@ def BulkGenerateSimilarHanguelWordList(nids):
     Pattern_Cache_Dicts = {'first':'string value'} #fnmatch with wild cards can be costly, so we cache the searched pattern results to optimise time
     #before using Cache takes around 3 minutes for 5200 cards. now around 1minutes10secs
     ran_fnmatchregex_count = 0
-    fnmatchregex_time = 0 
+    fnmatchregex_time = 0
     filteredCache_used_count = 0
     warning_Output_SrcField_NotFound = 0
     notincache_but_already_inmasterdict_count = 0
 
-    showInfo ("Beginning with the following config:\n modelName: %s \n Vocab_SrcField: %s \n Meaning_SrcField: %s \n Output_SrcField: %s \n OVERWRITE_DST_FIELD: %s \n Fuzzy_Character_Mode_Enabled: %s " %(str(modelName),Vocab_SrcField,Meaning_SrcField,Output_SrcField,OVERWRITE_DST_FIELD,Fuzzy_Character_Mode_Enabled ))
+    print ("Beginning with the following config:\n modelName: %s \n Vocab_SrcField: %s \n Meaning_SrcField: %s \n Output_SrcField: %s \n OVERWRITE_DST_FIELD: %s \n Fuzzy_Character_Mode_Enabled: %s " %(str(modelName),Vocab_SrcField,Meaning_SrcField,Output_SrcField,OVERWRITE_DST_FIELD,Fuzzy_Character_Mode_Enabled ))
 
     for nid in nids:
-        #showInfo ("Found note: %s" % (nid))
+        #print ("Found note: %s" % (nid))
         note = mw.col.getNote(nid)
         if isinstance(modelName, str):
             if modelName not in note.model()['name']:
                 if warning_ModelNotFound == 0:
-                      showInfo ("--> Model mismatch Str type: %s not in  %s" %( modelName, note.model()['name']))
+                      print ("--> Model mismatch Str type: %s not in  %s" %( modelName, note.model()['name']))
                 warning_counter += 1
                 warning_ModelNotFound += 1
                 continue
         elif isinstance(modelName, list):
             if not set(modelName).isdisjoint(note.model()['name']):
                 if warning_ModelNotFound == 0:
-                      showInfo ("--> Model mismatch List type: %s not in %s" %( str(modelName), note.model()['name']))
+                      print ("--> Model mismatch List type: %s not in %s" %( str(modelName), note.model()['name']))
                 warning_counter += 1
                 warning_ModelNotFound += 1
                 continue
@@ -322,7 +405,7 @@ def BulkGenerateSimilarHanguelWordList(nids):
             # no src1 field
 
             if warning_Vocab_SrcField_NotFound == 0:
-                  showInfo ("--> Field %s not found." % (Vocab_SrcField))
+                  print ("--> Field %s not found." % (Vocab_SrcField))
             warning_counter += 1
             warning_Vocab_SrcField_NotFound += 1
             continue
@@ -331,7 +414,7 @@ def BulkGenerateSimilarHanguelWordList(nids):
         if not src_Meaning:
             # no src_Meaning field
             if warning_Meaning_SrcField_NotFound == 0:
-                  showInfo ("--> Field %s not found." % (Meaning_SrcField))
+                  print ("--> Field %s not found." % (Meaning_SrcField))
             warning_counter += 1
             warning_Meaning_SrcField_NotFound += 1
             continue
@@ -341,17 +424,17 @@ def BulkGenerateSimilarHanguelWordList(nids):
         if not dst:
             # no dst field
             if warning_Output_SrcField_NotFound == 0:
-                  showInfo ("--> Field %s not found." % (Output_SrcField))
+                  print ("--> Field %s not found." % (Output_SrcField))
             warning_counter += 1
             warning_Output_SrcField_NotFound += 1
             continue
         if note[dst] and not OVERWRITE_DST_FIELD:
             # already contains data, skip
-            #showInfo ("--> %s not empty. Skipping!" % (Output_SrcField))
+            #print ("--> %s not empty. Skipping!" % (Output_SrcField))
             continue
         try:
-            
-            # showInfo ("--> Everything should have worked. Trying Regex")
+
+            # print ("--> Everything should have worked. Trying Regex")
             if note[src1] not in Master_HomoPhone_Dicts:
                  Master_HomoPhone_Dicts[note[src1]] = [note[src_Meaning]]
             else:
@@ -371,21 +454,21 @@ def BulkGenerateSimilarHanguelWordList(nids):
                     Master_CompositeJongseong_Dicts[tempComposite].append(note[src1] + ": " + note[src_Meaning])
 
             #END Test Composite Jongseong Dict
-            #showInfo (Master_HomoPhone_Dicts[note[src1]][0])
+            #print (Master_HomoPhone_Dicts[note[src1]][0])
             #TextOutput = note[src1]
             #note[dst]= str(TotalWordCount)
         except Exception as e:
             raise
         note.flush()
     ##ROUND two. this one assign compiled list to appropriate notes.
-    showInfo ("--> Now on final part. Binding final output to dst !")
+    print ("--> Now on final part. Binding final output to dst !")
     debugcount = 0
     refreshGuiTimer = time.perf_counter()
     totalRunTime = time.perf_counter()
     maxloop = max(len(nids),1)
     for  loopno, nid in enumerate(nids):
-        #showInfo ("Found note: %s" % (nid))
-        #showInfo(str((currentloop/maxLoop)*100 %2))
+        #print ("Found note: %s" % (nid))
+        #print(str((currentloop/maxLoop)*100 %2))
         #if ((currentloop/maxLoop)*100 %2 ==0): THIS WON'T WORK, sometimes result is 2.000000000245 and that's not valid
 
         if ( time.perf_counter() - refreshGuiTimer >= 2.5):
@@ -396,7 +479,7 @@ def BulkGenerateSimilarHanguelWordList(nids):
             tooltip("Progress : %d %%" % ( (loopno/maxloop)*100),    period=300    )
             # refresh GUI during loop
             time.sleep(0.1)
-            #showInfo('hi')
+            #print('hi')
             mw.app.processEvents()
 
 
@@ -405,14 +488,14 @@ def BulkGenerateSimilarHanguelWordList(nids):
         if isinstance(modelName, str):
             if modelName not in note.model()['name']:
                 if warning_ModelNotFound == 0:
-                      showInfo ("--> Model mismatch: %s vs %s" %( modelName, note.model()['name']))
+                      print ("--> Model mismatch: %s vs %s" %( modelName, note.model()['name']))
                 warning_counter += 1
                 warning_ModelNotFound += 1
                 continue
         elif isinstance(modelName, list):
             if not set(modelName).isdisjoint(note.model()['name']):
                 if warning_ModelNotFound == 0:
-                      showInfo ("--> Model mismatch: %s vs %s" %( str(modelName), note.model()['name']))
+                      print ("--> Model mismatch: %s vs %s" %( str(modelName), note.model()['name']))
                 warning_counter += 1
                 warning_ModelNotFound += 1
                 continue
@@ -422,116 +505,124 @@ def BulkGenerateSimilarHanguelWordList(nids):
             src1 = Vocab_SrcField
         if not src1:
             # no src1 field
-            #showInfo ("--> Field %s not found." % (Vocab_SrcField))
+            #print ("--> Field %s not found." % (Vocab_SrcField))
             continue
         if Meaning_SrcField in note:
             src_Meaning = Meaning_SrcField
         if not src_Meaning:
             # no src_Meaning field
-            #showInfo ("--> Field %s not found." % (Meaning_SrcField))
+            #print ("--> Field %s not found." % (Meaning_SrcField))
             continue
         dst = None
         if Output_SrcField in note:
             dst = Output_SrcField
         if not dst:
-            #showInfo ("--> Field %s not found!" % (Output_SrcField))
+            #print ("--> Field %s not found!" % (Output_SrcField))
             # no dst field
             continue
         if note[dst] and not OVERWRITE_DST_FIELD:
             # already contains data, skip
-            #showInfo ("--> %s not empty. Skipping!" % (Vocab_SrcField))
+            #print ("--> %s not empty. Skipping!" % (Vocab_SrcField))
             continue
         try:
             #dct = {'this':1,'is':2,'just':3,'tazvikst':4,'test':5,'tzxct':6,'test':7}
             #filtered = fnmatch.filter(dct, 't*t')
             # (result =)filtered => ['tazvikst', 'test', 'tzxct']
-            if (Fuzzy_Character_Mode_Enabled == False):
-                cur_TextOutput = ''
-                mAllToneInput_List = get_singleChar_da_hada_Patterns(note[src1])
-                mAllToneInput_List.extend(get_wildcard_Patterns(note[src1])) #extend list
-                #mAllToneInput_List = list(set(mAllToneInput_List)) #remove duplicate. Obsolete, doesn't preserve order
-                mAllToneInput_List = list(dict.fromkeys(mAllToneInput_List)) #remove duplicate
-                if(debugMode and debugcount<=5):
-                    showInfo ("generated pattern list :" + str(mAllToneInput_List))
 
-                
-                for cur_Tone in mAllToneInput_List:
-                     if cur_Tone in Pattern_Cache_Dicts:#pattern previously searched,i.e  "*먹다*", use cache instead of fnmatch.filter(Dict) which is cpu intensive
-                        filteredLst = Pattern_Cache_Dicts.get(cur_Tone)
-                        filteredCache_used_count +=1
-                     else:
-                        if (cur_Tone in Master_HomoPhone_Dicts):
-                            notincache_but_already_inmasterdict_count +=1
-                        time_start = time.perf_counter()
-                        filteredLst = fnmatch.filter(Master_HomoPhone_Dicts, cur_Tone)
-                        fnmatchregex_time += time.perf_counter()- time_start #time how much time total  fnmatch.filter() takes
-                        Pattern_Cache_Dicts[cur_Tone] = filteredLst #add result to cache dict for later use
-                        ran_fnmatchregex_count += 1
-                        
-                     if (len(filteredLst)>0 and len(filteredLst)<40 ):
-                         #Skips null result . e.g skips 먹하다 (match nothing) , also if len exceed 40 it's too common, don't want
-                         cur_TextOutput = cur_TextOutput + bold_HTML('&emsp;' +cur_Tone + ' ('+str(len(filteredLst))+')<br />')+  '<ol>' #i.e  *먹다* (4)
-                         #only the first 7 is taken
-                         for filtered in filteredLst[:7]:
-                            x = Master_HomoPhone_Dicts[filtered][0] #need the [0] because dict result is stored in list e.g. ['to suffer a big loss, be cheated']. this will convert it to string 
-                            #filtered == Hanguelword, x = Meaning
-                            x = x.replace("<div>","").replace("</div>","")  #won't work with  e.g. <div style="background-color:lightblue"> . this sufficient enough for me. will regex later
-                            cur_TextOutput = cur_TextOutput + '<li>'+ filtered + ": "+str(x)+"</li>"
-                         cur_TextOutput += '</ol>'
+            cur_TextOutput = ''
+            mAllToneInput_List = get_singleChar_da_hada_Patterns(note[src1])
+            mAllToneInput_List.extend(get_wildcard_Patterns(note[src1])) #extend list
+            #mAllToneInput_List = list(set(mAllToneInput_List)) #remove duplicate. Obsolete, doesn't preserve order
+            mAllToneInput_List = list(dict.fromkeys(mAllToneInput_List)) #remove duplicate
+            if(debugMode and debugcount<=5):
+                print ("generated pattern list :" + str(mAllToneInput_List))
 
 
-                #Now to deal with composite JongSeongDict
+            for cur_Tone in mAllToneInput_List:
+                 if cur_Tone in Pattern_Cache_Dicts:#pattern previously searched,i.e  "*먹다*", use cache instead of fnmatch.filter(Dict) which is cpu intensive
+                    filteredLst = Pattern_Cache_Dicts.get(cur_Tone)
+                    filteredCache_used_count +=1
+                 else:
+                    if (cur_Tone in Master_HomoPhone_Dicts):
+                        notincache_but_already_inmasterdict_count +=1
+                    time_start = time.perf_counter()
+                    filteredLst = fnmatch.filter(Master_HomoPhone_Dicts, cur_Tone)
+                    fnmatchregex_time += time.perf_counter()- time_start #time how much time total  fnmatch.filter() takes
+                    Pattern_Cache_Dicts[cur_Tone] = filteredLst #add result to cache dict for later use
+                    ran_fnmatchregex_count += 1
 
-                tempCompositeList = []
-                if len(note[src1]) <=3 and len(note[src1]) >0:
-                    for ch in note[src1]:
-                        t = hasComposite_jongseong(ch)
-                        if t and not(t in tempCompositeList):
-                            tempCompositeList.append(t)
+                 if (len(filteredLst)>0 and len(filteredLst)<40 ):
+                     #Skips null result . e.g skips 먹하다 (match nothing) , also if len exceed 40 it's too common, don't want
+                     cur_TextOutput = cur_TextOutput + bold_HTML('&emsp;' +cur_Tone + ' ('+str(len(filteredLst))+')<br />')+  '<ol>' #i.e  *먹다* (4)
+                     #only the first 7 is taken
+                     for filtered in filteredLst[:7]:
+                        x = Master_HomoPhone_Dicts[filtered][0] #need the [0] because dict result is stored in list e.g. ['to suffer a big loss, be cheated']. this will convert it to string
+                        #filtered == Hanguelword, x = Meaning
+                        x = x.replace("<div>","").replace("</div>","")  #won't work with  e.g. <div style="background-color:lightblue"> . this sufficient enough for me. will regex later
+                        cur_TextOutput = cur_TextOutput + '<li>'+ filtered + ": "+str(x)+"</li>"
+                     cur_TextOutput += '</ol>'
 
-                for tempComposite in tempCompositeList:
-                    #showInfo(str(tempComposite))
-                    if tempComposite in Master_CompositeJongseong_Dicts:
-                        #showInfo(str(tempComposite) + str(Master_CompositeJongseong_Dicts[tempComposite]))
-                        cur_TextOutput += "<br />" + bold_HTML('&emsp;' +tempComposite + '<br />') +  '<ol>'
-                        for x in Master_CompositeJongseong_Dicts[tempComposite]:
-                             cur_TextOutput += '<li>' + x + '</li>'
+
+            #Now to deal with composite JongSeongDict
+
+            tempCompositeList = []
+            if len(note[src1]) <=3 and len(note[src1]) >0:
+                for ch in note[src1]:
+                    t = hasComposite_jongseong(ch)
+                    if t and not(t in tempCompositeList):
+                        tempCompositeList.append(t)
+
+            for tempComposite in tempCompositeList:
+                #print(str(tempComposite))
+                if tempComposite in Master_CompositeJongseong_Dicts:
+                    #print(str(tempComposite) + str(Master_CompositeJongseong_Dicts[tempComposite]))
+                    cur_TextOutput += "<br />" + bold_HTML('&emsp;' +tempComposite + '<br />') +  '<ol>'
+                    for x in Master_CompositeJongseong_Dicts[tempComposite]:
+                         cur_TextOutput += '<li>' + x + '</li>'
+                    cur_TextOutput += '</ol>'
+
+            #END Dealing with Composite Jongseong Dict
+
+
+
+
+            if (Fuzzy_Character_Mode_Enabled == True):
+                if len(note[src1]) > 0:
+                    # only get first char from korean vocab . e.g. '썩'  from '썩이다'
+                    mFuzz_List = get_fuzzyJamoList(note[src1][0])
+
+                    FuzzyHeaderMade = False
+                    for cur_Fuzz in mFuzz_List:
+                        mAllFuzzyToneInput_List = get_singleChar_da_hada_Patterns(cur_Fuzz)
+                        mAllFuzzyToneInput_List = list(dict.fromkeys(mAllFuzzyToneInput_List)) #remove duplicate
+
+                        for x in mAllFuzzyToneInput_List:
+                             if x in Master_HomoPhone_Dicts:
+                                if not FuzzyHeaderMade:
+                                    # Make header for fuzzy list The first time only.
+                                    cur_TextOutput += "<br />" + bold_HTML('&emsp;' +'Fuzzy' + '<br />') +  '<ol>'
+                                    FuzzyHeaderMade = True
+
+                                #for filtered in filteredLst[:7]:
+                                y = Master_HomoPhone_Dicts[x][0] #need the [0] because dict result is stored in list e.g. ['to suffer a big loss, be cheated']. this will convert it to string
+                                y = y.replace("<div>","").replace("</div>","")  #won't work with  e.g. <div style="background-color:lightblue"> . this sufficient enough for me. will regex later
+                                cur_TextOutput = cur_TextOutput + '<li>' + x + ": "+str(y)+"</li>"
+
+                    if FuzzyHeaderMade:
                         cur_TextOutput += '</ol>'
-
-                #END Dealing with Composite Jongseong Dict
-
-                note[dst]= cur_TextOutput
-                #showInfo (Master_HomoPhone_Dicts[note[src1]][0])
-                #TextOutput = note[src1]
-                #note[dst]= str(TotalWordCount)
-            else:
-                cur_TextOutput = ''
-                mFuzz_List = get_fuzzyJungseongList(note[src1])
-                for cur_Fuzz in mFuzz_List:
-                    mAllToneInput_List = get_fuzzyChoseongList(cur_Fuzz)
-                    for cur_Tone in mAllToneInput_List:
-                         cur_TextOutput = cur_TextOutput + cur_Tone + ' : '
-                         if cur_Tone in Master_HomoPhone_Dicts:
-                               #showInfo("value of Master_HomoPhone_Dicts[cur_Tone] is : %s, length is : %d"  % (str(Master_HomoPhone_Dicts[cur_Tone]),len(Master_HomoPhone_Dicts[cur_Tone]))) 
-                               for cur_Val in Master_HomoPhone_Dicts[cur_Tone]:
-                                    cur_TextOutput = cur_TextOutput + cur_Val
-                                    
-                         cur_TextOutput = cur_TextOutput + '<br />'
-                         #else:
-                               # if hanja list is blank e.g. 춍 : 쑝 : 쭁 :  then no need to break <br /> to save space
-                               #cur_TextOutput = cur_TextOutput
-                    if cur_Fuzz != mFuzz_List[-1]:
-                        cur_TextOutput = cur_TextOutput + '<br />'
-                note[dst]= cur_TextOutput
+            note[dst]= cur_TextOutput
+            #print (Master_HomoPhone_Dicts[note[src1]][0])
+            #TextOutput = note[src1]
+            #note[dst]= str(TotalWordCount)
         except Exception as e:
             raise
         note.flush()
     totalRunTime  = time.perf_counter() -totalRunTime
-    showInfo ("--> Everything should have worked.\n warning_counter = %d \n warning_ModelNotFound = %d \n warning_Vocab_SrcField_NotFound = %d \n warning_Meaning_SrcField_NotFound = %d \n warning_Output_SrcField_NotFound = %d" %(warning_counter,warning_ModelNotFound,warning_Vocab_SrcField_NotFound,warning_Meaning_SrcField_NotFound,warning_Output_SrcField_NotFound))
+    print ("--> Everything should have worked.\n warning_counter = %d \n warning_ModelNotFound = %d \n warning_Vocab_SrcField_NotFound = %d \n warning_Meaning_SrcField_NotFound = %d \n warning_Output_SrcField_NotFound = %d" %(warning_counter,warning_ModelNotFound,warning_Vocab_SrcField_NotFound,warning_Meaning_SrcField_NotFound,warning_Output_SrcField_NotFound))
     if (debugMode):
-        showInfo ("len(Pattern_Cache_Dicts): %d \n filteredCache_used_count: %d \n  ran_fnmatchregex_count: %d \n fnmatchregex_time: %d \n notincache_but_already_inmasterdict_count: %d \n totalRunTime: %d" %(len(Pattern_Cache_Dicts),filteredCache_used_count,ran_fnmatchregex_count,fnmatchregex_time, notincache_but_already_inmasterdict_count, totalRunTime))      
+        print ("len(Pattern_Cache_Dicts): %d \n filteredCache_used_count: %d \n  ran_fnmatchregex_count: %d \n fnmatchregex_time: %d \n notincache_but_already_inmasterdict_count: %d \n totalRunTime: %d" %(len(Pattern_Cache_Dicts),filteredCache_used_count,ran_fnmatchregex_count,fnmatchregex_time, notincache_but_already_inmasterdict_count, totalRunTime))
     # for 5200 cards, len(Pattern_Cache_Dicts):14632,filteredCache_used_count:52027,ran_fnmatchregex_count:14631,fnmatchregex_time:71
-    #showInfo (TextOutput)
+    #print (TextOutput)
     mw.progress.finish()
     mw.reset()
 
