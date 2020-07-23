@@ -34,7 +34,7 @@ def getNaverSentenceExample(para):
 
             for idx, sentence in enumerate(officialExamp_Sentence[:2]):
                 if (debugMode):
-                    showInfo("input: %s \n sentence , type: %s  , value : %s \n meaning, type: %s  , value : %s \n x, type: %s value: %s " %(para,type(sentence),str(sentence),type(officialExamp_Meaning[idx]),str(officialExamp_Meaning[idx]),type(x),str(x)))
+                    print("input: %s \n sentence , type: %s  , value : %s \n meaning, type: %s  , value : %s \n x, type: %s value: %s " %(para,type(sentence),str(sentence),type(officialExamp_Meaning[idx]),str(officialExamp_Meaning[idx]),type(x),str(x)))
                 x += sentence + "<br>" + officialExamp_Meaning[idx] + "<br>"
                 result["Sentence"] += sentence + "<br>"
                 result["Meaning"] += officialExamp_Meaning[idx] + "<br>"
