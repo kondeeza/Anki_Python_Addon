@@ -11,7 +11,7 @@ print ([x for x in itertools.chain.from_iterable(itertools.zip_longest(list1,lis
 
 #csvLocation = ""+os.path.dirname(__file__) + "\\Bulk_Generate_KrJp_def\\" + "KRDict_JP_All_Full_edited.csv"
 
-csvLocation = ""+os.path.dirname(__file__) + "\\list2.csv"
+csvLocation = ""+os.path.dirname(__file__) + "\\list4.csv"
 def csvToRoundrobinList(fileName):
     L1 = []
     L2 = []
@@ -24,7 +24,7 @@ def csvToRoundrobinList(fileName):
 
 
     #now make file
-    with open('SSS Class Suicide Hunter_KR_JP_1-50.txt', 'w', encoding="utf-8") as f:
+    with open('Torture Princess Vol1 KR JP.txt', 'w', encoding="utf-8") as f:
         for item in finalL:
             #f.write('<p class="calibre1">%s </p>\n' % item)
             f.write('%s\n' % item)
