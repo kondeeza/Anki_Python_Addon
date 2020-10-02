@@ -38,7 +38,8 @@ replaceDoubleQuote = True
 formatOption1 = False
 completeFormatWithQuoteSub = False
 replaceSingleLineSingleQuoteWithBracket = True
-
+OCR_quickFix_replace_single_quote_with_double_quote = True
+OCR_quickFix_regex_sub_common_quote_typos = True
 #Ends config
 out_f = open('outputfile.txt', 'w', encoding="utf-8")
 toOpenFile = 'file.txt'
@@ -58,10 +59,47 @@ def convert_to_standard_quote(input_string):
     return input_string
 
 
-def convert_to_standard_bracket(input_string):
-    input_string = input_string.replace('（', '(')
-    input_string = input_string.replace('）', ')')
+def convert_to_standard_parentheses(input_string):
+    input_string = input_string.replace('（', '(')  # Korean & Japanese parentheses changed to standard ones
+    input_string = input_string.replace('）', ')')  # Korean & Japanese parentheses changed to standard ones
     return input_string
+
+
+def OCR_quick_fix_replace_single_quote_with_double_quote(input_string):
+    """
+    can be useful for when OCR is too inaccurate and incorrectly detects " as ' and vice versa. So we simply converts them all to doublequote
+    ‘*미안，" >> "*미안，"     (From Hikaru 1)
+
+    Note: Make sure to convert all none standard quotes (i.e. ’‘  to the standard quote first)
+    """
+    input_string = input_string.replace('’','"')
+    input_string = input_string.replace('‘','"')
+    input_string = input_string.replace("'",'"')
+    return input_string
+
+def OCR_quick_fix_regex_sub_common_quote_typos(input_string):
+    """
+    """
+    input_string = input_string.replace("''",'"')  # ''다른 부타악?'    >> converts 2x single quotes '' to "
+
+    input_string = re.sub("^'([^']*)[17\*•]$", r"'\1'", input_string, flags=re.MULTILINE)
+    input_string = re.sub("^'([^']*)[17\*•]'$" , r'"\1"', input_string, flags=re.MULTILINE)
+    input_string = re.sub("^'([^']*)'[17\*•]$",r'"\1"' , input_string, flags=re.MULTILINE)
+    pattern = '''^"([^']*)[17\*•]'$'''
+    input_string = re.sub(pattern, r'"\1"' , input_string, flags=re.MULTILINE)
+    pattern = '''^"([^']*)'[17\*•]$'''
+    input_string = re.sub(pattern,r'"\1"' , input_string, flags=re.MULTILINE)
+    pattern = '''^"([^']*)[17\*•]$'''
+    input_string = re.sub(pattern,r'"\1"' , input_string, flags=re.MULTILINE)
+    pattern = '''^[17\*•]([^']*)'$'''
+    input_string = re.sub(pattern,r"'\1'" , input_string, flags=re.MULTILINE)
+    pattern = '''^[17\*•]([^']*)"$'''
+    input_string = re.sub(pattern,r'"\1"' , input_string, flags=re.MULTILINE)
+    pattern = '''(?:^[17\*•]'|^'[17\*•])([^']*)(?:"|')$'''
+    input_string = re.sub(pattern,r'"\1"' , input_string, flags=re.MULTILINE)
+
+    return input_string
+
 
 
 if replaceDoubleQuote:
@@ -73,18 +111,21 @@ if replaceDoubleQuote:
         #also replaces Korean doublequote with normal ASCII doublequote because sometimes they typoed like this “너무하네. 난 정직함이 장점인데"
         # ( From otomege_v5_ch2) The front doublequote is kr style but the back is ascii
 
+        formatted_f = convert_to_standard_quote(formatted_f)
+        formatted_f = convert_to_standard_parentheses(formatted_f)
+
+        if OCR_quickFix_regex_sub_common_quote_typos:
+            formatted_f = OCR_quick_fix_regex_sub_common_quote_typos(formatted_f)
         if replaceSingleLineSingleQuoteWithBracket:
+            """
+            useful for OCR, only when a single line contains a  complete set of single quote at the beginning and end of line then convert to bracket
+            probably the most OCR detection error-free conversion compared to quote spanning over multiple lines
+            '있잖아, 이카기.' >> (있잖아, 이카기.)
+            """
+            formatted_f = re.sub("^'([^']*)'$", r'(\1)', formatted_f, flags=re.MULTILINE)  # flags=re.MULTILINE required to use anchor ^ and $ operators
 
-            formatted_f = formatted_f.replace('‘',"'") # change korean singlequote to universal single quote
-            formatted_f = formatted_f.replace(' ’',"'") # change korean singlequote to universal single quote
-            #temp_formatted_f = [re.sub("'([^']*)'", r'(\1)', line) for line in formatted_f.splitlines()]
-            formatted_f = re.sub("^'([^']*)'$", r'(\1)', formatted_f, flags=re.MULTILINE) # flags=re.MULTILINE required to use anchor ^ and $ operators
-
-        formatted_f = formatted_f.replace('“','"')
-        formatted_f = formatted_f.replace('”','"')
-        formatted_f = formatted_f.replace('’','"') # Hikaru
-        formatted_f = formatted_f.replace('‘','"') # Hikaru
-        formatted_f = formatted_f.replace("'",'"') # Hikaru
+        if OCR_quickFix_replace_single_quote_with_double_quote:
+            formatted_f = OCR_quick_fix_replace_single_quote_with_double_quote(formatted_f)
 
         """Dealing with bad OCR
         1.  if line ends with .’OR !’  but there were no preceding incomplete ‘   then  the OCR likely missed the ‘   so simply add  ‘ at the beginning of the same line.
@@ -201,7 +242,7 @@ with open(toOpenFile, mode="r", encoding="utf-8") as f:
                 out_f.write('%s' % line.strip())
 
                 if incomplete_quote is False and incomplete_quote2 is False and incomplete_quote3 is False and incomplete_quote4 is False and incomplete_quote5 is False:
-                    if line.strip()[-1] in ['.', '◇', '」', '』', '?', '!!', '!', '）', '”', ')', ',', '"']:
+                    if line.strip()[-1] in ['.', '◇', '」', '』', '?', '!!', '!', '）', '”', ')', ',', '"', 'O', '◊']:
                         out_f.write('\n')
                 if incomplete_quote is True:
                     if line.strip()[-1] in ['」']:
