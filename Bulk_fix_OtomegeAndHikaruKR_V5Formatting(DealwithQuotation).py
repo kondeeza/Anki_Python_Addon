@@ -40,6 +40,7 @@ completeFormatWithQuoteSub = False
 replaceSingleLineSingleQuoteWithBracket = True
 OCR_quickFix_replace_single_quote_with_double_quote = True
 OCR_quickFix_regex_sub_common_quote_typos = True
+OCR_quickFix_use_simple_newline_identifier = True
 #Ends config
 out_f = open('outputfile.txt', 'w', encoding="utf-8")
 toOpenFile = 'file.txt'
@@ -98,7 +99,73 @@ def OCR_quick_fix_regex_sub_common_quote_typos(input_string):
     pattern = '''(?:^[17\*•]'|^'[17\*•])([^']*)(?:"|')$'''
     input_string = re.sub(pattern,r'"\1"' , input_string, flags=re.MULTILINE)
 
+    start_or_end_patterns_doubleQ = ["44", "17", "71"]
+
+    for p in start_or_end_patterns_doubleQ:
+        startswith = "^" + p + "(.*?)$"
+        endswith = "^(.*?)" + p + "$"
+        input_string = re.sub(startswith, r'"\1', input_string, flags=re.MULTILINE)   # /^44(.*?)$/    , 44네 목적은 도대체 뭐였지?’ >> "네 목적은 도대체 뭐였지?’
+        input_string = re.sub(endswith, r'\1"', input_string, flags=re.MULTILINE)    #  /^(.*?)44$/    , '네 목적은 도대체 뭐였지?44 >> '네 목적은 도대체 뭐였지?"
+
+    start_or_end_patterns_singleQ = ["4", "7", "T"]  # handle "•••야，설마 귀여운 꽃이란 건 네 얘기냐?T
+
+    for p in start_or_end_patterns_singleQ:
+        startswith = "^" + p + "(.*?)$"
+        endswith = "^(.*?)" + p + "$"
+        input_string = re.sub(startswith, r"'\1", input_string, flags=re.MULTILINE)
+        input_string = re.sub(endswith, r"\1'", input_string, flags=re.MULTILINE)
+
+    """
+    input_string_lines = [line for line in input_string.splitlines()]
+    input_string = ""
+    for start_or_end_pattern in start_or_end_patterns:
+        for i_line in input_string_lines:
+            if i_line.startswith(start_or_end_pattern):
+                input_string = input_string + '\n' + ('"'+i)"""
+
+    pattern = '''^"(.*?)(?:'$|'.{1}$)'''
+    input_string = re.sub(pattern, r'"\1"', input_string, flags=re.MULTILINE)
+    # match if starts with "  and ends with str[-1] = ' or str[-2] = '
+    # "네 목적은 도대체 뭐였지?'
+    # "네 목적은 도대체 뭐였지'7
+    pattern = '''^(?:'|.{1}')(.*?)"$'''
+    input_string = re.sub(pattern, r'"\1"', input_string, flags=re.MULTILINE)
+    # match if first index or second index contains ' and the line  and ends with "
+    # ?'네 목적은 도대체 뭐였지?"
+    # '1네 목적은 도대체 뭐였지"
+
+
+    input_string = re.sub(endswith, r'\1"', input_string, flags=re.MULTILINE)    #  /^(.*?)44$/    , '네 목적은 도대체 뭐였지?44 >> '네 목적은 도대체 뭐였지?"
     return input_string
+
+def OCR_quick_fix_use_simple_newline_identifier(input_f):
+
+    contain_line_ender = False
+    for line in input_f:
+
+        if line not in ['\n', '\r\n']:  # if line not empty
+
+            if line.strip()[-1] in ['.', '•', '。', '…', '一', '，', ',', '、', 'O', '◊', '◇', '』', '」', '）', ')', '〟', '’', '”', '"', '!', '！', '?', '？']:
+                    if line.strip()[0] in ['.', '•', '。', '…', '一', '，', ',', '、', 'O', '◊', '◇', '』', '」', '）', ')', '〟', '’', '”', '"', '!', '！', '?', '？'] + ['“', '‘', '（', '〝', '『', '「']:
+                        if not contain_line_ender:
+                            """  if 1. current line starts and end with quote and 2.previous line doesn't contain \n then add \n before that. For example:
+                                젠장, 안에서 문을 잠갔아
+                                "안 돼，나는 히카루의 마음을 네게 전할 사명이 있어!”
+                                Would be 2 separate lines.
+                            """
+                            out_f.write('\n')
+                    out_f.write('%s' % line.strip())
+                    contain_line_ender = True
+                    out_f.write('\n')
+            else:
+                out_f.write('%s' % line.strip())
+                contain_line_ender = False
+            if debugmode:
+                    print("line[-1] contain_line_ender:%s  Txt: %s" % (contain_line_ender,line.strip()))
+
+
+
+
 
 
 
@@ -224,65 +291,69 @@ with open(toOpenFile, mode="r", encoding="utf-8") as f:
             out_f.write('\n')
         return c1
 
-    for line in f:
-        if line not in ['\n', '\r\n']:  # if line not empty
-            #print(line.strip())
-            if '「' in line and not '」' in line and incomplete_quote is False:
-               incomplete_quote = True
-            if '『' in line and not '』' in line and incomplete_quote2 is False:
-                incomplete_quote2 = True
-            if '（' in line and not '）' in line and incomplete_quote3 is False:
-                incomplete_quote3 = True
-            if '“' in line and not '”' in line and incomplete_quote4 is False:
-                incomplete_quote4 = True
-            if '(' in line and not ')' in line and incomplete_quote5 is False: #This got me big time. So many bracket unicode. '（' isn't the same is '('
-                incomplete_quote5 = True
-
-            if incomplete_quote is False and incomplete_quote2 is False and incomplete_quote3 is False and incomplete_quote4 is False and incomplete_quote5 is False:
-                out_f.write('%s' % line.strip())
+    if OCR_quickFix_use_simple_newline_identifier:
+        OCR_quick_fix_use_simple_newline_identifier(f)
+    else:
+        for line in f:
+            if line not in ['\n', '\r\n']:  # if line not empty
+                #print(line.strip())
+                if '「' in line and not '」' in line and incomplete_quote is False:
+                   incomplete_quote = True
+                if '『' in line and not '』' in line and incomplete_quote2 is False:
+                    incomplete_quote2 = True
+                if '（' in line and not '）' in line and incomplete_quote3 is False:
+                    incomplete_quote3 = True
+                if '“' in line and not '”' in line and incomplete_quote4 is False:
+                    incomplete_quote4 = True
+                if '(' in line and not ')' in line and incomplete_quote5 is False: #This got me big time. So many bracket unicode. '（' isn't the same is '('
+                    incomplete_quote5 = True
 
                 if incomplete_quote is False and incomplete_quote2 is False and incomplete_quote3 is False and incomplete_quote4 is False and incomplete_quote5 is False:
-                    if line.strip()[-1] in ['.', '◇', '」', '』', '?', '!!', '!', '）', '”', ')', ',', '"', 'O', '◊']:
-                        out_f.write('\n')
-                if incomplete_quote is True:
-                    if line.strip()[-1] in ['」']:
-                        out_f.write('\n')
-                        incomplete_quote = False
-                if incomplete_quote2 is True:
-                    if line.strip()[-1] in ['』']:
-                        out_f.write('\n')
-                        incomplete_quote2 = False
-                if incomplete_quote3 is True:
-                    if line.strip()[-1] in ['）']:
-                        out_f.write('\n')
-                        incomplete_quote3 = False
-                if incomplete_quote4 is True:
-                    if line.strip()[-1] in ['”']:
-                        out_f.write('\n')
-                        incomplete_quote4 = False
-                if incomplete_quote5 is True:
-                    if line.strip()[-1] in [')']:
-                        out_f.write('\n')
-                        incomplete_quote5 = False
-            else:
-                linestr = line.strip()
-                for c in linestr:
-                    out_f.write(c)
-                    check_char(c)
+                    out_f.write('%s' % line.strip())
 
-            #TODO:  Deal with faulty bracket
-            """
-            
-                 incomplete_qte:0 incomplete_qte2:0 incomplete_qte3:0 incomplete_qte4:0 incomplete_quote5:0 line[-1] in[. ◇ 」 』 ? !! ! ）)”,]:1 line[-1] contains 」:0 txt: 레리아도 그 시절을 기억하고 있다.
-                 incomplete_qte:0 incomplete_qte2:0 incomplete_qte3:0 incomplete_qte4:0 incomplete_quote5:1 line[-1] in[. ◇ 」 』 ? !! ! ）)”,]:0 line[-1] contains 」:0 txt: (그리고, 2편의 주인공은 학원에서 공략 대상과 사랑을 나누고, 최종적으로 좋
-                 incomplete_qte:0 incomplete_qte2:0 incomplete_qte3:0 incomplete_qte4:0 incomplete_quote5:1 line[-1] in[. ◇ 」 』 ? !! ! ）)”,]:1 line[-1] contains 」:0 txt: 아하는 상대를 수호자로 선택해. 하지만, 이대로면 선택받은 건 리온이 돼) 레리아로서는 곤혹스러울 수밖에 없었다.
-                 incomplete_qte:0 incomplete_qte2:0 incomplete_qte3:0 incomplete_qte4:0 incomplete_quote5:1 line[-1] in[. ◇ 」 』 ? !! ! ）)”,]:1 line[-1] contains 」:0 txt: 설마, 자신의 언니가 리온을 선택할 거라고는 생각하지 않은 것이다.
-            """
+                    if incomplete_quote is False and incomplete_quote2 is False and incomplete_quote3 is False and incomplete_quote4 is False and incomplete_quote5 is False:
+                        if line.strip()[-1] in ['.', '◇', '」', '』', '?', '!!', '!', '）', '”', ')', ',', '"', 'O', '◊']:
+                            out_f.write('\n')
+                    if incomplete_quote is True:
+                        if line.strip()[-1] in ['」']:
+                            out_f.write('\n')
+                            incomplete_quote = False
+                    if incomplete_quote2 is True:
+                        if line.strip()[-1] in ['』']:
+                            out_f.write('\n')
+                            incomplete_quote2 = False
+                    if incomplete_quote3 is True:
+                        if line.strip()[-1] in ['）']:
+                            out_f.write('\n')
+                            incomplete_quote3 = False
+                    if incomplete_quote4 is True:
+                        if line.strip()[-1] in ['”']:
+                            out_f.write('\n')
+                            incomplete_quote4 = False
+                    if incomplete_quote5 is True:
+                        if line.strip()[-1] in [')']:
+                            out_f.write('\n')
+                            incomplete_quote5 = False
+                else:
+                    linestr = line.strip()
+                    for c in linestr:
+                        out_f.write(c)
+                        check_char(c)
+
+                #TODO:  Deal with faulty bracket
+                """
+                
+                     incomplete_qte:0 incomplete_qte2:0 incomplete_qte3:0 incomplete_qte4:0 incomplete_quote5:0 line[-1] in[. ◇ 」 』 ? !! ! ）)”,]:1 line[-1] contains 」:0 txt: 레리아도 그 시절을 기억하고 있다.
+                     incomplete_qte:0 incomplete_qte2:0 incomplete_qte3:0 incomplete_qte4:0 incomplete_quote5:1 line[-1] in[. ◇ 」 』 ? !! ! ）)”,]:0 line[-1] contains 」:0 txt: (그리고, 2편의 주인공은 학원에서 공략 대상과 사랑을 나누고, 최종적으로 좋
+                     incomplete_qte:0 incomplete_qte2:0 incomplete_qte3:0 incomplete_qte4:0 incomplete_quote5:1 line[-1] in[. ◇ 」 』 ? !! ! ）)”,]:1 line[-1] contains 」:0 txt: 아하는 상대를 수호자로 선택해. 하지만, 이대로면 선택받은 건 리온이 돼) 레리아로서는 곤혹스러울 수밖에 없었다.
+                     incomplete_qte:0 incomplete_qte2:0 incomplete_qte3:0 incomplete_qte4:0 incomplete_quote5:1 line[-1] in[. ◇ 」 』 ? !! ! ）)”,]:1 line[-1] contains 」:0 txt: 설마, 자신의 언니가 리온을 선택할 거라고는 생각하지 않은 것이다.
+                """
 
 
 
-            if debugmode:
-                print("incomplete_qte:%i incomplete_qte2:%i incomplete_qte3:%i incomplete_qte4:%i incomplete_quote5:%i line[-1] in[. ◇ 」 』 ? !! ! ）)”,]:%i line[-1] contains 」:%i txt: %s" % (incomplete_quote, incomplete_quote2,incomplete_quote3,incomplete_quote4,incomplete_quote5,  line.strip()[-1] in ['.', '◇', '」', '』', '?', '!!', '!', '）', '”', ')', ','],line.strip()[-1] in ['」'],line.strip() ))
+                if debugmode:
+                    print("incomplete_qte:%i incomplete_qte2:%i incomplete_qte3:%i incomplete_qte4:%i incomplete_quote5:%i line[-1] in[. ◇ 」 』 ? !! ! ）)”,]:%i line[-1] contains 」:%i txt: %s" % (incomplete_quote, incomplete_quote2,incomplete_quote3,incomplete_quote4,incomplete_quote5,  line.strip()[-1] in ['.', '◇', '」', '』', '?', '!!', '!', '）', '”', ')', ','],line.strip()[-1] in ['」'],line.strip() ))
+    out_f.close()
     f.close()
 
 
