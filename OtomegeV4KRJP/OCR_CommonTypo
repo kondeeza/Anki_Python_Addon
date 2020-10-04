@@ -24,6 +24,9 @@ Common OCR misrecognition
 •정말로 할아버지랑 코하루 고모는 이 녀석이 안 보이고 목소리 도안들리는구나.’
 
 
+4네 ‘여자친구’，벽이 너무 높다고.’
+
+
 >> 1
 >> 1'
 >> 7
@@ -36,7 +39,8 @@ Common OCR misrecognition
 >> '1
 >> '7
 >> '*
-
+>> 44네 목적은 도대체 뭐였지?’
+    >> if begins or ends with 44
 """
 '제가 1학년 아카기 코레미츠지? 오늘부터 등교야?'7
 '제가 1학년 아카기 코레미츠지? 오늘부터 등교야?1'
@@ -118,3 +122,43 @@ formatted_f = re.sub("^'([^']*)'$", r'(\1)', formatted_f, flags=re.MULTILINE)  #
 』
 「
 」
+
+
+----
+Simplified line ender
+begins new line if ends with below:
+.
+•
+。
+…
+一
+，
+,
+、
+ O
+ ◊
+ ◇
+ 』
+ 」
+ ）
+ )
+ 〟
+ ’
+ ”
+ "
+ !
+ ！
+ ?
+ ？
+
+extra line beginner:
+“‘（〝   『「
+['“', '‘', '（', '〝', '『', '「']
+else:
+join next line then begin new line
+
+
+----
+"•••여자는 글씨 같은 걸 받으면 좋아하냐?"  "  -- a false positive
+보낸 사람 이름 옆에는 상쾌하고 아름다운 글씨로 •저는 치한이 아닙니다" 라고 적혀 있다. 아오이는 그것을 보고 갑자기 편지를찢었다.
+"하•지만 약혼은 친구 사이였던 아버지들끼리 마음대로 해 버린 거라"    -- a false positive
