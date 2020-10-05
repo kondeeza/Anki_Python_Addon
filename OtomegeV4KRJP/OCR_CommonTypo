@@ -24,7 +24,69 @@ Common OCR misrecognition
 •정말로 할아버지랑 코하루 고모는 이 녀석이 안 보이고 목소리 도안들리는구나.’
 
 
-4네 ‘여자친구’，벽이 너무 높다고.’
+4네 ‘여자친구’，벽이 너무 높다고.’   (Done)
+
+
+
+”없었냐?，
+”•••있었어，라고 말하는 건 비겁...들도 준비하고….”
+
+
+
+‘• = ",   BUT
+‘•••  != "    # ‘•••왜 이렇게 흥분한 거지? 표정은 왜 저렇게 필사적이야? >>
+
+
+
+'하시만 아사는 강하고 현명한 사람이야. 외동딸이어서 아오이 누나를 친동생처럼 돌보아 주었고，언제나 내가 아오이 누나에게
+너무 불성실하다고 꾸중을 했지. 남 뒷바라지를 잘하고 다정한 데 도 있어.”
+
+    >>
+    "하시만 아사는 강하고 현명한 사람이야. 외동딸이어서 아오이 누나를 친동생처럼 돌보아 주었고，언제나 내가 아오이 누나에게너무 불성실하다고 꾸중을 했지. 남 뒷바라지를 잘하고 다정한 데 도 있어."
+    (Currently incorrect quote as  '하시만 아사는 강하고 현명한 사람이야. 외동딸이어서 아오이 누나를 친동생처럼 돌보아 주었고，언제나 내가 아오이 누나에게너무 불성실하다고 꾸중을 했지. 남 뒷바라지를 잘하고 다정한 데 도 있어.")
+
+
+'너… 아오이는 어쩌고?5
+코레미츠는 곁눈질로 히카루를 노려보았다.   >>  2 lines
+
+'너… 아오이는 어쩌고?5
+코레미츠는 곁눈질로 히카루를 노려보았다.'  >>  1 lines
+
+'너… 아오이는 어쩌고?5
+'코레미츠는 곁눈질로 히카루를 노려보았다.  >>   2 lines
+
+'너… 아오이는 어쩌고?5
+'코레미츠는 곁눈질로 히카루를 노려보았다.'  >>  2 lines
+
+    (fx:Check2)
+    >> 1. Current line contains quote opener 2. Current line has NO quote ender
+           if 3. next line has NO opener 4. next line has  quote ender
+                    >> Then join  & (Choose whether to have single to double quote)
+            else
+                   >> add missing quote ender.
+
+    (previousline)
+너… 아오이는 어쩌고?'    >> 2 lines
+
+    '(previousline)
+너… 아오이는 어쩌고?'    >>  1 lines (But fx:check2() already did so)
+
+    (previousline)'
+너… 아오이는 어쩌고?'    >> 2 lines
+
+    '(previousline)'
+너… 아오이는 어쩌고?'    >> 2 lines
+    (fx:Check3  [dependency Check2()]
+    >> 1. Current line contains quote ender 2. Current line has NO quote opener
+        then add missing quote opener.
+
+
+너… 아오이는 어쩌고
+'코레미츠는 곁눈질로 히카루를 노려보았다.'  >>  2 lines
+    (fx:Check4 [ [dependency Check2&3()]]
+    >>1. current line no quote opener, no quote ender, no line ender
+        merge if next line no quote opener.
+
 
 
 >> 1
@@ -162,3 +224,144 @@ join next line then begin new line
 "•••여자는 글씨 같은 걸 받으면 좋아하냐?"  "  -- a false positive
 보낸 사람 이름 옆에는 상쾌하고 아름다운 글씨로 •저는 치한이 아닙니다" 라고 적혀 있다. 아오이는 그것을 보고 갑자기 편지를찢었다.
 "하•지만 약혼은 친구 사이였던 아버지들끼리 마음대로 해 버린 거라"    -- a false positive
+
+------------------------
+
+너… 아오이는 어쩌고
+코레미츠는 곁눈질로 히카루를 노려보았다.   >>  1 lines
+
+너… 아오이는 어쩌고
+'코레미츠는 곁눈질로 히카루를 노려보았다.'  >>  2 lines
+
+너… 아오이는 어쩌고
+코레미츠는 곁눈질로 히카루를 노려보았다.'  >>   2 lines
+
+너… 아오이는 어쩌고
+'코레미츠는 곁눈질로 히카루를 노려보았다.'  >>  2 lines
+
+
+
+'너… 아오이는 어쩌고
+코레미츠는 곁눈질로 히카루를 노려보았다.   >>  2 lines
+
+'너… 아오이는 어쩌고
+코레미츠는 곁눈질로 히카루를 노려보았다.'  >>  1 lines
+
+'너… 아오이는 어쩌고
+'코레미츠는 곁눈질로 히카루를 노려보았다.  >>   2 lines
+
+'너… 아오이는 어쩌고
+'코레미츠는 곁눈질로 히카루를 노려보았다.'  >>  2 lines
+
+
+너… 아오이는 어쩌고'
+코레미츠는 곁눈질로 히카루를 노려보았다.   >>  2 lines
+
+너… 아오이는 어쩌고'
+'코레미츠는 곁눈질로 히카루를 노려보았다.'  >>  2 lines
+
+너… 아오이는 어쩌고'
+코레미츠는 곁눈질로 히카루를 노려보았다.'  >>   2 lines
+
+너… 아오이는 어쩌고'
+'코레미츠는 곁눈질로 히카루를 노려보았다.'  >>  2 lines
+
+
+'너… 아오이는 어쩌고'
+ (Any combination)  >>  2 lines , just check that start & end quote matches
+
+
+----------------------------
+    (ANY previousline)
+'너… 아오이는 어쩌고?'  >> 2 lines , just check that start & end quote matches
+
+
+
+    (previousline)
+너… 아오이는 어쩌고?    >> 1 lines
+
+    '(previousline)
+너… 아오이는 어쩌고?    >>  1 lines
+
+    (previousline)'
+너… 아오이는 어쩌고?    >> 2 lines
+
+    '(previousline)'
+너… 아오이는 어쩌고?   >> 2 lines
+
+
+
+    (previousline)
+'너… 아오이는 어쩌고?    >> 2 lines
+
+    '(previousline)
+'너… 아오이는 어쩌고?    >> 2 lines
+
+    (previousline)'
+'너… 아오이는 어쩌고?    >> 2 lines
+
+    '(previousline)'
+'너… 아오이는 어쩌고?   >> 2 lines
+
+
+
+
+    (previousline)
+너… 아오이는 어쩌고?'    >> 2 lines
+
+    '(previousline)
+너… 아오이는 어쩌고?'    >>  1 lines
+
+    (previousline)'
+너… 아오이는 어쩌고?'    >> 2 lines
+
+    '(previousline)'
+너… 아오이는 어쩌고?'    >> 2 lines
+
+
+-------------
+
+testinput
+'@1begins mergepreviousline
+너… 아오이는 어쩌고@1ends merge.
+
+@ 2begin mergespreviousline
+너… 아오이는 어쩌고 @ 2end merge.
+
+@ 3 dont merge previousline
+'너… 아오이는 @ 3 dont merge어쩌고.
+
+'pre@4 begin merge viousline
+너… 아오이는 어@4 end merge쩌고?"
+
+"pre@5 begin merge viousline
+너… 아오이는 어@5 end merge쩌고?'
+一내가 지켜 줄요.
+
+코레미츠의 진지한 얼굴과 목소리가 떠올라 또 얼굴이 붉어졌 다. 마치 연애 소설의 주인공 같은 그런 말을 하다니.
+
+一내가지 켜….
+
+으아아어아아어아，하지 마，그만해!’
+
+팔을 파닥거리면서 현관에 도착했을 때,
+
+‘어?’
+
+호노카는 뭔가 이상하다는 것을 깨달았다.
+
+복도에 사람들이 와글와글하다.
+
+여자아이들이 "너무해.” “도대체 누구야7’ 하고 웅성거리면서 울상을 짓고 있다.
+
+무슨일이지?
+
+다급한 마음에 신발을 갈아 신고 사람들이 모여 있는 곳으로 걸 어가자，
+
+“호노.”
+
+맣은 머 리 친구가 이름을 불렀다.
+
+"미치루，이게 무슨 일이야?’
+
+미치루가 눈썹을 축 늘어뜨리고 대답했다.

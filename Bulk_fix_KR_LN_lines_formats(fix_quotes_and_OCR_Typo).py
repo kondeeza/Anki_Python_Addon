@@ -33,16 +33,44 @@ if really ends one line with single quote then turn to bracket:
     ‘어이어이… 이게 무슨 수라장이야.’ >> (어이어이… 이게 무슨 수라장이야.)
 """
 #Config
+outputName = 'outputfile.txt'
 debugmode = True
+debugconfig = {"hide_debug_line_type1_T&T": True}
 replaceDoubleQuote = True
 formatOption1 = False
-completeFormatWithQuoteSub = False
-replaceSingleLineSingleQuoteWithBracket = True
-OCR_quickFix_replace_single_quote_with_double_quote = True
+formatOption2 = False
+replaceOutputDoubleQuoteWithJapaneseStyleQuote = False  # "" >>「」   >>『』  ''>>（）    ie. 「そうですか、『帰ったら、..よ』 とおっしゃったんです」
+replaceSingleLineSingleQuoteWithBracket = False  # don't use this for now. buggy
+OCR_quickFix_replace_single_quote_with_double_quote = False  # This breaks lots of things. Not recommended unless OCR is very inaccurate.
 OCR_quickFix_regex_sub_common_quote_typos = True
-OCR_quickFix_use_simple_newline_identifier = True
+
+#  Pick one
+OCR_quickFix_use_newline_identifier = True
+OCR_quickFix_use_simple_newline_identifier = False
+# End of Pick one
+
+LINE_ENDER_CHAR_LIST = ['.', '•', '。', '…', '一', '，', ',', '、', 'O', '◊', '◇', '』', '」', '）', ')', '〟', '’', '”', '"', '!', '！', '?', '？', '“', '‘', "'"]
+QUOTE_OPENER_CHAR_LIST = ['〟', '’', '”', '"', "'", '“', '‘', '（', '〝', '『', '「']
+QUOTE_ENDER_CHAR_LIST = ['』', '」', '）', ')', '〟', '’', '”', '"', "'", '“', '‘']
+
+
+excel_quickFix_replaceOutputQuote = {"enabled": True, "style": 2, "StyleNameList": [  # Ignore StyleNameList, it's for explanation
+                                [1, "SimpleForeignStyleQuote"],  # Simple Style that replace standard quote to foreign quote so excel would not recognise the double quote. i.e. "어떻게 해?" >> ”야，어떻게 해?”
+                                [2, "JapaneseStyleQuote"]]}  # More elaborate Style that replaces '' with () and "" with 「」
 #Ends config
-out_f = open('outputfile.txt', 'w', encoding="utf-8")
+
+
+class bcolors:
+    HEADER = '\033[1;98m'
+    OKBLUE = '\033[1;34m'
+    OKCYAN = '\033[1;96m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+out_f = open(outputName, 'w', encoding="utf-8")
 toOpenFile = 'file.txt'
 
 
@@ -83,20 +111,20 @@ def OCR_quick_fix_regex_sub_common_quote_typos(input_string):
     """
     input_string = input_string.replace("''",'"')  # ''다른 부타악?'    >> converts 2x single quotes '' to "
 
-    input_string = re.sub("^'([^']*)[17\*•]$", r"'\1'", input_string, flags=re.MULTILINE)
-    input_string = re.sub("^'([^']*)[17\*•]'$" , r'"\1"', input_string, flags=re.MULTILINE)
-    input_string = re.sub("^'([^']*)'[17\*•]$",r'"\1"' , input_string, flags=re.MULTILINE)
-    pattern = '''^"([^']*)[17\*•]'$'''
+    input_string = re.sub("^'([^']*)[175\*•\?]$", r"'\1'", input_string, flags=re.MULTILINE)      # ? deals with i.e. ‘왜 이렇게 흥분한 거지?  >> ‘왜 이렇게 흥분한 거지?'
+    input_string = re.sub("^'([^']*)[175\*•]'$" , r'"\1"', input_string, flags=re.MULTILINE)
+    input_string = re.sub("^'([^']*)'[175\*•\?]$",r'"\1"' , input_string, flags=re.MULTILINE)
+    pattern = '''^"([^']*)[175\*•\?]'$'''
     input_string = re.sub(pattern, r'"\1"' , input_string, flags=re.MULTILINE)
-    pattern = '''^"([^']*)'[17\*•]$'''
+    pattern = '''^"([^']*)'[175\*•\?]$'''
     input_string = re.sub(pattern,r'"\1"' , input_string, flags=re.MULTILINE)
-    pattern = '''^"([^']*)[17\*•]$'''
+    pattern = '''^"([^']*)[175\*•\?]$'''
     input_string = re.sub(pattern,r'"\1"' , input_string, flags=re.MULTILINE)
-    pattern = '''^[17\*•]([^']*)'$'''
+    pattern = '''^[175\*•]([^']*)'$'''
     input_string = re.sub(pattern,r"'\1'" , input_string, flags=re.MULTILINE)
-    pattern = '''^[17\*•]([^']*)"$'''
+    pattern = '''^[175\*•]([^']*)"$'''
     input_string = re.sub(pattern,r'"\1"' , input_string, flags=re.MULTILINE)
-    pattern = '''(?:^[17\*•]'|^'[17\*•])([^']*)(?:"|')$'''
+    pattern = '''(?:^[175\*•]'|^'[175\*•])([^']*)(?:"|')$'''
     input_string = re.sub(pattern,r'"\1"' , input_string, flags=re.MULTILINE)
 
     start_or_end_patterns_doubleQ = ["44", "17", "71"]
@@ -138,6 +166,175 @@ def OCR_quick_fix_regex_sub_common_quote_typos(input_string):
     input_string = re.sub(endswith, r'\1"', input_string, flags=re.MULTILINE)    #  /^(.*?)44$/    , '네 목적은 도대체 뭐였지?44 >> '네 목적은 도대체 뭐였지?"
     return input_string
 
+
+def OCR_quick_fix_use_newline_identifier(input_f):
+
+    def complete_previous_quote():
+        if previous_has_quote_opener:
+            output_list[-1] += output_list[-1][0]  # '너… 아오이는 어쩌고? >>> '너… 아오이는 어쩌고?'
+
+        else:
+            output_list[-1] += '.'  # 여자가 아닌가 >> 여자가 아닌가.
+
+    def complete_current_quote():
+        if previous_has_quote_opener:
+            output_list[-1] += output_list[-1][0]  # '너… 아오이는 어쩌고? >>> '너… 아오이는 어쩌고?'
+        else:
+            output_list[-1] += '.'  # 여자가 아닌가 >> 여자가 아닌가.
+        return
+
+    def complete_all_line_quotes(input_list):
+        """
+        :input: List & Assume all lines merged.
+        으아아어아아어아，하지 마，그만해!’ >>> '으아아어아아어아，하지 마，그만해!’
+        "으아아어아아어아，하지 마，그만해! >>> "으아아어아아어아，하지 마，그만해!"
+        '으아아어아아어아，하지 마，그만해!" >>> "으아아어아아어아，하지 마，그만해!"
+        :return:
+        """
+        temp_output_list = []
+        for Line in input_list:
+            has_quote_opener = Line.startswith(tuple(QUOTE_OPENER_CHAR_LIST))
+            has_quote_ender = Line.endswith(tuple(QUOTE_ENDER_CHAR_LIST))
+            has_line_ender = Line.endswith(tuple(LINE_ENDER_CHAR_LIST))
+
+            if has_quote_opener is True and has_quote_ender is True:
+                if (Line.startswith("'") and Line.endswith('"')) or (Line.startswith('"') and Line.endswith("'")):
+                    temp_output_list.append('"' + Line[1:-1] + '"')
+                else:
+                    temp_output_list.append(Line)
+            elif has_quote_opener is True and has_quote_ender is False:
+                temp_output_list.append(Line + Line[0])
+            elif has_quote_opener is False and has_quote_ender is True:
+                temp_output_list.append(Line[-1] + Line)
+            elif has_quote_opener is False and has_quote_ender is False:
+                if has_line_ender:
+                    temp_output_list.append(Line)
+                else:
+                    temp_output_list.append(Line + ".")
+            else:
+                raise ValueError("logic failed at @complete_all_line_quotes(), temp_output_list: " + Line)
+        return temp_output_list
+
+    output_list = []
+    previous_has_line_ender = False
+    previous_has_quote_opener = False
+    previous_has_quote_ender = False
+    previous_has_no_quotes = False
+    previous_is_complete_line = False
+    c_has_line_ender = False
+    c_has_quote_opener = False
+    c_has_quote_ender = False
+    c_has_no_quotes = False
+    c_is_complete_line = False
+
+    for line in (line_raw.strip() for line_raw in input_f if line_raw not in ['\n', '\r\n']):   # Loop all non empty lines
+        previous_has_line_ender = c_has_line_ender
+        previous_has_quote_opener = c_has_quote_opener
+        previous_has_quote_ender = c_has_quote_ender
+        previous_has_no_quotes = c_has_no_quotes
+        debug_line_type = 0
+        if output_list == []:
+            previous_is_complete_line = True
+        else:
+            previous_is_complete_line = c_is_complete_line
+
+        c_has_line_ender = line[-1] in LINE_ENDER_CHAR_LIST  # True or False
+        c_has_quote_opener = line[0] in QUOTE_OPENER_CHAR_LIST   # True or False
+        c_has_quote_ender = line[-1] in QUOTE_ENDER_CHAR_LIST   # True or False
+        c_has_no_quotes = not(c_has_quote_opener and c_has_quote_ender)
+
+        c_is_complete_line = previous_is_complete_line and c_has_line_ender
+
+        if previous_is_complete_line and c_has_line_ender:
+            # The most simplest one, True & True
+            debug_line_type = "1_T&T"
+            output_list.append(line)
+            c_is_complete_line = True
+
+        elif previous_is_complete_line is False and c_has_line_ender is True:
+            if c_has_quote_opener:
+                """ 
+                    (ANY complete or incomplete previous line)
+                    '너… 아오이는 어쩌고?'  >> 2 lines , just check that start & end quote matches
+                """
+                #complete_previous_quote()
+                """
+                if not output_string.endswith('\n'):  # Make sure not to merge with previous line
+                    output_string += '\n'"""
+
+                # Make sure not to merge with previous line
+                debug_line_type = "2_F&T"
+                output_list.append(line)
+                c_is_complete_line = True
+            else:
+                """
+                if output_string.endswith('\n'):  # to make sure to force merge with previous line
+                    output_string = output_string[:-1]"""
+                # Force merge with previous line
+                debug_line_type = "3_F&T"
+                output_list[-1] += line
+                # complete_current_quote()
+                c_is_complete_line = True
+
+        elif previous_is_complete_line is False and c_has_line_ender is False:
+            if c_has_quote_opener:
+                # complete_previous_quote()
+                debug_line_type = "4_F&F"
+                output_list.append(line)
+                c_is_complete_line = False # Won't merge with previous line, but might merge with next line
+            elif c_has_quote_ender:
+                debug_line_type = "5_F&F"
+                raise ValueError("This shouldn't be possible to have c_has_line_ender == False and c_has_quote_ender == True. c_Line_ender:%s c_Qte_opener:%s c_Qte_ender:%s previous_is_complete_line:%s c_is_complete_line:%s debug_line_type:%s  Txt: %s" % (c_has_line_ender, c_has_quote_opener, c_has_quote_ender, previous_is_complete_line, c_is_complete_line, debug_line_type, line))
+
+            elif c_has_no_quotes:
+                # More likely better off not merging
+                print(f"{bcolors.WARNING}Warning: Rare occurrence &c_has_no_quotes{bcolors.ENDC}" + "c_Line_ender:%s c_Qte_opener:%s c_Qte_ender:%s   Txt: %s" % (c_has_line_ender, c_has_quote_opener, c_has_quote_ender, line))
+                # complete_previous_quote()
+                debug_line_type = "6_F&F"
+                output_list.append(line)
+                c_is_complete_line = False # Won't merge with previous line, but might merge with next line
+            else:
+                debug_line_type = "7_F&F"
+                raise ValueError("UNCAUGHT CONDITION ERROR. c_Line_ender:%s c_Qte_opener:%s c_Qte_ender:%s previous_is_complete_line:%s c_is_complete_line:%s debug_line_type:%s  Txt: %s" % (c_has_line_ender, c_has_quote_opener, c_has_quote_ender, previous_is_complete_line, c_is_complete_line, debug_line_type, line))
+
+        else:
+            debug_line_type = "8_T&F"
+            output_list.append(line)
+            c_is_complete_line = False # Won't merge with previous line, but might merge with next line
+            #raise ValueError("UNCAUGHT CONDITION ERROR. c_Line_ender:%s c_Qte_opener:%s c_Qte_ender:%s previous_is_complete_line:%s c_is_complete_line:%s debug_line_type:%s  Txt: %s" % (c_has_line_ender, c_has_quote_opener, c_has_quote_ender, previous_is_complete_line, c_is_complete_line, debug_line_type, line))
+
+
+
+
+        """
+        if c_has_no_quotes and c_has_line_ender:
+            output_list.append(line)    # the most simple one
+        elif c_has_no_quotes and not c_has_line_ender:
+            output_list.append(line)   # Prepare to merge with next line
+        elif c_has_quote_opener
+        
+      
+        if c_has_quote_ender and c_has_quote_opener:
+            if not previous_has_line_ender:
+                output_string += line
+                output_string += '\n'
+        elif c_has_quote_ender and not c_has_quote_opener:
+            output_string += line
+            output_string += '\n'
+        else:
+            output_string += line
+        """
+        if debugmode:
+            if debugconfig["hide_debug_line_type1_T&T"] and debug_line_type == "1_T&T" :
+                pass
+            else:
+                print(f"c_Line_ender:%s c_Qte_opener:%s c_Qte_ender:%s previous_is_complete_line:%s c_is_complete_line:%s {bcolors.OKBLUE}debug_line_type:%s{bcolors.ENDC}  Txt: %s" % (c_has_line_ender, c_has_quote_opener, c_has_quote_ender, previous_is_complete_line, c_is_complete_line, debug_line_type, line))
+
+    output_list = complete_all_line_quotes(output_list)
+    output_str = '\n'.join(output_list)
+    out_f.write(output_str)
+    return output_str
+
 def OCR_quick_fix_use_simple_newline_identifier(input_f):
 
     contain_line_ender = False
@@ -145,8 +342,8 @@ def OCR_quick_fix_use_simple_newline_identifier(input_f):
 
         if line not in ['\n', '\r\n']:  # if line not empty
 
-            if line.strip()[-1] in ['.', '•', '。', '…', '一', '，', ',', '、', 'O', '◊', '◇', '』', '」', '）', ')', '〟', '’', '”', '"', '!', '！', '?', '？']:
-                    if line.strip()[0] in ['.', '•', '。', '…', '一', '，', ',', '、', 'O', '◊', '◇', '』', '」', '）', ')', '〟', '’', '”', '"', '!', '！', '?', '？'] + ['“', '‘', '（', '〝', '『', '「']:
+            if line.strip()[-1] in LINE_ENDER_CHAR_LIST:  # ['.', '•', '。', '…', '"', , etc]
+                    if line.strip()[0] in LINE_ENDER_CHAR_LIST + QUOTE_OPENER_CHAR_LIST:
                         if not contain_line_ender:
                             """  if 1. current line starts and end with quote and 2.previous line doesn't contain \n then add \n before that. For example:
                                 젠장, 안에서 문을 잠갔아
@@ -214,7 +411,7 @@ if replaceDoubleQuote:
             The replacement uses $1 as a reference for the things that were wrapped in quotes.
             see https://stackoverflow.com/questions/53901717/string-replace-double-quotes-into-curly-brackets
             """
-        else:
+        elif formatOption2:
 
             commaCount = 0
             for i in x:
@@ -240,7 +437,7 @@ if replaceDoubleQuote:
                 else:
                     outtxt = outtxt + '\n' + i
 
-            if completeFormatWithQuoteSub:
+            if replaceOutputDoubleQuoteWithJapaneseStyleQuote:
                 formatted_f = re.sub('"([^"]*)"', r'「\1」', outtxt)
             else:
                 formatted_f = outtxt
@@ -251,6 +448,7 @@ if replaceDoubleQuote:
         toOpenFile = 'temp_f.txt'
         temp_f.close()
         f.close()
+
 
 
 with open(toOpenFile, mode="r", encoding="utf-8") as f:
@@ -291,8 +489,12 @@ with open(toOpenFile, mode="r", encoding="utf-8") as f:
             out_f.write('\n')
         return c1
 
-    if OCR_quickFix_use_simple_newline_identifier:
+    if OCR_quickFix_use_simple_newline_identifier:   #Pick one
         OCR_quick_fix_use_simple_newline_identifier(f)
+
+    elif OCR_quickFix_use_newline_identifier:  #Pick one
+        OCR_quick_fix_use_newline_identifier(f)
+
     else:
         for line in f:
             if line not in ['\n', '\r\n']:  # if line not empty
@@ -356,33 +558,30 @@ with open(toOpenFile, mode="r", encoding="utf-8") as f:
     out_f.close()
     f.close()
 
+if excel_quickFix_replaceOutputQuote['enabled']:
+    if excel_quickFix_replaceOutputQuote['style'] == 1:
+        # Simple quick-fix that replace standard quote to foreign quote so excel would not recognise the double quote. i.e. "어떻게 해?" >> ”야，어떻게 해?
+        cf = open(outputName, 'r', encoding="utf-8")
+        out = cf.read()
+        cf.close()
+        out_f = open(outputName, 'w', encoding="utf-8")
 
+        out = out.replace('"','”')
+        out_f.write(out)
+        out_f.close()
+    elif excel_quickFix_replaceOutputQuote['style'] == 2:
+        # More elaborate Style that replaces '' with () and "" with 「」
+        cf = open(outputName, 'r', encoding="utf-8")
+        out = cf.read()
+        cf.close()
+        out_f = open(outputName, 'w', encoding="utf-8")
 
+        out = re.sub("^'([^']*)'$", r'(\1)', out, flags=re.MULTILINE)  # flags=re.MULTILINE required to use anchor ^ and $ operators
 
-csvLocation = ""+os.path.dirname(__file__) + "\\list2.csv"
-def csvToRoundrobinList(fileName):
-    L1 = []
-    L2 = []
-    with open(fileName, "r", encoding="utf-8")as tsvfile:
-        reader = csv.DictReader(tsvfile,delimiter='\t', quoting=csv.QUOTE_NONE)
-        for row in reader:
-            L1.append(row["KR"])
-            L2.append(row["JP"])
-    finalL = makeRoundRobinList(L1,L2)
+        out = re.sub('^"([^"]*)"$', r'「\1」', out, flags=re.MULTILINE)
+        out_f.write(out)
+        out_f.close()
 
+    else:
+        raise ("@excel_quickFix_replaceOutputQuote, specified style does not exist. style:%s " %excel_quickFix_replaceOutputQuote['style'])
 
-    #now make file
-    with open('SSS Class Suicide Hunter_KR_JP_1-50.txt', 'w', encoding="utf-8") as f:
-        for item in finalL:
-            #f.write('<p class="calibre1">%s </p>\n' % item)
-            f.write('%s\n' % item)
-
-
-def makeRoundRobinList(L1,L2):
-    return ([x for x in itertools.chain.from_iterable(itertools.zip_longest(L1,L2)) if x])
-
-
-"""
-csvToRoundrobinList(csvLocation)
-
-"""
