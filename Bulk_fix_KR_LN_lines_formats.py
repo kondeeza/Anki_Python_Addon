@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Bulk_fix_KR_LN_lines_formats(fix_quotes_and_OCR_Typo) v1.0.0b
+# Bulk_fix_KR_LN_lines_formats(fix_quotes_and_OCR_Typo) v1.0.1b
 import itertools
 import os
 import csv
@@ -50,7 +50,7 @@ OCR_quickFix_use_newline_identifier = True
 OCR_quickFix_use_simple_newline_identifier = False
 # End of Pick one
 
-LINE_ENDER_CHAR_LIST = ['.', '•', '。', '…', '一', '，', ',', '、', 'O', '◊', '◇', '』', '」', '）', ')', '〟', '’', '”', '"', '!', '！', '?', '？', '“', '‘', "'"]
+LINE_ENDER_CHAR_LIST = ['.', '•', '。', '…', '一', '，', ',', '、', 'O', '◊', '◇', '』', '」', '）', ')', '〟', '’', '”', '"', '!', '！', '?', '？', '“', '‘', "'", 'o o o']
 QUOTE_OPENER_CHAR_LIST = ['〟', '’', '”', '"', "'", '“', '‘', '（', '〝', '『', '「']
 QUOTE_ENDER_CHAR_LIST = ['』', '」', '）', ')', '〟', '’', '”', '"', "'", '“', '‘']
 
@@ -62,7 +62,7 @@ excel_quickFix_replaceOutputQuote = {"enabled": True, "style": 2, "StyleNameList
 
 
 class bcolors:
-    HEADER = '\033[1;98m'
+    HEADER = '\033[0;98m'
     OKBLUE = '\033[1;34m'
     OKCYAN = '\033[1;96m'
     WARNING = '\033[93m'
@@ -197,14 +197,21 @@ def OCR_quick_fix_use_newline_identifier(input_f):
             has_quote_opener = Line.startswith(tuple(QUOTE_OPENER_CHAR_LIST))
             has_quote_ender = Line.endswith(tuple(QUOTE_ENDER_CHAR_LIST))
             has_line_ender = Line.endswith(tuple(LINE_ENDER_CHAR_LIST))
-
             if has_quote_opener is True and has_quote_ender is True:
                 if (Line.startswith("'") and Line.endswith('"')) or (Line.startswith('"') and Line.endswith("'")):
                     temp_output_list.append('"' + Line[1:-1] + '"')
                 else:
                     temp_output_list.append(Line)
             elif has_quote_opener is True and has_quote_ender is False:
-                temp_output_list.append(Line + Line[0])
+                if Line[1:-1].count(Line[0]) == 1:
+                    # Special Case to handle when Line has quote in the middle of the sentence & no quote at the end of the sentence.
+                    # "용서 못 해!" 이를 악물고 신음했다.  >>  ['"용서 못 해!"', ' 이를 악물고 신음했다.'] (Separate into two lines)
+                    lines = Line.rsplit(Line[0], 1)
+                    lines[-2] += lines[-2][0]
+                    temp_output_list.extend(lines)
+                    print(f"{bcolors.WARNING}Special line split!{bcolors.ENDC} OldTxt:{bcolors.WARNING}%s{bcolors.ENDC}  NewTxt:{bcolors.FAIL} %s{bcolors.ENDC}" % (Line, lines))
+                else:
+                    temp_output_list.append(Line + Line[0])
             elif has_quote_opener is False and has_quote_ender is True:
                 temp_output_list.append(Line[-1] + Line)
             elif has_quote_opener is False and has_quote_ender is False:
@@ -214,6 +221,9 @@ def OCR_quick_fix_use_newline_identifier(input_f):
                     temp_output_list.append(Line + ".")
             else:
                 raise ValueError("logic failed at @complete_all_line_quotes(), temp_output_list: " + Line)
+
+
+
         return temp_output_list
 
     output_list = []
@@ -239,7 +249,8 @@ def OCR_quick_fix_use_newline_identifier(input_f):
         else:
             previous_is_complete_line = c_is_complete_line
 
-        c_has_line_ender = line[-1] in LINE_ENDER_CHAR_LIST  # True or False
+        # c_has_line_ender = line[-1] in LINE_ENDER_CHAR_LIST  # endswith() is better because it can compare with string (ie. 'o o o') as opposed to single char
+        c_has_line_ender = line.endswith(tuple(LINE_ENDER_CHAR_LIST))  # True or False
         c_has_quote_opener = line[0] in QUOTE_OPENER_CHAR_LIST   # True or False
         c_has_quote_ender = line[-1] in QUOTE_ENDER_CHAR_LIST   # True or False
         c_has_no_quotes = not(c_has_quote_opener and c_has_quote_ender)
