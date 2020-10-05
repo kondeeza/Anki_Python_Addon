@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# Bulk_fix_KR_LN_lines_formats(fix_quotes_and_OCR_Typo) v1.0.0b
 import itertools
 import os
 import csv
