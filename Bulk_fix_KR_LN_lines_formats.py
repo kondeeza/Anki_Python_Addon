@@ -597,3 +597,14 @@ if excel_quickFix_replaceOutputQuote['enabled']:
     else:
         raise ("@excel_quickFix_replaceOutputQuote, specified style does not exist. style:%s " %excel_quickFix_replaceOutputQuote['style'])
 
+"""
+cell_no = "5"
+print("Here's the simple basic excel testing string:")
+print('''=IF(AND(LEFT(Aµ)="「",LEFT(Bµ)="「"),TRUE,IF(AND(LEFT(Aµ)="(",LEFT(Bµ)="（"),TRUE,IF(AND(LEFT(Aµ)<>"「",LEFT(Bµ)<>"「",LEFT(Aµ)<>"(",LEFT(Bµ)<>"（"),TRUE,FALSE)))'''.replace('µ', cell_no))
+print("Here's the simple basic excel testing string (Better Version, Right side):")
+print('''=IF(AND(LEFT(INDIRECT("RC[-2]",0))="「",LEFT(INDIRECT("RC[-1]",0))="「"),TRUE,IF(AND(LEFT(INDIRECT("RC[-2]",0))="(",LEFT(INDIRECT("RC[-1]",0))="（"),TRUE,IF(AND(LEFT(INDIRECT("RC[-2]",0))<>"「",LEFT(INDIRECT("RC[-1]",0))<>"「",LEFT(INDIRECT("RC[-2]",0))<>"(",LEFT(INDIRECT("RC[-1]",0))<>"（"),TRUE,FALSE)))''')
+print("Here's the simple basic excel testing string (Better Version, Left side):")
+print('''=IF(AND(LEFT(INDIRECT("RC[1]",0))="「",LEFT(INDIRECT("RC[2]",0))="「"),TRUE,IF(AND(LEFT(INDIRECT("RC[1]",0))="(",LEFT(INDIRECT("RC[2]",0))="（"),TRUE,IF(AND(LEFT(INDIRECT("RC[1]",0))<>"「",LEFT(INDIRECT("RC[2]",0))<>"「",LEFT(INDIRECT("RC[1]",0))<>"(",LEFT(INDIRECT("RC[2]",0))<>"（"),TRUE,FALSE)))''')
+
+"""
+print("Check out KR JP Lines Template.xlsx ! ")
