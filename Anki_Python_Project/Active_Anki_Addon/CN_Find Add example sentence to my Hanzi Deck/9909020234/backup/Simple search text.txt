@@ -1,0 +1,15 @@
+--In Hanzi Deck, find Hanzi that you already saw in Core5k Deck (Or other slave decks) but haven't studied in master deck yet.
+
+"deck:00_Hanzi::Most Common 3000 Hanzi" -Auto_SawSentenceExample: is:new
+
+ 
+--- In Hanzi Deck, find Hanzi that doesn't have sentence example from slave deck.
+
+
+("deck:00_Hanzi::Most Common 3000 Hanzi" Auto_Sentence:)
+
+
+--- In Hanzi Deck, find Hanzi that doesn't have sentence audioexample from slave deck.
+
+
+("deck:00_Hanzi::Most Common 3000 Hanzi" Auto_SA:)

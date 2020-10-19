@@ -1,0 +1,1 @@
+{"name": "KR_Find Hanja with Similar Sound", "config": {"01_modelName": "Ultimate_Hanja", "02_Pinyin_SrcField": "Reading_K", "03_Hanzi_SrcField": "Hanja", "04_Output_SrcField": "Auto Note_Current", "05_OVERWRITE_DST_FIELD": true, "06_Fuzzy_Character_Mode_Enabled": true}}

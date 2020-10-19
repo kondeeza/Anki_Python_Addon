@@ -1,1 +1,0 @@
-{"name": "Bulk add Similar Hanguel WordList", "config": {"01_modelName": "Korean Vocab", "02_Vocab_SrcField": "Korean", "03_Meaning_SrcField": "English", "04_Output_SrcField": "Auto_SimilarWord", "05_OVERWRITE_DST_FIELD": true, "06_Fuzzy_Character_Mode_Enabled": false}}

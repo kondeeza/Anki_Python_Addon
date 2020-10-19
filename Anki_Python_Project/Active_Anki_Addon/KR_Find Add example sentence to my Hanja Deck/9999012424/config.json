@@ -1,0 +1,51 @@
+{
+    "01_master_modelName": "",
+    "02_master_Hanzi_SrcField": "",
+    "03_master_Auto_Sentence_SrcField": "",
+    "04_master_Auto_SR_SrcField": "",
+    "05_master_Auto_ST_SrcField": "",
+    "06_master_Auto_SA_SrcField": "",
+    "07_master_Auto_SentenceF_SrcField": "",
+    "07_master_other1_Field": "",
+    "08_master_Auto_SR_F_SrcField": "",
+    "08_master_other2_Field": "",
+    "09_master_Auto_ST_F_SrcField": "",
+    "09_master_other3_Field": "",
+    "10_master_deckName": "",
+    "11_master_Auto_Synced_Hint_SrcField": "",
+    "13_Enable_Optional_Custom_MasterSlaveSyncFieldList": true,
+    "15_OVERWRITE_DST_FIELD": true,
+    "16_slave_Model_Sentence_SPinyin_SMeaning_SAudio_List": [],
+    "21_master_Traditional_Field": "",
+    "22_master_Freq_Field": "",
+    "23_master_Pinyin_Field": "",
+    "24_master_Pinyin2_Field": "",
+    "25_master_meaning_Field": "",
+    "26_master_CardCreate_Other1_field": "",
+    "27_master_CardCreate_Other2_field": "",
+    "998_EXAMPLE_DUMMY_FOR_REFERENCE_ONLY_(SINGLE_NOTE_TYPE_LIST)_slave_Model_Sentence_SPinyin_SMeaning_SAudio_List": [
+        [
+            "HSK",
+            "SentenceSimplified",
+            "SentencePinyinMarks",
+            "SentenceMeaning",
+            "SentenceAudio"
+        ]
+    ],
+    "999_EXAMPLE_DUMMY_FOR_REFERENCE_ONLY_(MULTIPLE_NOTE_TYPE_LIST)_slave_Model_Sentence_SPinyin_SMeaning_SAudio_List": [
+        [
+            "HSK",
+            "SentenceSimplified",
+            "SentencePinyinMarks",
+            "SentenceMeaning",
+            "SentenceAudio"
+        ],
+        [
+            "SpoonFedNote",
+            "Hanzi",
+            "Pinyin",
+            "English",
+            "Audio"
+        ]
+    ]
+}
