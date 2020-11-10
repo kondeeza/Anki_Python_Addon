@@ -1,0 +1,6 @@
+{
+ "01_modelName": "Japanese yomiSama",
+ "02_Vocab_SrcField": "Vocab",
+ "04_Output_SrcField": "Frequency Ranking",
+ "05_OVERWRITE_DST_FIELD": true
+ }

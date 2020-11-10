@@ -110,7 +110,7 @@ def bulkGenerateVocabFq(nids):
 def setupMenu(browser):
     menu = browser.form.menuEdit
     menu.addSeparator()
-    a = menu.addAction('Bulk-Generate Vocab Frequency')
+    a = menu.addAction('JP_Bulk-Generate Vocab Frequency')
     a.triggered.connect(lambda _, b=browser: onBulkGenerateVocabFq(b))
     
 

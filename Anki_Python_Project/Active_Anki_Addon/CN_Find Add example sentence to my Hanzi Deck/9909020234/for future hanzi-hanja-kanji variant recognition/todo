@@ -1,0 +1,24 @@
+
+note 聪 == simplifiedHanzi
+聰 == traditionalHanzi
+聡 == Kanji
+
+# for single char input:
+findKanjiVersion('聪')
+
+  step1- if simplified > also find traditional and vise virsa
+
+  step2- findKanji( ['聪', '聰'] )
+
+  step3 in kanjidic2_mini.xml
+
+  if trad exist then  (else if simplified exist then):
+  find 聰, get all  reading r_type ja_on[]  ja_kun[] korean_r[]  korean_h[]
+
+
+  step 5 find other char with similar reading, prioritising those with the following attribute:
+      <grade>9</grade>
+      <freq>1931</freq>
+      <jlpt>1</jlpt>
+<reading r_type="ja_kun">さと.い</reading>
+<reading r_type="ja_kun">みみざと.い</reading>

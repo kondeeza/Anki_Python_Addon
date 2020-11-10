@@ -177,7 +177,7 @@ def BulkImportNaverSentenceExample(nids):
 def setupMenu(browser):
     menu = browser.form.menuEdit
     menu.addSeparator()
-    a = menu.addAction('Bulk-Import Naver Sentence Example')
+    a = menu.addAction('KR_Bulk-Import Naver Sentence Example')
     a.triggered.connect(lambda _, b=browser: onBulkImportNaverSentenceExample(b))
 
 def onBulkImportNaverSentenceExample(browser):

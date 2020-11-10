@@ -124,7 +124,7 @@ def BulkGenerateKrJpDef(nids):
 def setupMenu(browser):
     menu = browser.form.menuEdit
     menu.addSeparator()
-    a = menu.addAction('Bulk-Generate Kr Jp Def')
+    a = menu.addAction('KR_Bulk-Generate Kr Jp Def')
     a.triggered.connect(lambda _, b=browser: onBulkGenerateKrJpDef(b))
 
 def onBulkGenerateKrJpDef(browser):

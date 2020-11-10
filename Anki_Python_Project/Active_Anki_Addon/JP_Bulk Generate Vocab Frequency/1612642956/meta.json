@@ -1,0 +1,1 @@
+{"name": "JP_Bulk-Generate Japanese Vocab Frequency Ranking", "mod": 1552259467, "config": {"01_modelName": "Japanese yomiSama", "02_Vocab_SrcField": "Vocab", "04_Output_SrcField": "Frequency_Ranking", "05_OVERWRITE_DST_FIELD": true}, "disabled": true, "conflicts": [], "max_point_version": 0, "min_point_version": 0, "branch_index": 0}

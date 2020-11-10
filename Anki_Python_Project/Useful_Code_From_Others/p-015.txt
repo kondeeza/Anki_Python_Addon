@@ -1,0 +1,406 @@
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　だが俺だって、伊達に十年以上師匠のところで修行してきた訳じゃない。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 이지만 나야말로 다테에 십년 이상 스승의 곳에서 수행하고 온 것이 아니다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　熱への防御にしろ酸素の供給にしろ、強化魔法でゴリ押しすればなんとでもなる。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 열에 대한 방어에 산소 공급하고 강화 마법으로 무리하게 강행하면 어떻게라도 되는. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　戦の常として火計への備えはしていたので、俺はエレオラと自分に急いで耐熱の魔法をかけた。酸素の供給のため、水中呼吸の魔法もかける。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 전쟁의 상례로서 불계에 대비하고 있었으므로, 나는 에레 내가 자신에게 급히 내열의 마법을 걸었다.산소 공급 때문에 수중 호흡의 마법도 걸다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　おそらくエレオラは呼吸器も火傷しているはずなので、治療魔法もかけておく。どれもかなり魔力を使うが、大盤振る舞いだ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 아마 에레 오라는 호흡기도 데고 있기 때문에 치료 마법도 걸어 둔다.어느 것도 꽤 마력을 쓰는데 퍼주기이다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　しかし治療や耐熱の魔法がかかっているのは、俺とエレオラの生体部分だけだ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그러나 치료나 내열의 마법이 걸린 것은 내가 엘레 내가 생체 부분 뿐이다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　エレオラのマントが燃えたりしているが、これはもうあきらめてもらおう。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 에레 내가 망토가 타곤 하는데 이는 이제 포기한다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 『殿下！　殿下！』 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 『 전하. 전하!』 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　彼女のイヤリングから、悲痛な叫びが聞こえてくる。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그녀의 귀걸이에서 비통한 외침이 들린다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　近くに隠れているロルムンド兵だろう。通信用の指輪を持っているのだから、おそらく側近のはずだ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 근처에 숨어 있롤뭉도병이다.통신용 반지를 갖고 있으므로 아마도 측근인 것이다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　俺はエレオラの耳元に口を近づけ、こう告げた。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 나는 에레오라의 귓가에 입을 가까이, 이렇게 말했다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「エレオラ皇女は意識を失っているが無事だ。身柄はこの黒狼卿ヴァイトが預かった。彼女の命が惜しければ、貴様たちには逃げることも死ぬことも許されぬと心得よ。投降の用意をしておけ」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "에레 오라 왕녀는 의식을 잃고 있지만 무사이다. 신병이 이 검은 색 랑경 우아이토이 위임 받았다. 그녀의 목숨이 아깝다면 네놈들에는 도망 갈 것도 죽을 것도 허용되지 않겠다고 마음이야.투항의 준비를 해놓았다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　こう言っておけば、ロルムンド兵たちも逃亡や自害はしないだろう。たぶん。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 이렇게 말하면, 롤뭉도병들도 도망 및 자해하지 않을 것이다.아마. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　　　　＊　　　　　　＊ </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> ＊ ＊ </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「ボルシュ副官の苦悩」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "보르 슈 부관의 고뇌" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　私は殿下が炎に包まれていくのを、呆然と見つめていた。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 저는 전하가 불길에 휩싸이는 것을 망연자실 바라보고 있었다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　こんな予定はなかったはずだ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 이런 일은 없었을 것이다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　殿下は自らを囮にして、黒狼卿と直接対決をすると言っておられた。秘策がある、と。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 전하께서는 스스로를 미끼로 하여, 흑랑 경과 직접 대결을 한다고 하고 계셨다.비책이 있다고. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　確かに今、殿下は黒狼卿と直接対決をしている。殿下の得意とする破壊魔法が、黒狼卿を襲っていた。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 확실히 지금 전하께서는 흑랑 경과 직접 대결을 하고 있다.전하의 강점하고 파괴 마법이 흑랑 경을 휩쓸고 있었다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　だがその炎の渦の中に、殿下がいる。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그러나 그 불꽃의 소용돌이 속에 전하가 있다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　これでは約束が違う。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 이래서는 약속이 다르다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　私はオリガニア領出身の軍人として、殿下とは長い付き合いがある。殿下がまだ絵本とぬいぐるみを抱いていた頃から、殿下をお守りしてきた。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 저는 오리가 니아의 영토 출신 군인으로서 전하과는 오랜 친분이 있다.전하께서 아직 그림책과 인형을 안고 있었을 때 전하를 수호하고 왔다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　私にとっては、軍人としても個人としてもかけがえのない御方だ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 저에게는 군인으로서도 개별적으로 둘도 없는 분이다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　その方が今、祖国を遠く離れた地で燃え尽きようとしている。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그 분이 지금 조국을 멀리 떨어진 땅에서 타버리고 있다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　悪夢だ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 악몽이다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「副官！」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "부관!" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「救出命令を！」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "구출 명령을!" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　部下たちが魔撃杖を握り締めて叫ぶが、あの炎を消す手段などありはしない。殿下の破壊魔法は極めて強力で、我々には対処する方法がないのだ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 부하들이 마격 지팡이를 움켜쥐고 외치지만 그 불길을 껄 수단 등 없다.전하의 파괴 마법은 매우 강력하고 우리는 대처할 방법이 없다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　それに何より、殿下は我々に「命令あるまで待機せよ。決してその場を動いてはならない」と命じられた。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그 안에 무엇보다 전하께서는 우리에게 "명령 받을 때까지 대기한다.결코 그 자리를 움직여서는 안 되는 "으로 내려졌다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　つまり殿下は最初から、こうなる覚悟をしておられたのだ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 즉 전하께서는 처음부터 이렇게 될 각오를 하고 계신 것이다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　見抜けなかった私の責任だ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 알아 차리지 못한 제 책임이다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　炎は激しく踊り狂い、リューンハイトの怪物と共に殿下を燃やさんと猛っている。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 불길은 치열한 미친 듯이 춤추다, 류ー은 하이트의 괴물과 함께 전하를 태우려고 사납고 있다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　もはや殿下は御存命ではあるまい。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 이제 전하께서는 생존이 아니다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　悪夢だ。夢なら覚めてくれ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 악몽이다.꿈이라면 깨어 준다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　そう願ったとき、通信用の指輪から男の声が聞こえてきた。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그렇게 바랐을 때 통신용 반지에서 남자 목소리가 흘러나왔다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 『エレオラ皇女は意識を失っているが無事だ。身柄はこの黒狼卿ヴァイトが預かった。彼女の命が惜しければ、貴様たちには逃げることも死ぬことも許されぬと心得よ。投降の用意をしておけ』 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 『 에레 오라 왕녀는 의식을 잃고 있지만 무사이다. 신병이 이 검은 색 랑경 우아이토이 위임 받았다. 그녀의 목숨이 아깝다면 네놈들에는 도망 갈 것도 죽을 것도 허용되지 않겠다고 마음이야.투항의 준비를 해놓』 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「なっ!?」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "뭐!?" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　誰かが思わず声をあげる。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 누군가가 무심코 소리를 지르다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　まさか、あの地獄の業火の中で生きているのか。信じられない。黒狼卿は不死身なのか。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 설마 저 지옥의 업화 속에서 살고 있는가.믿을 수 없어.흑랑 경은 불사신인가. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　だがどれだけ信じられなくとも、聞こえてくる声は事実だ。黒狼卿は生きている。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 하지만 얼마나 믿을 수 없어도, 들려오는 목소리는 사실이다.흑랑 경이 살아 있다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　そして彼の言葉が本当なら、殿下も。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그리고 그의 말이 진심이라면 전하도. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　私は思わず叫んでいた。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 나는 무심코 불렀다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「わかった！　投降する！　だから殿下の御身だけは守ってくれ！　頼む！」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> " 알았다!투항하다. 그래서 전하의 귀하신 몸만은 지켜라!부탁!" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　返事はない。だが先ほどの落ち着いた声は、黒狼卿がまだ生きていることを確信させるのに十分だった。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 답장 없음.하지만 아까의 차분한 목소리는 흑랑 경이 아직 살아 있다는 것을 확신시키기에 충분했다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「副官、本当に投降しますか？」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "부관, 정말로 투항하나요?" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　部下の一人がささやいたので、私は振り返って自嘲気味につぶやくしかなかった。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 부하 한 사람이 있었으므로, 나는 돌아서서 자조하는 경향이 중얼거리는 수밖에 없었다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「ここで私が殿下の安全よりも任務の続行を選んだら、お前はどうする？」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "여기서 내가 전하의 안위보다는 임무의 속행을 고르면 넌 어떡하지?" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「それは……」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "그건……" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　言葉を濁したが、たぶん彼はそんな命令には従わないだろう。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 말끝을 흐렸지만 아마 그는 그런 명령에 따르지 않을 것이다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　私は部下たちに命じる。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 나는 부하들에게 명한다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「殿下は黒狼卿に身柄を拘束されており、部隊の指揮が可能な状態ではないと推測される。よってこの時点をもって、私が第一小隊の指揮権を代行するものとする」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "전하께서는 흑랑 경에 신병을 구속됐으며, 부대의 지휘가 가능한 상태는 아니라고 추측된다. 이 시점을 가지고 내가 제일 소대의 지휘권을 대행한다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　全員がうなずいたのを見て、私は命令を下した。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 전원이 고개를 끄덕인 것을 보고나는 명령을 내렸다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「我々は黒狼卿に投降する。準備をしておけ」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "우리는 흑랑 경에 투항하다.준비를 해놓았다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「はっ！」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "헉!" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　　　　＊　　　　　　＊ </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> ＊ ＊ </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　やがてエレオラの魔力を全て燃やし尽くし、竜巻のような猛火が消える。あちこちで夏草が燃えているが、後で人狼隊に消火活動をさせよう。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 이윽고 에레오라의 마력을 모두 없애버리는 토네이도 같은 맹렬한 불길이 사라진다.여기저기서 여름풀이 불타고 있지만 나중에 늑대 인간대에 소화 활동을 하자. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　俺がエレオラ皇女を文字通りお姫様だっこしていると、森の暗闇から兵士たちが現れた。総勢十八人。全員だな。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 내가 에레오라 아들을 글자 그대로 공주 안고 있다고 숲의 어둠 속에서 병사들이 나타났다.총 열여덟명.전원이네. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　彼らはエレオラの無事を確認してから、魔撃杖と剣を投げ捨てる。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그들은 에레오라의 안전을 확인하면서 마격 지팡이와 칼을 내버리다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　そして一番年輩の男が進み出ると、俺に言った。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그리고 가장 연배의 남자가 나서면 나에게 말했다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「ボルシュ・ノリンスキー一等士官であります。大隊長の指揮続行が不可能なため、交戦時の規定に基づき自分が指揮権を受け継ぎます」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "보르 슈·노 린스 키 일등 사관입니다.대대장의 지휘 진행이 불가능하기 때문에 전쟁 때 규정에 근거한 자신이 지휘권을 계승합니다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　そう宣言した上で、彼はこう続けた。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그렇게 선언한 다음, 그는 이렇게 계속했다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「第二〇九近衛魔撃大隊はミラルディア連邦に降伏します。その条件として、エレオラ殿下の安全を保証していただきたい」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "둘째 〇구 근위광 공격 대대는 미라 루디아 연방에 항복합니다.그 조건으로 에레오라 전하의 안전을 보증하고 싶다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「ミラルディア連邦評議員として約束しよう。貴殿たちの安全も保証する」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "미라 루디아 연방 평의원으로서 약속한다.귀하들의 안전도 보장하는 " </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　俺がそう言うと、彼らは一斉に無言で敬礼した。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 내가 그렇게 말하면 그들은 일제히 말 없이 경례했다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　ベッドに寝かせられていたエレオラ皇女が、ようやく目を覚ました。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 침대에 잠겼던 에레오라 아들이 겨우 눈을 떴다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「ここは……」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "여기는……" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　俺は枕元に立ち、その問いに答える。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 나는 머리맡에 서서 그 물음에 대답한다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「魔都リューンハイトにある魔王軍の医療施設だ。貴殿は三日三晩眠っていたのだよ、エレオラ皇女」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "마도 류ー은 하이트에 있는 마왕 군 의료 시설이다.당신은 사흘 낮 사흘 밤 자고 있었느니라, 에레오란 왕녀" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　師匠の診断によると、エレオラは過労とストレスでいつ倒れてもおかしくなかったそうだ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 스승의 진단에 의하면, 에레 오라는 과로와 스트레스로 언제 쓰러질 법도 없었단다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　俺たちはエレオラを鎮静の魔法でしばらく休ませておくことにして、その間に色々と手筈を整えていた。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 우리는 에레오라을 진정의 마법에서 잠시 쉬어 두기로 해서 그 사이에 여러가지 준비를 갖추고 있었다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　このお姫様、見た目よりずっと脆弱らしい。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 이 공주님, 보기보다 훨씬 취약하다고 한다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　エレオラは俺を見て、それからこう尋ねた。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 에레 오라는 나를 보고그것부터 이렇게 물었다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「なぜ、殺さない？」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "왜 죽이지 않을래?" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「後がやっかいだからだ。貴殿を殺せば、ロルムンドに侵攻の口実を与えることになる」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "뒤가 귀찮기 때문이다.당신을 죽이면 롤뭉도에 침공의 빌미를 주게 된다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「ふむ」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "음" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　エレオラが視線を天井に戻してしまったので、俺は続けた。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 에레 내가 시선을 천장으로 돌렸기 때문에 나는 계속했다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「貴殿を追い返して、我々はロルムンドのことなど忘れて暮らしたいものだ」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "당신을 물리치고, 우리는 롤뭉도의 일 따위는 잊고 살고 싶다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「南征が勅命である以上、それは無理であろうな。代替わりしたとしても、新帝は先帝の遺志を軽くは扱えまい。それにロルムンドは寒冷で農業に適さぬ。貴族に分け与えられる所領も残り少ない。いずれ必ず、南征は再開されるだろう」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "남정이 칙명인 이상 그것도 무리가 있어. 대물림했다고 해도 새로 즉위한 황제는 선제의 유지를 가볍게 다루지 않을 것이다. 그것에 롤뭉도은 한랭으로 농업에 적합한. 귀족에게 나누어 주는 영지도 남지 않았다.반드시, 남정이 재개될 것" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　それは困るな。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그것은 곤란한데. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　それにしても捕虜の自覚がなさそうなお姫様だ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그나저나 포로의 자각이 없어 보이는 공주님이다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　捕虜のくせに態度が悪いので、俺は少しだけ彼女に意地悪することにした。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 포로 주제에 태도가 나빠서, 나는 조금만 그녀에게 심술을 부리기로 했다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「貴殿の部下……」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "당신 부하..." </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　その瞬間、エレオラが上体を起こす。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그 순간, 에레 내가 상체를 일으킨다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「どうなった!?」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> " 어떻게 됐어!?" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　魔撃大隊は壊滅的な損害を受けていた。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 마귀 공격 대대는 괴멸적인 손해를 받고 있었다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　今回の作戦に参加した九十五名のうち、捕虜になったのは六十一名。三十四名は戦死だ。つまり </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 이번 작전에 참가했던 구십 오명 중 포로가 되는 것은 예순 살 일명.삼십사명은 전사다.즉 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　四割ほどが死亡しており、生存者も大半が負傷していた。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 네할 가량이 사망했으며 생존자들도 대부분 부상했다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　戦死者は全員、新市街に突入した部隊の所属だ。これが七十名ほどだから、市街戦に投入された兵士の約半数は死亡したことになる。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 전사자는 모두 신스가에 돌입한 부대 소속이다.이것이 칠십명 정도니 시가전에 투입된 병사들의 약 반수는 사망한 셈이다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　一方、魔都の防衛部隊も、かなりの痛手を受けていた。ベルーザ陸戦隊の戦死者が十九名。竜人族の兵士も、奇襲を受けた時点で四名が死亡していた。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 한편 마도의 방위 부대도 상당한 타격을 받고 있었다.벨ー자 육전대의 전사자가 열 아홉명.류진족의 병사도 기습을 받은 시점에서 네명이 사망했다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　不幸中の幸いなのは、師匠が戻ってきて負傷者を治療してくれたことだ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 불행 중 다행인 것은 스승이 돌아오고 부상자를 치료하고 준 것이다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　これがなかったら、敵味方の死者はもっと増えていただろう。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 이것이 아니면 적과 아군의 사망자는 더 늘어났을 것이다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　既に戦死者の埋葬と慰霊は終わっている。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 이미 전사자 매장과 위령 사업은 끝났다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　俺がそのことをエレオラに伝えると、彼女は俺を見て皮肉っぽい笑みを浮かべる。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 내가 그 일을 에레 내에게 전하면, 그녀는 나를 보고 비아냥거리는 웃음을 띄우다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「まさか捕虜を取るとはな。私を自害させないための人質という訳か」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "설마 포로를 취할 줄이야.나를 자해하지 않기 위한 인질이라는 이유?" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　敵は生かしておいて恩を売りつけるのが俺のスタイルなのだが、この調子だと信じてもらえそうにないな。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 적은 살려서 놓고 은혜를 파는 것이 나의 스타일인데, 이 상태라고 믿지 못했네. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　じゃあそういうことにしておこう。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그럼 그렇게 한다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「貴殿が馬鹿な真似をすれば、彼らの安全は保証しない」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "당신이 바보짓을 하면 그들의 안전은 보장하지 않는 " </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　俺がそう言うと、エレオラは逆にほっとしたような表情になる。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 내가 그렇게 말하면, 에레 오라는 반대로 안심한 듯한 표정이다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「どのみち私に選択権はないのだ。それで私をどう利用する？」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "어차피 나에게 선택권은 없다.그래서 나를 어떻게 이용 하지?" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　やりにくいな、この人。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 못한 이 사람. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　前から思っていたが、エレオラは自分から不幸になる道を選んでいる気がする。もっとうまい方法があると思うのに、それだけは絶対に選ばない。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 전부터 알았는데, 에레 내는 스스로 불행의 길을 선택하는 분위기다.더 좋은 방법이 있다고 생각하는데 그것만은 절대 뽑지 않는다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　もし俺が自分の立場を投げ捨ててエレオラを保護したとしても、彼女は自分から不幸へ突き進むだろう。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 만약 내가 자신의 입장을 팽개치고 에레오라을 보호한다고 해도 그녀는 스스로 불행으로 치달을 것이다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　だったらもう、俺自身の手で彼女を比較的マシな不幸に投げ込んでやるしかない。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그럼 이제 나 자신의 손으로 그녀를 비교적 괜찮은 불행하게 집어던지고 할 수 밖에 없다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　俺はしかめっ面になって、腕組みをした。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 나는 우거지상이 되어 팔짱을 낀. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「貴殿は迷惑の種だ。率直に言えば、荷札をくくりつけてロルムンドに投げ返したい」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "당신은 폐의 씨앗이다.솔직히 말하면 꼬리표를 묶어 롤뭉도에게 돌려주고 싶다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「その場合、私は本国の軍法会議で死刑を言い渡されるだけだ」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "그 경우 나는 본국의 군법 회의에서 사형을 선고할 뿐이다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　魔撃大隊の生存者からロルムンド国内の複雑な事情はいろいろと聞いているが、やっぱりそうか。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 마귀 공격 대대의 생존자로부터 롤뭉도 국내의 복잡한 사정은 여러가지 듣고 있지만, 역시 그렇군. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　エレオラは静かな口調で続ける。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 에레 오라는 조용한 어조로 계속한다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「それならむしろ、ここで殺してもらったほうが助かるな。名誉の戦死だ。本国で刑死となれば魔撃大隊の部下はもちろん、屋敷の見習いメイドに至るまで処刑されるだろう」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> " 그렇다면 오히려 여기서 죽이고 받는 것이 살아나지 말라. 명예의 전사이다.본국에서 사형이 되면 마귀 공격 대대의 부하는 물론 저택의 견습 하녀에게 이르기까지 처형될 것" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「ずいぶんと冷たい国だな」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "꽤나 차가운 나라이구나" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「そうだな。だがそれでも、ミラルディアの風ほど冷たくはない」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "그래. 하지만 그래도 미라 루디아의 바람 정도 차이는 없다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　ミラルディアに関しては、だいぶ懲りているようだ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 미랄디아에 관해서는 많이 벗어나는 것 같다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　今の言葉だけで、彼女の疲労感がどっと増したように見える。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 지금의 말만으로 그녀의 피로감이 왈칵 늘어난 것으로 보인다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「確かにミラルディアには、もう貴殿の居場所はない」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "확실히 미랄디아는 이제 귀하의 설 자리가 없다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「元から居場所と呼べるものは魔撃大隊ぐらいしかなかったのだ。彼らがいなければ、何度暗殺されていたかわからん」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "원래부터 있는 곳과 부를 수 있는 것은 마귀 공격 대대 정도밖에 안 된 것이다.그들이 없으면 몇번 암살되고 있었는지 모르겠다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「たかが継承権第六位の皇女がか？」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "고작 계승권 여섯번째위의 아들이?" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　すると彼女は真顔で応じた。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그러자 그녀는 정색하고 따랐다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「第七位以降の者にとっては、排除すべき対象だ。そして第五位以上の者にとっても、自分を狙ってくる潜在的な敵といえる」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> " 제칠위 이후의 사람에게는 배제해야 할 대상이다.그리고 다섯위 이상의 사람에게도 자신을 노리는 잠재적 적이다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　どんな国なんだよ。怖すぎるだろ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 어떤 나라란다.너무 무서웠잖아. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　そういう争いを起こさないために、継承順位を設けてるんじゃないのか。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그런 다툼을 일으키지 않기 위해서, 계승 순위를 두는 거 아냐? </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「なるほど。確かにミラルディアよりは温かい風が吹いてそうだ」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "과연.확실히 미랄디아보다는 따뜻한 바람이 불고 그렇다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　地獄の熱風だ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 지옥의 열풍이다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　俺はついでに皮肉を言ってやる。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 나는 내친 김에 비꼬는 말을 하고. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「貴殿もさぞかし心温まる人々に囲まれていたのだろうな」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "귀하도 틀림없이 훈훈한 사람들에게 둘러싸였던 것일까" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「ああ、私の乳母も十年後に再会したときには金で雇われた暗殺者になっていた。せめてもの慈悲で私が彼女を拷問にかけたが、首謀者を聞き出すために爪と指の間に……」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "아이고 내 유모도 십년 후에 다시 만났을 때에는 돈으로 고용된 암살자가 된.그나마의 자비로 내가 그녀를 고문에 퍼부었는데, 주모자를 알아내기 위해서 손톱과 손가락 사이에……" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　痛い話が苦手な俺は冷静を装いつつ、エレオラの拷問トークを途中でさえぎる。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 아픈 사연이 약한 나는 냉정을 가장하고, 에레 내가 고문 톡을 도중에 가리다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「貴殿の思い出話は結構だ、興味がない」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "귀하의 회고담은 좋다, 관심이 없다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　仲良くできる気が微塵もしないぞ、この国。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 친해질 수 있는 마음이 추호도 없어 이 나라. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　だんだん気持ちが不安定になってきたので、俺はあくまでも情報収集を優先させることにする。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 점점 마음이 불안했기에 나는 어디까지나 정보 수집을 우선시키기로 한다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「ロルムンドのその余裕のなさは何だ？　ミラルディア北部民の祖国を名乗る割には、ずいぶんと野蛮に思えるが」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "롤뭉도의 그 여유가 없음은 뭐야?미라 루디아 북부민의 조국을 자처하는 것에 비하면 대단히 야만으로 생각되지만" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　すると彼女は俺から視線をそらし、天井を仰いで目を閉じる。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그러자 그녀는 나로부터 시선을 돌리면서 천장을 쳐다보고 눈을 내린다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「それなら『冷たいミーチャ』を聞かせてやろう。それでわかるはずだ」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> " 그렇다면 『 차가운 미 차 』를 들려주었다.그래서 알것이다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　なにそれ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 뭐 그것. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　エレオラはびっくりするぐらい優しい表情と声で、おとぎ話を語り始めた。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 에레 오라는 놀랄 정도로 상냥한 표정과 목소리로 이야기를 꺼냈다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「深い森の奥に、ミーチャがお父さん、お母さんと仲良く暮らしていました。ある年の冬、不作で食べ物が足りなくなってしまいました」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> " 깊은 숲 너머로 미ー챠이 아빠, 엄마와 사이좋게 지내고 있었습니다.한해 겨울, 흉작이어서 음식이 부족하게 되어 버렸습니다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　食べ物を探しに行って、妖精さんに助けてもらう……みたいな展開じゃないんだろうな、やっぱり。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 음식을 찾으러 가고 요정에게 도움을 받고...같은 전개가 아니겠지, 역시. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「今の食べ物では、どうしても二人しか冬を越せません。だからお父さんが家を出て、森の奥に消えていきました」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "지금 음식이 아무래도 둘만 겨울을 보낼 수 없습니다. 그래서 아버지가 집을 나갔다가 숲 속으로 사라졌습니다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　やめて、そういうの一番苦手だからやめて。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그만두고 그런 것 가장 서툴러서 그만. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　拷問トークのほうがマシだから。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 고문 토크가 낫다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「おかげでミーチャとお母さんは、無事に冬を越すことができました。でも次の年も不作で、家の食べ物では一人しか冬を越せません」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "덕분에 미ー챠와 어머니는 무사히 겨울을 넘길 수 있었습니다. 하지만 다음 해에도 흉작이어서 집 음식이 한 사람만 겨울을 보낼 수 없습니다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　エレオラは穏やかな表情だ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 에레 오라는 온화한 표정이다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「だからお母さんが家を出て、森の奥に消えていきました。ミーチャはひとりぼっちになりました」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "그래서 어머니가 집을 나오고 숲 속으로 사라졌습니다.미ー챠는 혼자가 되었습니다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「……救いのない話だな」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "……구원 없는 얘기구나" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「ロルムンドでは誰もが知っているおとぎ話だよ。ロルムンドの冬を生き延びるためには、非情にならざるを得ない」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "롤뭉도에서는 누구나 아는 동화야.롤뭉도의 겨울을 살아, 비정하게 될 수밖에 없다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「なるほど、そういう土地柄か」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "역시 그러한 지방 풍습인가" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　俺のつぶやきに、エレオラは笑みを浮かべた。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 나의 글에 에레 오라는 미소를 지었다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「安心しろ、まだ続きはある。ミーチャは立派に成長し、自分も母親になるのだ」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "안심하고 아직 계속은 있다.미ー챠은 훌륭하게 성장하고 자신도 어머니이다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　あ、少しだけ救いが出てきた。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 아, 조금만 구원이 나왔다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「そして次の不作の年に、今度は自分が犠牲になるのだよ。我が子を守るためにな。だから『冷たいミーチャ』なのだ」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "그리고 다음 흉년에 이번에는 자신이 희생 되는 것이야.우리 아이 지키기 위해서?그래서 『 차가운 미 차 』 것이다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　なんでそういうオチをつけるのかな、この国は。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 왜 그런 반전을 할까, 이 나라는. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　この精神テロ女め。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 이 정신 테러 여자들아. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　今夜絶対夢に見るぞ、今の話。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 오늘밤 절대 꿈에 보자 지금의 이야기. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　俺は予想外の反撃に大ダメージを受けつつも、かろうじて冷静さを保つ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 나는 예상외의 반격에 큰 타격을 입고도 겨우 냉정을 유지하다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　ロルムンドの厳しい気候が団結と規律を生み、それを破る者に容赦ない制裁を加えるようになったのだろう。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 롤뭉도의 극한 날씨가 단결과 규율을 낳고, 그것을 깨는 자에게 가차 없이 제재를 가하게 됐을까. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　誰かが秩序を乱せば、全員の死に直結する。そういう土地のようだ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 누군가가 질서를 어지럽히면 전원의 죽음에 직결된다.그런 땅 같다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「なるほど、よくわかった。ロルムンド人が冷酷なのも自然の摂理というわけだ」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "역시 잘 알았다.롤뭉도인이 냉혹한 것도 자연의 섭리인 셈이다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「そうだな。好き好んで連座による一族処刑や、拷問つきの異端審問を繰り返しているのではない。もっと温暖な土地があればよかったのだが」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> " 그렇구나. 좋아서 연좌의 일족 처형과 고문이 붙은 이단 심문을 반복하는 것은 아니다.더 따뜻한 고장이 있으면 좋으련만" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「だとすればますます、俺はロルムンドを敵と認識したぞ」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> " 그렇다면 갈수록 나는 롤뭉도을 적으로 인식했다." </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　まずその「冷たいミーチャ」の話を何とかしろ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 우선 그" 차가운 미 차"의 이야기를 어떻게든. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　エレオラの話が本当なら、ミラルディアにとってロルムンドは危険な存在だ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 에레 내가 말이 정말이라면 미랄디아에게 롤뭉도은 위험한 존재이다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　ロルムンドのほうは、まだミラルディア征服をあきらめた訳ではない。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 롤뭉도는 아직 미랄디아 정복을 포기한 것은 아니다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　エレオラを追放し、坑道を爆破して侵攻ルートを塞いだところで、いずれまた牙を剝いてくるはずだ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 에레 오라를 추방하고 갱도를 폭파하고 침공 루트를 가로막은 곳에서 후에 또 으르릉거리달 것이다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　ミラルディアの人間と魔族を守るためにも、このままにはしておけない。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 미라 루디아의 인간과 마족을 지키기 위해서라도 이대로는 하고 둘 수 없다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　それにエレオラと魔撃大隊の捕虜たちの処遇もある。降伏した彼らをみすみす死なせる訳にはいかない。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그것에 에레 내와 마귀 공격 대대의 포로들의 처우도 있다.항복한 그들을 빤히 보면서 죽게 하는 수는 없다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　この展開は評議会でも予想していたもののひとつだ。この場合の対策も決定している。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 이 전개는 평의회에서도 예상했지만 하나이다.이 경우의 대책도 결정하고 있다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　だから俺はなるべく悪役っぽい口調で、彼女に交渉をもちかける。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그래서 나는 되도록 악역 같은 어조로 그녀에게 흥정을 해. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「貴殿は俺の捕虜だ、エレオラ・カストニエフ・オリガニア・ロルムンド」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "당신은 나의 포로이다, 에레오라, 카스트니 에프·오리가 니어 롤뭉도" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　フルネームを呼ばれ、エレオラが少し表情をこわばらせる。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 정식 이름이 불리며 에레 내가 조금 표정을 굳게 한다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　俺は身を乗り出し、エレオラに顔を近づけた。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 나는 몸을 나서면서 에레 내에 다가갔다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「貴殿は俺に敗北した。貴殿の命も尊厳も部下も未来も、全て俺の支配下にある。貴殿の髪ひとすじ、血の一滴まで俺のものだ」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "당신은 나에게 패배했다. 귀하의 목숨도 존엄도 부하도 미래도 모두 나의 지배하에 있다.귀하의 머리 한 줄기 피 한 방울까지 나의 것이다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「……認めよう」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "……인정" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　エレオラは目を伏せた。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 에레 오라는 눈길을 끌었다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　俺はここぞとばかりにたたみかける。良心の呵責を悟られないよう、なるべく冷酷な口調で。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 나는 이때다 하고 다그쳐.양심의 가책을 알아채지 못하도록 가능하면 냉혹한 어조로. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「だが俺は慈悲深い。役に立つ捕虜には情けをかけることを知っている。そして貴殿は正当な帝位継承権を持っている。後は役に立つ意志があるかどうかだ」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "이지만 나는 자비로운. 도움이 되는 포로에게는 자비를 베풀음을 알고 있다. 그리고 당신은 정당한 제위 계승권을 갖고 있다.뒤에서는 유용한 의지가 있느냐이다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「なに……？」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "뭐……?" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　エレオラ皇女は不審そうに眉を寄せたが、察しのいい彼女はすぐに俺の言葉の意味に気づいたらしい。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 에레 오라 왕녀는 미심쩍다는 듯이 눈썹을 붙였으나 이해의 좋은 그녀는 바로 내 말의 의미를 눈치 챈 것 같다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「まさか、私を傀儡として利用してロルムンドに侵攻をかける気か」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "설마 나를 꼭두각시로 이용하고 롤뭉도에 침공을 걸것인가" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「利用とは人聞きの悪い。……部下思いの貴殿の、自発的な意志を尊重したいだけだよ」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "이용이라는 평판이 나쁜.……부하 생각의 귀하의 자발적인 의지를 존중할 뿐이야" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　部下思いのエレオラ殿下なら俺の役に立ってくれると思うのだが、どうだろう。ダメかな？ </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 부하 생각 에레오라 전하라면 내 도움이 되겠다고 생각하지만 어떨까.안 될까? </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　ダメならせっかく生き残った部下が、また減ってしまうかもしれないね。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 안 되면 모처럼 살아남은 부하 직원이 다시 줄어 버릴지도 모르겠네. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　そんな雰囲気を漂わせてやる。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그런 분위기를 풍기다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　だがもちろん、そんなことはしない。というか無理だ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 하지만 물론 그런 일은 하지 않는다.그래서인지 무리다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　自分でも甘いと自覚しているが、俺に捕虜の処刑なんてできない。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 스스로도 달다고 자각하고 있지만 나에게 포로의 처형 순 없지. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　だから断られたら、違う方法を考える。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그래서 거절당하면 다른 방법을 생각한다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　エレオラ皇女は俺をじっと見つめる。恐ろしく冷たい視線だ。怖くてドキドキする俺。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 에레 오라 왕녀는 나를 빤히 쳐다보다.무서운 차가운 시선이다.무서워서 떨리는 나. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　それから彼女は溜息をつき、視線をそらした。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그리고 그녀는 한숨을 쉬다, 시선을 돌렸다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「……あのとき、どんな犠牲を払ってでも貴殿を倒しておくべきだった。私の最大の失敗だ」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "……그때 어떤 희생을 치르더라도 당신을 넘어뜨리고 둬야 했다.저의 가장 큰 실패다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　そしてエレオラ皇女は俺に頭を下げる。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그리고 에레 오라 왕녀는 나에게 머리를 조아려라 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「ヴァイト黒狼卿。私に力を貸してくれ。私が次の皇帝になれば、ミラルディアには二度と近づかぬ」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "우아이토 흑랑 경. 나에게 힘을 보탠다.내가 다음의 황제가 되면 미랄디아에는 다시 다가온 " </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　俺は念のため、彼女に顔を近づけた。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 나는 혹시나 해서 그녀에게 다가갔다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「本心かな、それは」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "진심일까?그것은 " </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「ミラルディアの全てに見放された私が、今さらここに来られるとでも思っているのか？　私がそんな愚か者なら、利用する価値もなかろう」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "미랄디아 모든 것에 포기한 내가 지금 여기 오실 줄 알고 있는가?내가 그런 어리석다면, 이용할 가치도 없는 " </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　間近で彼女の匂いを嗅いだが、噓を言っている匂いはしない。本気で懲りているようだ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 가까이서 그녀의 냄새를 맡지만, 거짓말을 하는 냄새는 않는다.진심에서 벗어나는 것 같다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「結構。以前の貴殿の言葉通り、『良い関係』を築いていけそうだな」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "많이.이전의 당신 말대로 『 좋은 관계 』를 맺어 나가겠다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　俺はニヤリと笑い、マントを翻した。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 나는 히죽 웃으며 망토를 휘날렸다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　エレオラを使ってロルムンドに混乱を引き起こせば、当面は他国への侵攻どころではないはずだ。短くても数年、長ければ数十年は時間が稼げるだろう。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 에레 오라를 쓰고 롤뭉도에 혼란을 일으키면, 당분간은 타국의 침공 때가 아닐 것이다.최소 몇년, 길면 수십년은 시간을 벌 것이다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　それだけあれば、ミラルディアの守りを固められる。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그것만 있으면 미라 루디아의 방비를 굳힌다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　それにエレオラが帝位につけば、エレオラと魔撃大隊の生存者も死なずに済むだろう。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그것에 에레 내가 제위에 오르면, 에레 내와 마귀 공격 대대의 생존자도 죽지 않게 될 것이다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　ロルムンドの人には悪いが、俺は神様じゃないし善人でもない。ミラルディアの平和を守るのが俺の役目だ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 롤뭉도의 사람에게는 나쁘지만, 나는 하나님이 아니고 착한 사람도 아니다.미라 루디아의 평화를 지키는 것이 내 몫이다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「ではしばし養生するのだな、盟友エレオラ殿。私を喜ばせてくれ」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "에서는 잠시 요양하는 것이다, 맹우 에레오라님나를 기쁘게 하고 주었다" </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　彼女は目を閉じ、観念したように小さく溜息をつく。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그녀는 눈을 감고 체념했다 같은 한숨을 쉬다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 「……努力する」 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> "……노력하는 " </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　よし、うまくいった。絶対に悪いようにはしないから、ミラルディアの平和のために力を貸してくれ。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 그래, 잘했다.절대로 나쁘게는 안 하니까 밀라 루디아의 평화의 데 도움을 준다. </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 　俺は彼女の病室から退出しながら、今夜「冷たいミーチャ」の怖い夢を見ないようにする方法を考えることにした。 </span></p>
+<p class="calibre"><span xmlns="http://www.w3.org/1999/xhtml" class="kobospan"> 나는 그녀의 병실에서 퇴출하면서 오늘밤" 차가운 미 차"의 무서운 꿈을 꾸지 않도록 하는 방법을 생각하기로 했다. </span></p>
