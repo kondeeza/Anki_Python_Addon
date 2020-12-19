@@ -5,4 +5,4 @@
 #
 # License: GNU AGPLv3 <https://www.gnu.org/licenses/agpl.html>
 
-from . import CN_Find_Hanzi_Vocabs_With_Similar_Sound
+from . import CN_01_Add_Example_Vocabs_To_Vocab_Deck

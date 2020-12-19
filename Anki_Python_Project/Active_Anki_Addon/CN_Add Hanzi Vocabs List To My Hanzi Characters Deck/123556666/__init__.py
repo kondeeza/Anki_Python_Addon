@@ -5,4 +5,4 @@
 #
 # License: GNU AGPLv3 <https://www.gnu.org/licenses/agpl.html>
 
-from . import CN_Add_Hanzi_Vocabs_List_To_My_Hanzi_Characters_Deck
+from . import CN_03_Add_Example_Vocabs_To_Hanzi_Deck

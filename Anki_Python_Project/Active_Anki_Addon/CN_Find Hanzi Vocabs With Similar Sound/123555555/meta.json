@@ -1,4 +1,4 @@
-{"name": "CN_Find_Hanzi_Vocabs_With_Similar_Sound", "mod": 123555555,"disabled": false, "mod": 0, "conflicts": [], "max_point_version": 0, "min_point_version": 0, "branch_index": 0,"config":{
+{"name": "CN_01_Add_Example_Vocabs_To_Vocab_Deck", "mod": 123555555,"disabled": false, "mod": 0, "conflicts": [], "max_point_version": 0, "min_point_version": 0, "branch_index": 0,"config":{
  "01_modelName": "HSK",
  "02_Vocab_SrcField": "Simplified",
  "03_Meaning_SrcField": "Meaning",

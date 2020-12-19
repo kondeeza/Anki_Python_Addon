@@ -6,4 +6,4 @@
 # Copyright: mo  <paradoxez919@gmail.com>
 # License: GNU AGPLv3 <https://www.gnu.org/licenses/agpl.html>
 
-from . import CN_Find_Add_example_sentence_to_my_Hanzi_Deck
+from . import CN_02_Generate_Dynamic_Hanzi_Deck

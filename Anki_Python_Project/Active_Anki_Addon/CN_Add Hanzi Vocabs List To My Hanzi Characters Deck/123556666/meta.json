@@ -1,4 +1,4 @@
-{"name": "CN_Add_Hanzi_Vocabs_List_To_My_Hanzi_Characters_Deck", "mod": 123556666,"disabled": false, "mod": 0, "conflicts": [], "max_point_version": 0, "min_point_version": 0, "branch_index": 0,"config":{
+{"name": "CN_03_Add_Example_Vocabs_To_Hanzi_Deck", "mod": 123556666,"disabled": false, "mod": 0, "conflicts": [], "max_point_version": 0, "min_point_version": 0, "branch_index": 0,"config":{
  "01_modelName": "HSK",
  "02_Vocab_SrcField": "Simplified",
  "03_Meaning_SrcField": "Meaning",

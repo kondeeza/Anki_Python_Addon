@@ -6,4 +6,4 @@
 # Copyright: mo  <paradoxez919@gmail.com>
 # License: GNU AGPLv3 <https://www.gnu.org/licenses/agpl.html>
 
-from . import CN_Find_Hanzi_With_Similar_Sound
+from . import CN_04_Find_Hanzi_Homophone
