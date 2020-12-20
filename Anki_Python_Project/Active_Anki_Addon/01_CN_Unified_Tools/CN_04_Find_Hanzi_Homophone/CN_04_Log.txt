@@ -1,0 +1,37 @@
+os.getcwd():  C:\Users\myxomaz\AppData\Roaming\Anki2\CH\collection.media
+sys.path:  ['C:\\Users\\myxomaz\\AppData\\Roaming\\Anki2\\addons21', 'C:\\Program Files\\Anki2\\base_library.zip', 'C:\\Program Files\\Anki2']
+__name__:  01_CN_Unified_Tools.CN_04_Find_Hanzi_Homophone.CN_04_Find_Hanzi_Homophone
+SCRIPT_DIR:  C:\Users\myxomaz\AppData\Roaming\Anki2\addons21\01_CN_Unified_Tools\CN_04_Find_Hanzi_Homophone
+test log2
+mw.col  :<anki.collection.Collection object at 0x000001E21D6CEBB0> {'_lastSave': 1608476843.5400572,
+ '_logHnd': <_io.TextIOWrapper name='C:\\Users\\myxomaz\\AppData\\Roaming\\Anki2\\CH\\collection.log' mode='a' encoding='utf8'>,
+ '_should_log': True,
+ '_undo': [2, 'Bulk-Generate TotalWordCount'],
+ 'conf': <anki.config.ConfigManager object at 0x000001E220C411F0>,
+ 'db': <anki.dbproxy.DBProxy object at 0x000001E21D6CE850>,
+ 'decks': <anki.decks.DeckManager object at 0x000001E220C41280> {'decks': <anki.decks.DecksDictProxy object at 0x000001E220C412B0>},
+ 'media': <anki.media.MediaManager object at 0x000001E21D6CE2B0> {'_dir': 'C:\\Users\\myxomaz\\AppData\\Roaming\\Anki2\\CH\\collection.media', '_oldcwd': 'C:\\Program Files\\Anki2'},
+ 'path': 'C:\\Users\\myxomaz\\AppData\\Roaming\\Anki2\\CH\\collection.anki2',
+ 'sched': <anki.sched.Scheduler object at 0x000001E220C41490> {'_haveQueues': True,
+ '_lrnDayQueue': [],
+ '_lrnDids': [1505133594872],
+ '_lrnQueue': [],
+ '_newDids': [1505133594872],
+ '_newQueue': [],
+ '_revDids': [1505133594872],
+ '_revQueue': [],
+ 'dayCutoff': 1608498000,
+ 'dynReportLimit': 99999,
+ 'lrnCount': 0,
+ 'newCardModulus': 0,
+ 'newCount': 0,
+ 'queueLimit': 50,
+ 'reportLimit': 1000,
+ 'reps': 0,
+ 'revCount': 0,
+ 'today': 1414},
+ 'server': False,
+ 'tags': <anki.tags.TagManager object at 0x000001E220C41310> {}}
+fieldmode:  QUERY
+len(nids_ALLMode):  3261
+len(nids_CurrentMode):  2881

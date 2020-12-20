@@ -1,8 +1,0 @@
-{
-"01_modelName": "Hanzi Writing", 
-"02_Pinyin_SrcField": "Pinyin", 
-"03_Hanzi_SrcField": "Hanzi", 
-"04_Output_SrcField": "Auto Note_Current", 
-"05_OVERWRITE_DST_FIELD": true, 
-"06_Fuzzy_Character_Mode_Enabled": false
-}

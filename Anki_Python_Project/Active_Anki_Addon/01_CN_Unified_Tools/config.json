@@ -1,0 +1,171 @@
+{
+"01_01_modelName": "HSK",
+"01_02_Vocab_SrcField": "Simplified",
+"01_03_Meaning_SrcField": "Meaning",
+"01_04_Output_SrcField": "Auto_SimilarWord",
+"01_05_OVERWRITE_DST_FIELD": true, 
+"01_06_Fuzzy_Character_Mode_Enabled": false,
+"01_07_debugMode":false,
+"01_08_Pinyin_SrcField":"PinyinMarks",
+"01_09_query_input":"note:HSK",
+
+"03_01_modelName": "HSK",
+"03_02_Vocab_SrcField": "Simplified",
+"03_03_Meaning_SrcField": "Meaning",
+"03_04_1_HanziDeck_modelName": "Hanzi Writing",
+"03_04_2_HanziDeck_Input_HanziField": "Hanzi",
+"03_04_3_HanziDeck_Output_SrcField": "Auto_Example_Vocab",
+"03_05_OVERWRITE_DST_FIELD": true, 
+"03_06_Fuzzy_Character_Mode_Enabled": false,
+"03_07_debugMode":false,
+"03_08_Pinyin_SrcField":"PinyinMarks",
+"03_09_query_input":"note:HSK or \"note:Hanzi Writing\"",
+
+"04_01_modelName": "Hanzi Writing", 
+"04_02_Pinyin_SrcField": "Pinyin", 
+"04_03_Hanzi_SrcField": "Hanzi", 
+"04_04_Output_SrcField_ALLMode": "Auto_Note_All", 
+"04_04P2_Output_SrcField_CurrentMode": "Auto_Note_Current", 
+"04_05_OVERWRITE_DST_FIELD": true, 
+"04_06_Fuzzy_Character_Mode_Enabled_ALLMode": true,
+"04_06P2_Fuzzy_Character_Mode_Enabled_CurrentMode": false,
+"04_07P1_query_ALLMode": "\"deck:00\\_Hanzi::Most Common 3000 Hanzi\"",
+"04_07P2_queryMode_CurrentMode": "\"deck:00\\_Hanzi::Most Common 3000 Hanzi\" -is:new -is:suspended or (\"deck:00\\_Hanzi::Most Common 3000 Hanzi\" -Auto_Sentence: -is:suspended)",
+
+
+"02_01_master_modelName": "Hanzi Writing",
+"02_02_master_Hanzi_SrcField": "Hanzi",
+"02_03_master_Auto_Sentence_SrcField": "Auto_Sentence",
+"02_04_master_Auto_SR_SrcField": "Auto_SR",
+"02_05_master_Auto_ST_SrcField": "Auto_ST",
+"02_06_master_Auto_SA_SrcField": "Auto_SA",
+"02_07_master_Auto_SentenceF_SrcField": "Auto_SentenceF",
+"02_07_master_other1_Field": "",
+"02_08_master_Auto_SR_F_SrcField": "Auto_SR_F",
+"02_08_master_other2_Field": "Auto_SawSentenceExample",
+"02_09_master_Auto_ST_F_SrcField": "Auto_ST_F",
+"02_09_master_other3_Field": "",
+"02_10_master_deckName": "00_Hanzi::Most Common 3000 Hanzi",
+"02_11_master_Auto_Synced_Hint_SrcField": "Auto_Synced_Hint",
+"02_13_Enable_Optional_Custom_MasterSlaveSyncFieldList": true,
+"02_15_OVERWRITE_DST_FIELD": true,
+"02_16_slave_Model_Sentence_SPinyin_SMeaning_SAudio_List": [
+    [
+        "HSK",
+        "SentenceSimplified",
+        "SentencePinyinMarks",
+        "SentenceMeaning",
+        "SentenceAudio",
+        "Hint",
+        "",
+        "Key",
+        ""
+    ],
+    [
+        "SpoonFedNote",
+        "Hanzi",
+        "Pinyin",
+        "English",
+        "Audio",
+        "Note",
+        "",
+        "",
+        ""
+    ]
+],
+"02_17_Master_to_Corresponding_Slave_Field_List": [
+    [
+        "HSK",
+        [
+            "SentenceSimplified",
+            "Auto_Sentence",
+            true
+        ],
+        [
+            "SentencePinyinMarks",
+            "Auto_SR",
+            true
+        ],
+        [
+            "SentenceMeaning",
+            "Auto_ST",
+            true
+        ],
+        [
+            "SentenceAudio",
+            "Auto_SA",
+            true
+        ],
+        [
+            "Note",
+            "Auto_Synced_Hint",
+            true
+        ],
+        [
+            "Auto_SawSentenceExample",
+            "Key"
+        ]
+    ],
+    [
+        "SpoonFedNote",
+        [
+            "Hanzi",
+            "Auto_Sentence",
+            true
+        ],
+        [
+            "Pinyin",
+            "Auto_SR",
+            true
+        ],
+        [
+            "English",
+            "Auto_ST",
+            true
+        ],
+        [
+            "Audio",
+            "Auto_SA",
+            true
+        ],
+        [
+            "Note",
+            "Auto_Synced_Hint",
+            true
+        ]
+    ]
+],
+"02_21_master_Traditional_Field": "Traditional",
+"02_22_master_Freq_Field": "FrequencyRank",
+"02_23_master_Pinyin_Field": "Pinyin",
+"02_24_master_Pinyin2_Field": "Pinyin 2",
+"02_25_master_meaning_Field": "Meaning",
+"02_26_master_CardCreate_Other1_field": "",
+"02_27_master_CardCreate_Other2_field": "",
+"02_30_query_input":"",
+"02_998_EXAMPLE_DUMMY_FOR_REFERENCE_ONLY_(SINGLE_NOTE_TYPE_LIST)_slave_Model_Sentence_SPinyin_SMeaning_SAudio_List": [
+    [
+        "HSK",
+        "SentenceSimplified",
+        "SentencePinyinMarks",
+        "SentenceMeaning",
+        "SentenceAudio"
+    ]
+],
+"02_999_EXAMPLE_DUMMY_FOR_REFERENCE_ONLY_(MULTIPLE_NOTE_TYPE_LIST)_slave_Model_Sentence_SPinyin_SMeaning_SAudio_List": [
+    [
+        "HSK",
+        "SentenceSimplified",
+        "SentencePinyinMarks",
+        "SentenceMeaning",
+        "SentenceAudio"
+    ],
+    [
+        "SpoonFedNote",
+        "Hanzi",
+        "Pinyin",
+        "English",
+        "Audio"
+    ]
+]
+}
